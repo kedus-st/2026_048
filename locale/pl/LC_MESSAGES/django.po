@@ -1,0 +1,548 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-22 15:08+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && "
+"(n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && "
+"n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+
+#: clearance/settings.py:155
+msgid "Englisch"
+msgstr "Angielski"
+
+#: clearance/settings.py:156
+msgid "Deutsch"
+msgstr "Niemiecki"
+
+#: clearance/settings.py:157
+msgid "Polnisch"
+msgstr "Polski"
+
+#: clearance_app/models.py:43 clearance_app/models.py:48
+#: clearance_app/models.py:54
+msgid "JA"
+msgstr "TAK"
+
+#: clearance_app/models.py:44 clearance_app/models.py:49
+#: clearance_app/models.py:55
+msgid "NEIN"
+msgstr "NIE"
+
+#: clearance_app/models.py:56
+msgid "IN ARBEIT"
+msgstr "w trakcie pracy"
+
+#: clearance_app/models.py:67
+msgid "Breitengrad"
+msgstr "Szerokość"
+
+#: clearance_app/models.py:68
+msgid "Längengrad"
+msgstr "Stopień długości"
+
+#: clearance_app/models.py:70
+msgid "Wassertiefe [m]"
+msgstr "Glebokosc wody [m]"
+
+#: clearance_app/models.py:72
+msgid "Modelltiefe [m]"
+msgstr "Szacowana glebokosc [m]"
+
+#: clearance_app/models.py:74
+msgid "Modelltiefe unter GOK [m]"
+msgstr "Szacowana glebokosc geoida pod pow.dna [m]"
+
+#: clearance_app/models.py:76
+msgid "Modelgewicht [kg]"
+msgstr "Szacowana waga [kg]"
+
+#: clearance_app/models.py:78
+msgid "MAG Moment [A/m²]"
+msgstr "Moment magnetyczny [A/m²]"
+
+#: clearance_app/models.py:80
+msgid "Anomaly max [nT]"
+msgstr "Max anomalia [nT]"
+
+#: clearance_app/models.py:82
+msgid "Anomaly min [nT]"
+msgstr "Min anomalia [nT]"
+
+#: clearance_app/models.py:84
+msgid "Dipole Breite [m]"
+msgstr "Szerokosc dipola [m]"
+
+#: clearance_app/models.py:86
+msgid "Dipole P-P [nT]"
+msgstr "Dipol P-P [nT]"
+
+#: clearance_app/models.py:87
+msgid "ITP Notizen"
+msgstr "Notatki ITP"
+
+#: clearance_app/models.py:96
+msgid "WTG-OSS-EXC"
+msgstr ""
+
+#: clearance_app/models.py:97
+msgid "Abstand vom EXC"
+msgstr ""
+
+#: clearance_app/models.py:98
+msgid "todo_target"
+msgstr "Obiekt do zrobienia"
+
+#: clearance_app/models.py:99
+msgid "Priorität"
+msgstr "Priorytet"
+
+#: clearance_app/models.py:101
+msgid "Bergungsdatum"
+msgstr "Data oczyszczenia"
+
+#: clearance_app/models.py:102
+msgid "Bergungszeit"
+msgstr "Czas oczyszczenia"
+
+#: clearance_app/models.py:103
+msgid "Schiff"
+msgstr "Statek"
+
+#: clearance_app/models.py:104
+msgid "Feuerwerker"
+msgstr "Saper"
+
+#: clearance_app/models.py:105
+msgid "Vermesser"
+msgstr "Surveyor"
+
+#: clearance_app/models.py:108
+msgid "Gewicht (kg)"
+msgstr "Waga (kg)"
+
+#: clearance_app/models.py:109
+msgid "Länge (m)"
+msgstr "Długość (m)"
+
+#: clearance_app/models.py:110
+msgid "Breite (m)"
+msgstr "Szerokość (m)"
+
+#: clearance_app/models.py:111
+msgid "Tiefe GOK (m)"
+msgstr "Rzeczywista glebokosc obiektu (m)"
+
+#: clearance_app/models.py:113 templates/home.html:153
+msgid "TR Kommentar"
+msgstr "Uwagi sapera"
+
+#: clearance_app/models.py:114
+msgid "gefunden (y/n)"
+msgstr "znaleziono (t/n)"
+
+#: clearance_app/models.py:115
+msgid "geborgen (y/n/w)"
+msgstr "wydobyte (t/n/w)"
+
+#: clearance_app/models.py:117
+msgid "Kampfmittel (x)"
+msgstr "Niewybuchy (x)"
+
+#: clearance_app/models.py:120
+msgid "frei (y/n/w)"
+msgstr "oczyszczone (t/n/w)"
+
+#: clearance_app/models.py:123
+msgid "QA Freigabe (y)"
+msgstr "Sprawdzone kontrola jakosci (t)"
+
+#: clearance_app/models.py:126
+msgid "Beschreibung"
+msgstr "Opis"
+
+#: clearance_app/models.py:127
+msgid "QA Kommentare"
+msgstr "Uwagi kontrola jakosci"
+
+#: clearance_app/models.py:128 clearance_app/models.py:652
+msgid "Erstellt am"
+msgstr "Stworzone"
+
+#: clearance_app/models.py:129 clearance_app/models.py:653
+msgid "Aktualisiert am"
+msgstr "Zaktualizowano dnia"
+
+#: clearance_app/models.py:607
+msgid ""
+"The first image associated with an mtlitem will be renamed in the form of "
+"ITP-[no]_pic_1.jpg. Consecutive images associated with an mtlitem will be "
+"saved as is"
+msgstr ""
+"Nazwa pierwszego obrazu powiązanego z mtlitem zostanie zmieniona naPKT-"
+"[nr]_pic_1.jpg. Kolejne obrazy powiązane z mtlitem będązapisane w "
+"niezmienionej formie"
+
+#: clearance_app/models.py:628
+msgid "Overlay"
+msgstr "Overlay"
+
+#: clearance_app/models.py:629
+msgid "TMI"
+msgstr "TMI"
+
+#: clearance_app/models.py:630
+msgid "MBES"
+msgstr "MBES"
+
+#: clearance_app/models.py:631
+msgid "SSS"
+msgstr "SSS"
+
+#: clearance_app/models.py:649 management/models.py:45 management/models.py:186
+msgid "Name"
+msgstr "Nazwa"
+
+#: clearance_app/models.py:650
+msgid "Art"
+msgstr "Rodzaj"
+
+#: clearance_app/models.py:651 management/models.py:46 management/models.py:187
+msgid "Datei"
+msgstr "Plik"
+
+#: management/models.py:147
+msgid "Weather Downtime"
+msgstr "Czas przestoju pogodowego"
+
+#: management/models.py:148
+msgid "Scheduled Target"
+msgstr "Zaplanowany cel"
+
+#: management/models.py:149
+msgid "Crew Change"
+msgstr "Zmiana załogi"
+
+#: management/models.py:150
+msgid "Port Call"
+msgstr "Wezwanie do portu"
+
+#: management/models.py:151
+msgid "Other"
+msgstr "Inne"
+
+#: management/models.py:189
+msgid "Hochgeladen am"
+msgstr "Załadowano dnia"
+
+#: management/models.py:198
+msgid "Datum"
+msgstr ""
+
+#: management/models.py:199 templates/home.html:61
+#, fuzzy
+#| msgid "Bergungszeit"
+msgid "Betriebsstunden"
+msgstr "Czas oczyszczenia"
+
+#: management/models.py:200
+#, fuzzy
+#| msgid "TR Kommentar"
+msgid "Kommentar"
+msgstr "Uwagi sapera"
+
+#: templates/admin/base_site.html:25 templates/calendar.html:11
+msgid "Kartenansicht"
+msgstr "Widok mapy"
+
+#: templates/admin/change_list.html:31
+msgid "Home"
+msgstr "Strona główna"
+
+#: templates/admin/change_list.html:38
+msgid "Sichtbare Spalten auswählen"
+msgstr "Wybierz widoczne kolumny"
+
+#: templates/admin/change_list.html:72
+msgid "Please correct the error below."
+msgstr "Proszę poprawić błąd poniżej."
+
+#: templates/admin/change_list.html:72
+msgid "Please correct the errors below."
+msgstr "Proszę poprawić błędy poniżej."
+
+#: templates/admin/change_list.html:97 templates/home.html:164
+msgid "Filter"
+msgstr "Filtr"
+
+#: templates/admin/change_list.html:99
+msgid "Clear all filters"
+msgstr "Wyczyść wszystkie filtry"
+
+#: templates/home.html:49 templates/home.html:50 templates/home.html:51
+#: templates/home.html:52 templates/home.html:53 templates/home.html:54
+#: templates/home.html:55 templates/home.html:56 templates/home.html:57
+#: templates/home.html:58 templates/home.html:59 templates/home.html:60
+#: templates/home.html:61 templates/home.html:62
+msgid "de"
+msgstr "de"
+
+#: templates/home.html:49
+msgid "Abschnitte"
+msgstr "Sekcje"
+
+#: templates/home.html:50 templates/home.html:170
+msgid "Statistik"
+msgstr "Statystyka"
+
+#: templates/home.html:52
+msgid "Nasslager"
+msgstr "Składowisko mokre"
+
+#: templates/home.html:53
+msgid "Schiffe"
+msgstr "Statki"
+
+#: templates/home.html:54
+msgid "Geodata"
+msgstr "Geodane"
+
+#: templates/home.html:55
+msgid "Unterlagen"
+msgstr "Dokumenty"
+
+#: templates/home.html:56
+msgid "Berichte"
+msgstr "Raporty"
+
+#: templates/home.html:57
+msgid "Wasserproben"
+msgstr "Próby wody"
+
+#: templates/home.html:58
+msgid "Kalender"
+msgstr "Kalendarz"
+
+#: templates/home.html:59
+msgid "Bilder"
+msgstr "Zdjęcia"
+
+#: templates/home.html:60 templates/home.html:279
+msgid "Wetter"
+msgstr "Pogoda"
+
+#: templates/home.html:62
+msgid "Target Records"
+msgstr "Rejestry celów"
+
+#: templates/home.html:70 templates/picture_gallery.html:19
+msgid "Suchen..."
+msgstr "Szukaj..."
+
+#: templates/home.html:89
+msgid "Bild hochladen"
+msgstr "Prześlij obraz"
+
+#: templates/home.html:101
+msgid "Modelltiefe :"
+msgstr "Głębokość modelu:"
+
+#: templates/home.html:102
+msgid "Wassertiefe :"
+msgstr "Głębokość wody:"
+
+#: templates/home.html:106
+msgid "Tiefe unter Boden :"
+msgstr "Głębokość pod ziemią:"
+
+#: templates/home.html:111
+msgid "Gefunden"
+msgstr "Znaleziono"
+
+#: templates/home.html:117
+msgid "Geborgen"
+msgstr "Odnaleziono"
+
+#: templates/home.html:128
+msgid "Frei"
+msgstr "Wolne"
+
+#: templates/home.html:135
+msgid "QA Frei"
+msgstr "Zatwierdzone przez QA"
+
+#: templates/home.html:143
+msgid "Gewicht (kg):"
+msgstr "Waga (kg):"
+
+#: templates/home.html:146
+msgid "Breite (m):"
+msgstr "Szerokość (m):"
+
+#: templates/home.html:149
+msgid "Lange (m):"
+msgstr "Długość (m):"
+
+#: templates/home.html:154
+msgid "TR Kommentar hier eingeben..."
+msgstr "Wpisz tutaj komentarz TR..."
+
+#: templates/home.html:161 templates/home.html:315
+msgid "Legend"
+msgstr ""
+
+#: templates/home.html:162 templates/home.html:258
+msgid "Sprachen"
+msgstr "Języki"
+
+#: templates/home.html:162
+msgid "Sprache"
+msgstr "Język"
+
+#: templates/home.html:163 templates/home.html:227
+msgid "Ebenen"
+msgstr "Warstwy"
+
+#: templates/home.html:165
+msgid "ITP Gruppen"
+msgstr "Grupy ITP"
+
+#: templates/home.html:174
+msgid "Klar Statistik"
+msgstr "Statystyka Klar"
+
+#: templates/home.html:175
+msgid "To Do Statistik"
+msgstr "Statystyka Do Zrobienia"
+
+#: templates/home.html:176
+msgid "UXO Statistik"
+msgstr "Statystyka UXO"
+
+#: templates/home.html:177
+#, fuzzy
+#| msgid "Statistik"
+msgid "Leistung Statistik"
+msgstr "Statystyka"
+
+#: templates/home.html:196
+msgid "Filter Option"
+msgstr "Opcje filtra"
+
+#: templates/home.html:222
+msgid "Filter anwenden"
+msgstr "Zastosuj filtr"
+
+#: templates/home.html:223
+msgid "Filter zurücksetzen"
+msgstr "Resetuj filtr"
+
+#: templates/home.html:246
+msgid "ITP Cluster Einstellungen"
+msgstr "Ustawienia klastra ITP"
+
+#: templates/home.html:250
+msgid "Max. Pixel zwischen Punkten im Cluster:"
+msgstr "Maks. liczba pikseli między punktami w klastrze:"
+
+#: templates/home.html:273
+msgid "Sprache ändern"
+msgstr "Zmień język"
+
+#: templates/home.html:284
+msgid "Wetter abfragen"
+msgstr "Zapytaj o pogodę"
+
+#: templates/home.html:293
+msgid "Temperatur"
+msgstr "Temperatura"
+
+#: templates/home.html:294 templates/home.html:298 templates/home.html:304
+#: templates/home.html:308
+msgid "Lädt..."
+msgstr "Ładuje..."
+
+#: templates/home.html:297
+msgid "Wetterlage"
+msgstr "Warunki pogodowe"
+
+#: templates/home.html:303
+msgid "Feuchtigkeit"
+msgstr "Wilgotność"
+
+#: templates/home.html:307
+msgid "Windgeschwindigkeit"
+msgstr "Prędkość wiatru"
+
+#: templates/home.html:324
+msgid "nicht freigegeben"
+msgstr "nie zatwierdzone"
+
+#: templates/home.html:330
+msgid "freigegeben"
+msgstr "zatwierdzone"
+
+#: templates/home.html:336
+msgid "in Arbeit"
+msgstr "w trakcie pracy"
+
+#: templates/home.html:341
+msgid "Kampfmittel nicht freigegeben"
+msgstr "Środki bojowe niezatwierdzone"
+
+#: templates/home.html:347
+msgid "Kampfmittel freigegeben"
+msgstr "Środki bojowe zatwierdzone"
+
+#: templates/home.html:353
+msgid "Kampfmittel in Arbeit"
+msgstr "Środki bojowe w trakcie pracy"
+
+#: templates/home.html:359
+msgid "Kein ToDo"
+msgstr "Brak do wykonania"
+
+#: templates/picture_gallery.html:10
+msgid "Bildergalerie"
+msgstr "Galeria zdjęć"
+
+#: templates/picture_gallery.html:12
+msgid "Sortieren nach:"
+msgstr "Sortuj według:"
+
+#: templates/picture_gallery.html:15
+msgid "Datum hochgeladen"
+msgstr "Data załadowania"
+
+#: templates/picture_gallery.html:22
+msgid "Bilder pro Seite:"
+msgstr "Obrazy na stronie:"
+
+#: templates/picture_gallery.html:29
+msgid "erste"
+msgstr "pierwszy"
+
+#: templates/picture_gallery.html:30
+msgid "vorherige"
+msgstr "poprzedni"
+
+#: templates/picture_gallery.html:38
+msgid "nächste"
+msgstr "następny"
+
+#: templates/picture_gallery.html:39
+msgid "letzte"
+msgstr "ostatni"

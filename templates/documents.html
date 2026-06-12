@@ -1,0 +1,91 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Management System</title>
+    <link rel="stylesheet" href="{{STATIC_URL}}/static/css/documents.css">
+    <div id="docs_context_elem" data="{{serialized_docs}}"></div>
+</head>
+<body>
+    <script>    
+        var MEDIA_URL = "{{MEDIA_URL}}";
+        var PROJECT_NAME = "{{PROJECT_NAME}}";
+    </script>
+    <div class="container">
+        <div class="sidebar">
+            <div class="category" id="seaTerra">
+                <h2>SeaTerra</h2>
+            </div>
+            <div class="category" id="qhse">
+                <h2>QHSE</h2>
+            </div>
+            <div class="category" id="operations">
+                <h2>Operations</h2>
+            </div>
+            <div class="category" id="weatherReport">
+                <h2>Weather Reports</h2>
+            </div>
+        </div>
+        <div class="content" id="content_panel">
+            <!-- Content will be dynamically populated -->
+        </div>
+        <template id="expandable-item-template">
+            <div class="expandable-item">
+                <div class="document-name">Document Name</div>
+                <div class="document-details">
+                    <div class="document-section">
+                        <select class="document-dropdown">
+                            <!-- Options will be dynamically populated -->
+                        </select>
+                        <a href="#" class="document-link" style="display: none;">Download Document</a>
+                    </div>
+                    <div class="upload-section">
+                        <form action="/doc_upload" method="post" id="" enctype="multipart/form-data">
+                            <input type="hidden" name="type" value="" id=""/>
+                            {% csrf_token %}
+                            <input type="file" class="upload-document" accept=".pdf,.doc,.docx,.txt" name="docUpload" id="docUpload">
+                            <input class="upload-button" type="submit" value="Upload" form=""></input>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <div id="seaterra_items" style="display: none;">
+            <div class="expandable-item" name="wms">WMS (Work Method Statement)</div>
+            <div class="expandable-item" name="sop">SOP (Standard Operation Procedures)</div>
+            <div class="expandable-item" name="eqi">Equipment Info</div>
+            <div class="expandable-item" name="pji">Project Info</div>
+            <!--div class="expandable-item" name="psi">Personnel Info</div-->
+            <div class="expandable-item" name="pmt">Permits</div>
+            <div class="expandable-item" name="mbc">Mob and Calibration Report</div>
+            <!--div class="expandable-item" name="kof">Kickoff Files</div-->
+        </div>
+    
+        <div id="qhse_items" style="display: none;">
+            <div class="expandable-item" name="enc">ENC (Emergency Notification Chart)</div>
+            <div class="expandable-item" name="hir">HIRA (Hazard Identification and Risk Assessment)</div>
+            <div class="expandable-item" name="iac">Incident & Accident Reports</div>
+        </div>
+
+        <div id="operations_items" style="display: none;">
+            <div class="expandable-item" name="dpr">DPR (Daily Progress Reports)</div>
+            <div class="expandable-item" name="tbt">TBT (Tool Box talks)</div>
+            <div class="expandable-item" name="soc">SOC (Safety Observation Card)</div>
+        </div>
+
+        <div id="weather_reports_items" style="display: none;">
+            <div class="expandable-item" name="wr-pw02">Weather Reports (PW02)</div>
+            <div class="expandable-item" name="wr-pw32">Weather Reports (PW32)</div>
+            <div class="expandable-item" name="wr-pw35">Weather Reports (PW35)</div>
+            <div class="expandable-item" name="wr-ws">Weather Reports (Wetstore)</div>
+        </div>
+    </div>
+
+    <script src="{{STATIC_URL}}/static/js/documents.js"></script>
+</body>
+</html>
+{% endblock %}

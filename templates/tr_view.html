@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target Records</title><style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: #0056b3;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 20px;
+            margin: 0;
+        }
+        li {
+            background: white;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        a {
+            color: #0056b3;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #003973;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 20px;
+            background: #e1e1e1;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        h2{
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Target Records</h2>
+    <ul>
+        {% for tr in trs %}
+        <li><a href="{{ tr.link }}" target="_blank">{{ tr.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

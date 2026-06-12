@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecasts</title>
+    <link rel="stylesheet" href="/static/css/weather.css">
+</head>
+<body>
+    <h1>Weather Forecasts</h1>
+
+    <button id="skipButton">Skip to Graphs</button>
+        
+    <table id="weatherTable" border="1">
+        <thead>
+            <tr>
+                <th>Timestep</th>
+                <th>Confidence</th>
+                <th>Wind Direction</th>
+                <th>Wind Speed (10m)</th>
+                <th>Wind Gust (10m)</th>
+                <th>Wind Speed (50m)</th>
+                <th>Wind Gust (50m)</th>
+                <th>Wave Height</th>
+                <th>Max Wave Height</th>
+                <th>Wave Period</th>
+                <th>Peak Period (1d)</th>
+                <th>Wind Wave Direction</th>
+                <th>Wind Wave Height</th>
+                <th>Wind Wave Period</th>
+                <th>Swell Direction</th>
+                <th>Swell Height</th>
+                <th>Swell Period</th>
+                <th>Temperature</th>
+                <th>Visibility</th>
+            </tr>
+            <tr class="unit-row">
+                <td></td>
+                <td></td>
+                <td>°</td>
+                <td>kts</td>
+                <td>kts</td>
+                <td>kts</td>
+                <td>kts</td>
+                <td>m</td>
+                <td>m</td>
+                <td>s</td>
+                <td>s</td>
+                <td>°</td>
+                <td>m</td>
+                <td>s</td>
+                <td>°</td>
+                <td>m</td>
+                <td>s</td>
+                <td>°C</td>
+                <td>km</td>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <div id="graphsSection">
+        <canvas id="windGraph" width="400" height="100" style="margin-bottom: 15px"></canvas>
+        <canvas id="heightGraph" width="400" height="100" style="margin-bottom: 15px"></canvas>
+        <canvas id="windWaveGraph" width="400" height="100" style="margin-bottom: 15px"></canvas>
+        <canvas id="swellGraph" width="400" height="100" style="margin-bottom: 15px"></canvas>
+    </div>
+
+    <script src="/static/js/weather.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

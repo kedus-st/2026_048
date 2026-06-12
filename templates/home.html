@@ -1,0 +1,704 @@
+{% load static %}
+{% load i18n %}
+<!--{% block title %}Home{% endblock %}-->
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeaTerra Clearance</title>
+    <!--meta name="google-site-verification" content="fbQ7-3Olo6GB0rnWuQ7lCcUS2q7qNHpoE5S55hBIPcA" /-->
+    <!--link rel="google-site-verification" href="{{ STATIC_URL }}/static/google7e89da1bf7749096.html"-->
+    <link rel="stylesheet" href="{{ STATIC_URL }}/static/css/styles.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}/static/css/home_calendar_styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@0.7.7"></script>
+    <div id="events_context_elem" data="{{serialized_events}}"></div>
+
+    <!--script>
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+    
+        const csrftoken = getCookie('csrftoken');
+    </script-->
+
+</head>
+<body>
+    <div id="clearance_dates" type="application/json">
+        {{ clearance_dates|json_script:"clearance_dates" }}
+    </div>
+    <script>
+        /*
+        var mtl_items_count = {{mtl_items_count}};
+        var mtl_items_uxo_count = {{mtl_items_uxo_count}};
+        var mtl_items_uxo_count_percent= {{mtl_items_uxo_count_percent}};
+        var mtl_items_clear_count= {{mtl_items_clear_count}};
+        var mtl_items_clear_count_percent= {{mtl_items_clear_count_percent}};
+        var mtl_items_to_clear_count= {{mtl_items_to_clear_count}};
+        var mtl_items_to_clear_count_percent= {{mtl_items_to_clear_count_percent}};
+        var mtl_items_waiting_count= {{mtl_items_waiting_count}};
+        var mtl_items_waiting_count_percent= {{mtl_items_waiting_count_percent}};
+        var mtl_items_not_clear_count= {{mtl_items_not_clear_count}};
+        var mtl_items_not_clear_count_percent= {{mtl_items_not_clear_count_percent}};
+        var mtl_items_open_count= {{mtl_items_open_count}};
+        var mtl_items_open_count_percent= {{mtl_items_open_count_percent}};
+        var mtl_items_not_checked_count= {{mtl_items_not_checked_count}};
+        var mtl_items_not_checked_count_percent= {{mtl_items_not_checked_count_percent}};
+        var mtl_items_sentinel = {{mtl_items_sentinel}};
+        var mtl_items_kamara = {{mtl_items_kamara}};
+        */
+
+        var MEDIA_URL = "{{MEDIA_URL}}";
+        var GEODATA_URL = "{{GEODATA_URL}}";
+        var PROJECT_NAME = "{{PROJECT_NAME}}";
+        var EPSG = "{{EPSG}}";
+
+        var clearance_dates = JSON.parse(document.getElementById('clearance_dates').textContent);
+        //var baskets = JSON.parse('{{ serialized_baskets|escapejs }}');
+        var mtlitems = JSON.parse('{{ serialized_mtlitems|escapejs }}');
+
+    </script>
+    <main>
+        <nav>
+            <img class="logo" src="{{ STATIC_URL }}/static/img/seaterra_logo.png" alt="Your Logo">
+            <ul>
+                <li><a href="statistics" target="_blank" rel="noopener noreferrer" id="statistics-button"><span lang="{% translate "de" %}"><img class="icon" src="{{ STATIC_URL }}/static/img/icons/statistics.png"></span><label>{% translate "Statistik" %}</label></a></li>
+                <li><a href="admin/clearance_app/mtlitem/" target="_blank" rel="noopener noreferrer"><span lang="{% translate "de" %}"><img class="icon" src="{{ STATIC_URL }}/static/img/icons/mtls.png"></span><label>Mtl Items</label></a></li>
+                <li><a id="ships-button"><span lang="{% translate "de" %}"><img class="icon" src="{{ STATIC_URL }}/static/img/icons/vessels.png"></span><label>{% translate "Schiffe" %}</label></a></li>
+                <!--li><a href="admin/clearance_app/documents/"><span lang="{% translate "de" %}"><img class="icon" src="{{ STATIC_URL }}/static/img/icons/geodata.png"></span><label>{% translate "Geodata" %}</label></a></li-->
+                <!--li><a href="documents" target="_blank" rel="noopener noreferrer"><span lang="{% translate "de" %}"><img class="icon" src="{{ STATIC_URL }}/static/img/icons/documents.png"></span><label>{% translate "Unterlagen" %}</label></a></li-->
+                <li><a href="calendar" target="_blank" rel="noopener noreferrer"><span lang="{% translate "de" %}"><img class="icon" src="{{ STATIC_URL }}/static/img/icons/calendar.png"></span><label>{% translate "Kalender" %}</label></a></li>
+                <li><a href="picture-gallery" target="_blank" rel="noopener noreferrer"><span lang="{% translate "de" %}"><img class="icon" src="{{ STATIC_URL }}/static/img/icons/pictures.png"></span><label>{% translate "Bilder" %}</label></a></li>
+                <li><a href="weather" target="_blank" rel="noopener noreferrer"><span lang="{% translate "de" %}"><img class="icon" src="{{ STATIC_URL }}/static/img/icons/weather.png"></span><label>{% translate "Wetter" %}</label></a></li>
+                <!--li><a id="weather-button"><span lang="{% translate "de" %}"><img class="icon" src="{{ STATIC_URL }}/static/img/icons/weather.png"></span><label>{% translate "Wetter" %}</label></a></li-->
+                <!--li><a href="admin/management/operationalhours/" target="_blank" rel="noopener noreferrer" id="operation-hours-button"><span lang="{% translate "de" %}"><img class="icon" src="{{ STATIC_URL }}/static/img/icons/hours.png"></span><label>{% translate "Betriebsstunden" %}</label></a></li-->
+                <li><a href="target-records" target="_blank" rel="noopener noreferrer" id="tr-button"><span lang="{% translate "de" %}"><img class="icon" src="{{ STATIC_URL }}/static/img/icons/records.png"></span><label>{% translate "Target Records" %}</label></a></li>
+                <li><a href="admin/auth" target="_blank" rel="noopener noreferrer" id="tr-button"><span lang="{% translate "de" %}"><img class="icon" src="{{ STATIC_URL }}/static/img/icons/accounts.png"></span><label>{% translate "Kontoverwaltung" %}</label></a></li>
+                <li><a href="https://seaterra.azurewebsites.net/admin/projects/orders" target="_blank" rel="noopener noreferrer" id="tr-button"><span lang="{% translate "de" %}"><img class="icon" src="{{ STATIC_URL }}/static/img/icons/orders.png"></span><label>{% translate "Bestellliste" %}</label></a></li>
+                <li><a href="progress-reports" target="_blank" rel="noopener noreferrer"><span lang="{% translate "de" %}"><img class="icon" src="{{ STATIC_URL }}/static/img/icons/reports.png"></span><label>{% translate "DPRs" %}</label></a></li>
+                <!-- Icons and titles -->
+            </ul>
+        </nav>
+
+        <div id="map"></div>
+
+        <div id="search-bar">
+            <input type="text" placeholder={% translate "Suchen..."%} style="width: 100%; padding: 8px; border: none; border-radius: 3px;">
+        </div>
+        <div id="search-results">
+
+        </div>
+        <div id="itp_overlay" class="custom-popup">
+            <div class="popup-header">
+                <span id='popup_title' class="popup-label"></span>
+                <button class="close-button">X</button>
+            </div>
+            <form action="/itp_edit" method="post" id="itp-form" enctype="multipart/form-data">{% csrf_token %}
+                <input type="hidden" id="itp_no_mag" name="itp_no_mag" value="">
+                <div class="popup-content">
+                    <div class="popup-images">
+                        <img src="" alt="" class="current-image">
+                        <div class="image-nav">
+                            <div class="arrow left-arrow">&lt;</div>
+                            <div class="arrow right-arrow">&gt;</div>
+                        </div>
+                        <label for="imageUpload">{% translate "Bild hochladen" %}</label>
+                        <input multiple type="file" id="imageUpload" name="imageUpload" accept="image/*">
+                    </div>
+
+                    <div class="popup-form">
+                        <!-- Form elements -->
+                        <!--label for="updatedValue">Updated Value:</label>
+                        <input type="text" id="updatedValue" name="updatedValue"-->
+                        <!--label class="spanning-label" id="info_coordinates">Coordinates:</label-->
+                        <div class="columns-container">
+                            <div class="column">
+                                <label id="info_easting">Eastings:</label>
+                                <label title="{% translate "Modelltiefe :" %}" id="info_modelDepth">{% translate "Modelltiefe :" %}</label>
+                                <label title="{% translate "Wassertiefe :" %}" id="info_waterDepth">{% translate "Wassertiefe :" %}</label>
+                                <label title="{% translate "Bergungsdatum :" %}" id="info_clearDate">{% translate "Bergungsdatum :" %}</label>
+                                <label title="{% translate "Feuerwerker :" %}" id="info_EOD">{% translate "Feuerwerker :" %}</label>
+                            </div>
+                            <div class="column">
+                                <label id="info_northing">Northings:</label>
+                                <label title="{% translate "Tiefe unter Boden :" %}" id="info_depthBelowGround">{% translate "Tiefe unter Boden :" %}</label>
+                                <label id="info_magMoment">Mag Moment:</label>
+                                <label title="{% translate "Schiff :" %}" id="info_ship">{% translate "Schiff :" %}</label>
+                            </div>
+                        </div>
+                        <div class="dropdown-container">
+                            <label for="found-dropdown">{% translate "Gefunden" %}</label>
+                            <select class = "popup-form-select" id="found-dropdown" name="found-dropdown">
+                                <option value="e"></option>
+                                <option value="y">y</option>
+                                <option value="n">n</option>
+                            </select>
+                            <label for="recovered-dropdown">{% translate "Geborgen" %}</label>
+                            <select class = "popup-form-select" id="recovered-dropdown" name="recovered-dropdown">
+                                <option value="e"></option>
+                                <option value="y">y</option>
+                                <option value="n">n</option>
+                            </select>
+                            <label for="uxo-dropdown">UXO</label>
+                            <select class = "popup-form-select" id="uxo-dropdown" name="uxo-dropdown">
+                                <option value="e"></option>
+                                <option value="x">x</option>
+                            </select>
+                            <label for="clear-dropdown">{% translate "Frei" %}</label>
+                            <select class = "popup-form-select" id="clear-dropdown" name="clear-dropdown">
+                                <option value="e"></option>
+                                <option value="y">y</option>
+                                <option value="n">n</option>
+                                <option value="w">w</option>
+                            </select>
+                            <label for="qa-clear-dropdown">{% translate "QA Frei" %}</label>
+                            <select class = "popup-form-select" id="qa-clear-dropdown" name="qa-clear-dropdown"> 
+                                <option value="y">y</option>
+                                <option value="n">n</option>
+                            </select>
+                            <label for="todo-dropdown">{% translate "Todo" %}</label>
+                            <select class = "popup-form-select" id="todo-dropdown" name="todo-dropdown"> 
+                                <option value="e"></option>
+                                <option value="x">x</option>
+                                <option value="f">f</option>
+                                <option value="n">n</option>
+                            </select>
+                        </div>
+
+                        <div class="inputs-container">
+                            <label for="weight">{% translate "Gewicht (kg):" %}</label>
+                            <input type="number" class="input" id="weight" name="weight" placeholder="" min="0" step="any">
+
+                            <label for="width">{% translate "Breite (m):" %}</label>
+                            <input type="number" class="input" id="width" name="width" placeholder="" min="0" step="any">
+
+                            <label for="length">{% translate "Lange (m):" %}</label>
+                            <input type="number" class="input" id="length" name="length" placeholder="" min="0" step="any">
+                        </div>
+                        
+                        <label id="tr-comment-label" for="tr-comment">{% translate "TR Kommentar" %}</label>
+                        <input type="text" class="text-input" id="tr-comment" name="tr-comment" placeholder="{% translate "TR Kommentar hier eingeben..." %}">
+                        <label id="tr-comment-label" for="tr-comment">{% translate "Beschreibung" %}</label>
+                        <input type="text" class="text-input" id="description-detail" name="description-detail" placeholder="{% translate "Beschreibung hier eingeben..." %}">
+                        <input class="itp-submit" type="submit" value="Submit" form="itp-form">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="cc_overlay">
+            <button id="cc_overlay_close_button">X</button>
+            <h3 id="cc_header"></h3>
+            <div class="cc-overlay-content">
+                <p><a id="cc_link" href="#" target="_blank">{% translate "Rasterzelle öffnen" %}</a></p>
+                <p><strong>{% translate "Untersuchungsgebiet Zelle" %}:</strong> <span id="cc_cell"></span></p>
+                <p><strong>{% translate "Easting" %}:</strong> <span id="cc_easting"></span></p>
+                <p><strong>{% translate "Northing" %}:</strong> <span id="cc_northing"></span></p>
+                <p><strong>{% translate "bearbeitet (y/n/w)" %}:</strong> <span id="cc_clear"></span></p>
+                <p><strong>{% translate "Objekt Zahl" %}:</strong> <span id="cc_item_count"></span></p>
+                <div class="cc-overlay-image-container">
+                    <div id="before_image_container" style="display:none;">
+                        <p><strong>{% translate "Bild vor Räumung" %}:</strong></p>
+                        <img id="cc_before_image" alt="Before Image">
+                    </div>
+                    <div id="after_image_container" style="display:none;">
+                        <p><strong>{% translate "Bild nach Räumung" %}:</strong></p>
+                        <img id="cc_after_image" alt="After Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="dp_overlay">
+            <button id="dp_overlay_close_button">X</button>
+            <h3 id="dp_header"></h3>
+            <div class="overlay-content">
+                <p><a id="dp_link" href="#" target="_blank">{% translate "Bohrpunkt öffnen" %}</a></p>
+                <p><strong>{% translate "Untersuchungsgebiet Zelle" %}:</strong> <span id="dp_cell"></span></p>
+                <p><strong>{% translate "Easting" %}:</strong> <span id="dp_easting"></span></p>
+                <p><strong>{% translate "Northing" %}:</strong> <span id="dp_northing"></span></p>
+                <p><strong>{% translate "Sondiert (y/n)" %}:</strong> <span id="dp_probed"></span></p>
+                <p><strong>{% translate "Anomalie gefunden (y/n)" %}:</strong> <span id="dp_anomaly"></span></p>
+                <iframe id="dp_pdf_frame" src="" style="width: 100%; height: 500px;" frameborder="0"></iframe>
+            </div>
+        </div>
+        <div id="wsc_overlay" class="overlay">
+            <button id="wsc_overlay_close_button">X</button>
+            <h3 id="wsc_header"></h3>
+            <div class="wsc-overlay-content">
+                <p><strong>{% translate "Easting" %}:</strong> <span id="wsc_easting"></span></p>
+                <p><strong>{% translate "Northing" %}:</strong> <span id="wsc_northing"></span></p>
+                <p><strong>{% translate "Wassertiefe [m]" %}:</strong> <span id="wsc_water_depth"></span></p>
+                <p><strong>{% translate "Behälter Art" %}:</strong> <span id="wsc_type"></span></p>
+                <p><strong>{% translate "Gesamtmasse (kg)" %}:</strong> <span id="wsc_total_weight"></span></p>
+                <p><strong>{% translate "Gesamtsprengstoffgewicht (kg)" %}:</strong> <span id="wsc_total_ex_weight"></span></p>
+                <p><strong>{% translate "Inhalt Zustand / Art" %}:</strong> <span id="wsc_content_type"></span></p>
+                <p><strong>{% translate "Mtl Item Zahl" %}:</strong> <span id="wsc_mtl_items_count"></span></p>
+                <p><strong>{% translate "Schlussdatum" %}:</strong> <span id="wsc_closing_date"></span></p>
+                <p><strong>{% translate "Einlagerung Datum" %}:</strong> <span id="wsc_placement_date"></span></p>
+                <p><strong>{% translate "Nasslager Zell" %}:</strong> <span id="wsc_wetstore_cell"></span></p>
+                <p><a id="wsc_export_link" href="#" target="_blank">{% translate "Objekte Exportieren" %}</a></p>
+            </div>
+        </div>
+        <div id="ws_overlay" class="overlay">
+            <button id="ws_overlay_close_button">X</button>
+            <h3 id="ws_header"></h3>
+            <div class="ws-overlay-content">
+                <p><strong>{% translate "Untersuchungsgebiet" %}:</strong> <span id="ws_area"></span></p>
+                <p><strong>{% translate "Untersuchungsgebiet Zelle" %}:</strong> <span id="ws_cell"></span></p>
+                <p><strong>{% translate "Easting" %}:</strong> <span id="ws_easting"></span></p>
+                <p><strong>{% translate "Northing" %}:</strong> <span id="ws_northing"></span></p>
+                <p><strong>{% translate "Gesammelt?" %}:</strong> <span id="ws_collected"></span></p>
+                <p><strong>{% translate "Zeitpunkt der Probenahme" %}:</strong> <span id="ws_collection_datetime"></span></p>
+                <p><strong>{% translate "Gesammeltes Volumen [mL]" %}:</strong> <span id="ws_collected_volume"></span></p>
+                <p><strong>{% translate "Wassertiefe [m]" %}:</strong> <span id="ws_water_depth"></span></p>
+                <p><strong>{% translate "Kommentar" %}:</strong> <span id="ws_comment"></span></p>
+            </div>
+        </div>
+        <div class="icon-buttons">
+            <button class="round-button" data-tooltip="{% translate "Legend" %}" id="legend-button"><img src="{{ STATIC_URL }}/static/img/icons/legend.png" alt={% translate "Legend" %}></button>
+            <button class="round-button" data-tooltip="{% translate "Sprachen" %}" id="language-button"><img src="{{ STATIC_URL }}/static/img/icons/language.png" alt={% translate "Sprache" %}></button>
+            <button class="round-button" data-tooltip="{% translate "Ebenen" %}" id="layer-button"><img src="{{ STATIC_URL }}/static/img/icons/layers.png" alt={% translate "Ebenen" %}></button>
+            <button class="round-button" data-tooltip="{% translate "Filter" %}" id="filter-button"><img src="{{ STATIC_URL }}/static/img/icons/filter.png" alt="Filter"></button>
+            <button class="round-button" data-tooltip="{% translate "ITP Gruppen" %}" id="cluster-button"><img src="{{ STATIC_URL }}/static/img/icons/clusters.png" alt={% translate "ITP Gruppen" %}></button>
+        </div>
+
+        <div id="statistics-popup" class="popup">
+            <div class="popup-header">
+                <span id='popup_title' class="statistics-popup-label">{% translate "Statistik" %}</span>
+                <button class="close-button" id="close-statistics-popup">X</button>
+            </div>
+            <div class="statistics-button-container">
+                <button class="statistics-popup-button" id="clear-button">{% translate "Klar Statistik" %}</button>
+                <button class="statistics-popup-button" id="todo-button">{% translate "To Do Statistik" %}</button>
+                <button class="statistics-popup-button" id="uxo-button">{% translate "UXO Statistik" %}</button>
+                <button class="statistics-popup-button" id="performance-button">{% translate "Leistung Statistik" %}</button>
+                <button class="statistics-popup-button" id="ship-button">{% translate "Schiff Statistik" %}</button>
+            </div>
+            <div class="popup-content">
+                <!-- Inside the #statistics-popup .popup-content div -->
+                <div class="statistics-container">
+                    <div class="chart-container" id="pie-chart"></div>
+                    <div class="legend-container" id="legend"></div>
+                    <!--div class="checkbox-container">
+                        <label><input type="checkbox" id="clear-checkbox"> Cleared Statistics</label>
+                        <label><input type="checkbox" id="todo-checkbox"> To Do Statistics</label>
+                        <label><input type="checkbox" id="uxo-checkbox"> UXO Statistics</label>
+                    </div-->
+                </div>
+            </div>
+        </div>
+
+        <div id="filter-popup">
+            <div class="popup-header">
+              <button class="close-button" id="close-filters-button">✕</button>
+              <div class="popup-label">{% translate "Filter Option" %}</div>
+            </div>
+            <div class="popup-content">
+                <div class="popup-checkboxes">
+                    <div class="checkbox-container">
+                        <label><input type="checkbox" id="clear-filter">Clear</label>
+                        <label><input type="checkbox" id="recovered-filter">Recovered</label>
+                        <label><input type="checkbox" id="found-filter">Found</label>
+                        <label><input type="checkbox" id="uxo-filter">UXO</label>
+                        <label><input type="checkbox" id="qa-clear-filter">QA Clear</label>
+                        <label><input type="checkbox" id="to-do-filter">To Do X</label>
+                    </div>
+                    <div class="checkbox-container">
+                        <label><input type="checkbox" id="nclear-filter">Not Clear</label>
+                        <label><input type="checkbox" id="nrecovered-filter">Not Recovered</label>
+                        <label><input type="checkbox" id="nfound-filter">Not Found</label>
+                        <label><input type="checkbox" id="nuxo-filter">Non UXO</label>
+                        <label><input type="checkbox" id="nqa-clear-filter">Not QA Clear</label>
+                        <label><input type="checkbox" id="nto-do-filter">No To Do</label>
+                    </div>
+                    <div class="checkbox-container">
+                        <label><input type="checkbox" id="wclear-filter">In Work</label>
+                        <label><input type="checkbox" id="wrecovered-filter">Recovery in progress</label>
+                    </div>
+                    <div class="checkbox-container">
+                        <label><input type="checkbox" id="prio1-filter">Priority 1</label>
+                        <label><input type="checkbox" id="prio2-filter">Priority 2</label>
+                    </div>
+                </div>
+            </div>
+            <button class="apply-filter-button" id="apply-filters-button">{% translate "Filter anwenden" %}</button>
+            <button class="apply-filter-button" id="reset-filters-button">{% translate "Filter zurücksetzen" %}</button>
+        </div>
+        <div id="layer-popup" class="popup">
+            <div class="popup-header">
+              <span class="popup-label">{% translate "Ebenen" %}</span>
+              <button class="close-button" id="close-layers-button">X</button>
+            </div>
+            <div class="popup-content">
+                <div class="checkbox-container">
+                    <label>
+                      <input type="checkbox" name="base">Base Map
+                      <input type="range" min="0" max="1" step="0.01" name="base-slider" value="100">
+                    </label>
+                    <label>
+                      <input type="checkbox" name="osm">Open Sea Map
+                      <input type="range" min="0" max="1" step="0.01" name="osm-slider" value="100">
+                    </label>
+                    <label>
+                      <input type="checkbox" name="tmi">TMI
+                      <input type="range" min="0" max="1" step="0.01" name="tmi-slider" value="1">
+                    </label>
+                    <label>
+                      <input type="checkbox" name="mbes">MBES
+                      <input type="range" min="0" max="1" step="0.01" name="mbes-slider" value="1">
+                    </label>
+                    <label>
+                      <input type="checkbox" name="sss">SSS
+                      <input type="range" min="0" max="1" step="0.01" name="sss-slider" value="1">
+                    </label>
+                    <label>
+                      <input type="checkbox" name="overlay">Overlay
+                      <input type="range" min="0" max="1" step="0.01" name="overlay-slider" value="1">
+                    </label>
+                    <label>
+                      <input type="checkbox" name="itp">ITP
+                      <input type="range" min="0" max="1" step="0.01" name="itp-slider" value="1">
+                    </label>
+                  </div>
+            </div>
+        </div>
+        <div id="itp-cluster-popup" class="popup">
+            <div class="popup-header">
+                <span class="popup-label">{% translate "ITP Cluster Einstellungen" %}</span>
+                <button class="close-button" id="close-itp-cluster-popup">X</button>
+            </div>
+            <div class="popup-content">
+                <label for="itp-cluster-slider">{% translate "Max. Pixel zwischen Punkten im Cluster:" %}</label>
+                <input type="range" id="itp-cluster-slider" min="0" max="50" step="1" value="0">
+                <span id="itp-cluster-value">0 pixels</span>
+            </div>
+            <!--button class="apply-itp-cluster-button" id="apply-itp-cluster-button">Apply</button-->
+        </div>
+        <div id="language-popup" class="popup custom-popup">
+            <div class="popup-header">
+                <span class="popup-label">{% translate "Sprachen" %}</span>
+                <button class="close-button" id="close-language-button">X</button>
+            </div>
+            <div class="popup-content">
+                <form action="/i18n/setlang/" method="post" id="lang_form">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="" />
+                    <select name="language">
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% get_available_languages as LANGUAGES %}
+                        {% get_language_info_list for LANGUAGES as languages %}
+                        {% for language in languages %}
+                            <option value="{{ language.code }}">{{ language.name_local }} ({{ language.code}})</option>
+                        {% endfor %}
+                    </select>
+                    <input id="lang_submit" type="submit" value="{% translate "Sprache ändern" %}" form="lang_form"/>
+                </form>
+            </div>
+        </div>
+        <div id="weather-popup" class="popup custom-popup">
+            <div class="popup-header">
+                <span class="popup-label">{% translate "Wetter" %}</span>
+                <button class="close-button" id="close-weather-button">X</button>
+            </div>
+            <div class="weather-popup-inputs">
+                <input type="date" id="weather-date"/>
+                <button id="new-weather-button">{% translate "Wetter abfragen" %}</button>
+                <input type="time" id="weather-time" step="3600"/>
+            </div>
+            <div id="weather-date-label-div">
+                <label id="weather-date-label"></label>
+            </div>
+            <div class="popup-content">
+                <div class="weather-info-row">
+                    <div class="weather-info-box temperature-box">
+                        <p class="info-label">{% translate "Temperatur" %}</p>
+                        <span id="weather-temp">{% translate "Lädt..." %}</span>
+                    </div>
+                    <div class="weather-info-box condition-box">
+                        <p class="info-label">{% translate "Wetterlage" %}</p>
+                        <span id="weather-condition">{% translate "Lädt..." %}</span>
+                    </div>
+                </div>
+                <div class="weather-info-row">
+                    <div class="weather-info-box humidity-box">
+                        <p class="info-label">{% translate "Feuchtigkeit" %}</p>
+                        <span id="weather-humidity">{% translate "Lädt..." %}</span>
+                    </div>
+                    <div class="weather-info-box wind-box">
+                        <p class="info-label">{% translate "Windgeschwindigkeit" %}</p>
+                        <span id="weather-wind">{% translate "Lädt..." %}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="legend-popup" class="popup custom-popup">
+            <div id="legend-popup-header" class="popup-header">
+                <span class="popup-label">{% translate "Legend" %}</span>
+                <button class="close-button" id="close-legend-button">X</button>
+            </div>
+            <div class="popup-content">
+                <ul>
+                    <li>
+                        <svg height="12.5" width="12.5">
+                            <circle cx="6.25" cy="6.25" r="5" stroke="black" stroke-width="1" fill="red"/>
+                        </svg>
+                        {% translate "nicht freigegeben" %}
+                    </li>
+                    <li>
+                        <svg height="12.5" width="12.5">
+                            <circle cx="6.25" cy="6.25" r="5" stroke="black" stroke-width="1" fill="orange"/>
+                        </svg>
+                        {% translate "zu sprengen" %}
+                    </li>
+                    <li>
+                        <svg height="12.5" width="12.5">
+                            <circle cx="6.25" cy="6.25" r="5" stroke="black" stroke-width="1" fill="green"/>
+                        </svg>
+                        {% translate "freigegeben" %}
+                    </li>
+                    <li>
+                        <svg height="12.5" width="12.5">
+                            <circle cx="6.25" cy="6.25" r="5" stroke="black" stroke-width="1" fill="yellow"/>
+                        </svg>
+                        {% translate "in Arbeit" %}
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 51 48">
+                            <path fill="red" stroke="#000" d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"/>
+                        </svg>
+                        {% translate "Kampfmittel nicht freigegeben" %}
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 51 48">
+                            <path fill="green" stroke="#000" d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"/>
+                        </svg>
+                        {% translate "Kampfmittel freigegeben" %}
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 51 48">
+                            <path fill="yellow" stroke="#000" d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"/>
+                        </svg>
+                        {% translate "Kampfmittel in Arbeit" %}
+                    </li>
+                    <li>
+                        <svg height="12.5" width="12.5">
+                            <circle cx="6.25" cy="6.25" r="5" stroke="black" stroke-width="1" fill="none"/>
+                        </svg>
+                        {% translate "Kein ToDo" %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <div id="mouse-position-projected"></div>
+    <div id="mouse-position"></div>
+    <div id="mouse-depth"></div>
+
+    <button id="pullUpCalendarButton">Pull Up Calendar</button>
+    <div id="calendarContent">
+        <button id="scheduleEventButton" class="schedule-event-button">Schedule Event</button>
+        <div id="calendar"></div>
+        <div id="scheduleEventPopup" class="popup">
+            <div class="popup-content">
+              <span class="close" id="closeScheduleEventButton">&times;</span>
+              <form id="eventForm" method="post" action="/schedule_event">{% csrf_token %}
+                <input type="hidden" id="eventId" name="eventId" value="">
+                <input type="hidden" id="homeCalendar" name="homeCalendar" value="homeCalendar">
+
+                <label for="eventTitle">Event Title:</label><br>
+                <input type="text" id="eventTitle" name="eventTitle"><br><br>
+                
+                <label for="startDateTime">Start Date Time:</label><br>
+                <input type="datetime-local" id="startDateTime" name="startDateTime"><br><br>
+                
+                <label for="endDateTime">End Date Time:</label><br>
+                <input type="datetime-local" id="endDateTime" name="endDateTime"><br><br>
+                
+                <label for="eventType">Event Type:</label><br>
+                <select id="eventType" name="eventType">
+                  <option value="W">Weather Downtime</option>
+                  <option value="T">Scheduled Target</option>
+                  <option value="C">Crew Change</option>
+                  <option value="P">Port Call</option>
+                  <option value="O">Other</option>
+                </select><br><br>
+                
+                <input type="submit" value="Schedule Event" form="eventForm" name="submit">
+                <input type="submit" value="Delete" form="eventForm" name="delete" class="delete-button" id="deleteEventButton">
+              </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="section-popup" class="popup">
+        <span id="close-section-button" class="close-section-button">X</span>
+        <div id="section-1" coords="[10.9297, 54.0948]" zoom="20" class="section-box">Pzh_00032</div>
+        <div id="section-2" coords="[10.9580, 54.0826]" zoom="20" class="section-box">Pzh_00035</div>
+        <div id="section-3" coords="[10.960432, 54.06517]" zoom="20" class="section-box">Pzh_00002</div>
+        <div id="section-2" coords="[10.80953, 54.03332]" zoom="18" class="section-box">Wet Store</div>
+    </div>
+
+    <!--div id="baskets-popup" class="popup">
+        <div class="popup-content">
+            <div class="popup-header"><h2>{% translate "Körbe" %}</h2></div>
+            <span class="close-baskets-button" id="close-baskets-button">X</span>
+            <div class="baskets-container">
+                {% for basket in baskets %}
+                    <div class="basket-item">
+                        <div style="background-color: {% if basket.full %}red;{% else %}green;{% endif %}" class="basket-circle">{{ basket.basket_id }}</div>
+                        <div class="basket-add-remove">
+                            <button id="addto-basket-{{ basket.basket_id }}" class="plus-btn">+/-</button>
+                            <button style="visibility:hidden" id="removefrom-basket-{{ basket.basket_id }}" class="minus-btn">-</button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div-->
+
+    <!--div id="basket-management-popup" pk="" class="popup">
+        <div id="basket-management-popup-content" class="popup-content">
+            <div id="basket-management-popup-header" class="popup-header"><h2>{% translate "Korb" %}</h2></div>
+            <span class="close-basket-management-button" id="close-basket-management-button">&times;</span>
+            <div class="list-container">
+                <div class="list">
+                    <label>{% translate "Meeresboden" %}</label>
+                    <input id="sf-search1" type="text" class="search-input" placeholder="Search">
+                    <div class="list-contents" id="sf-list1">
+                        {% for item in mtlitems %}
+                            {% if item.location == 'sf' %}
+                                <div class="basket-list-item">{{ item.itp_no_mag }}</div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="basket-move-buttons">
+                    <button id="move1-right" class="move-right">&rarr;</button>
+                    <button id="move1-left" class="move-left">&larr;</button>
+                </div>
+                <div class="list">
+                    <label>{% translate "Korb" %}</label>
+                    <input id="basket-search1" type="text" class="search-input" placeholder="Search">
+                    <div class="list-contents" id="basket-list1">
+                    </div>
+                </div>
+                <div class="basket-move-buttons">
+                    <button id="move2-right" class="move-right">&rarr;</button>
+                    <button id="move2-left" class="move-left">&larr;</button>
+                </div>
+                <div class="list">
+                    <label>{% translate "Bergungsschiff" %}</label>
+                    <input id="bs-search" type="text" class="search-input" placeholder="Search">
+                    <ul class="list-contents" id="bs-list">
+                        {% for item in mtlitems %}
+                            {% if item.location == 'bs' %}
+                                <div class="basket-list-item">{{ item.itp_no_mag }}</div>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="list-container">
+                <div style="visibility:hidden" class="list">
+                    <label>{% translate "Meeresboden" %}</label>
+                    <input id="sf-search2" type="text" class="search-input" placeholder="Search">
+                    <ul class="list-contents" id="sf-list2">
+                        {% for item in mtlitems %}
+                            {% if item.location == 'sf' %}
+                                <div class="basket-list-item">{{ item.itp_no_mag }}</div>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div style="visibility:hidden" class="basket-move-buttons">
+                    <button id="move3-right" class="move-right">&rarr;</button>
+                    <button id="move3-left" class="move-left">&larr;</button>
+                </div>
+                <div style="visibility:hidden" class="list">
+                    <label>{% translate "Korb" %}</label>
+                    <input id="basket-search2" type="text" class="search-input" placeholder="Search">
+                    <ul class="list-contents" id="basket-list2">
+                    </ul>
+                </div>
+                <div class="basket-move-buttons">
+                    <button id="move4-right" class="move-right">&rarr;</button>
+                    <button id="move4-left" class="move-left">&larr;</button>
+                </div>
+                <div class="list">
+                    <label>{% translate "Sortierschiff" %}</label>
+                    <input id="ss-search" type="text" class="search-input" placeholder="Search">
+                    <ul class="list-contents" id="ss-list">
+                        {% for item in mtlitems %}
+                            {% if item.location == 'ss' %}
+                                <div class="basket-list-item">{{ item.itp_no_mag }}</div>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <button id="saveBtn">Save</button>
+            <label id="basket-save-status"></label>
+        </div>
+    </div-->
+
+    <div id="vessel-popup">
+        <div id="vessel-popup-content">
+        <span id="close-vessel-button" class="close-vessel-button">X</span>
+            <div class="left-panel">
+                <ul id="vesselList">
+                    {% for vessel in vessels %}
+                    <li>
+                        <a href="#" class="vessel-link" 
+                        data-ship-name="{{ vessel.ship_name }}"
+                        data-mmsi="{{ vessel.mmsi }}"
+                        data-imo="{{ vessel.imo }}"
+                        data-easting="{{ vessel.easting }}"
+                        data-northing="{{ vessel.northing }}"
+                        data-vessel-id="{{ vessel.id }}">{{ vessel.ship_name }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="right-panel">
+                <div id="vesselDetails">
+                    <p>{% translate "Schiff auswählen" %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var target_filters = {
+            found: '',
+            recovered: '',
+            uxo: '',
+            clear: '',
+            qa_clear: '',
+            to_do: '',
+            prio:'',
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/geotiff@2.1.2/dist-browser/geotiff.min.js"></script>   
+    <script src="{{ STATIC_URL }}/static/leaflet/proj4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.10/index.global.js"></script>
+    <script src="{{ STATIC_URL }}/static/js/home_calendar.js"></script>
+    <script src="{{ STATIC_URL }}/static/js/filter_styles.js"></script>
+    <script src="{{ STATIC_URL }}/static/js/home.js"></script>
+</body>
+{% endblock %}
+
+

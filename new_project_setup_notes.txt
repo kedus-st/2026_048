@@ -1,0 +1,18 @@
+- change DBNAME in .env
+- makemigrations (no args, clearance_app and management as args) and migrate
+- change EPSG in clearance/settings.py
+- in case of changed srid(epsg in settings.py), make sure to makemigrations and migrate before adding mtlitems
+- createsuperuser and set password
+- setup project folder on Azure file storage
+- upload folder structure to file storage from 2024_clearance_env/project_dirs
+- change PROJECT_NAME in clearance/settings.py
+- change URL in clearance/settings.py
+- change map_center and zoom in static/js/home.js
+change trrecord project info in .env
+change client_logo.png in static/img
+change default itplayer clustering distance in static/js/home.js
+- change utm_zone in static/js/home.js
+- change proj4.defs in static/js/home.js if needed
+- update ALLOWED_HOSTS, CORS_ALLOWED_ORIGINS, CORS_TRUSTED_ORIGINS in clearance/settings.py
+- create guest user
+add vessels

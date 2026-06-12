@@ -1,0 +1,415 @@
+<html>
+    <head>
+        <title>Daily Progress Reports</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/dprs.css">
+        <script src="/static/js/dprs.js"></script>
+        <script>
+            function updateTotals() {
+                document.getElementById('daily_meetings_total').innerText = parseInt(document.getElementById('daily_meetings_today').innerText || '0') + parseInt(document.getElementById('daily_meetings_total').getAttribute('source_val') || '0');
+                document.getElementById('toolbox_talks_total').innerText = parseInt(document.getElementById('toolbox_talks_today').innerText || '0') + parseInt(document.getElementById('toolbox_talks_total').getAttribute('source_val') || '0');
+                document.getElementById('safety_observation_form_total').innerText = parseInt(document.getElementById('safety_observation_form_today').innerText || '0') + parseInt(document.getElementById('safety_observation_form_total').getAttribute('source_val') || '0');
+                document.getElementById('safety_drills_total').innerText = parseInt(document.getElementById('safety_drills_today').innerText || '0') + parseInt(document.getElementById('safety_drills_total').getAttribute('source_val') || '0');
+                document.getElementById('incidents_total').innerText = parseInt(document.getElementById('incidents_today').innerText || '0') + parseInt(document.getElementById('incidents_total').getAttribute('source_val') || '0');
+                document.getElementById('accidents_total').innerText = parseInt(document.getElementById('accidents_today').innerText || '0') + parseInt(document.getElementById('accidents_total').getAttribute('source_val') || '0');
+                document.getElementById('working_hours_total').innerText = parseInt(document.getElementById('working_hours_today').innerText || '0') + parseInt(document.getElementById('working_hours_total').getAttribute('source_val') || '0');
+                document.getElementById('days_without_accident_total').innerText = parseInt(document.getElementById('days_without_accident').innerText || '0') + parseInt(document.getElementById('days_without_accident_total').getAttribute('source_val') || '0');
+            }
+            function sumDurations(a, b) {
+                function toMinutes(t) {
+                    const parts = t.split(':');
+                    return parseInt(parts[0]) * 60 + parseInt(parts[1]);
+                }
+                function toHHMM(m) {
+                    const hours = Math.floor(m / 60);
+                    const minutes = m % 60;
+                    return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
+                }
+                return toHHMM(toMinutes(a) + toMinutes(b));
+            }
+            function updateAccumulatedDurations() {
+                document.getElementById('accumulated_mob_time').innerText = sumDurations(document.getElementById('accumulated_mob_time').getAttribute('source_val'), document.getElementById('today_mob_time').innerText);
+                document.getElementById('accumulated_t_time').innerText = sumDurations(document.getElementById('accumulated_t_time').getAttribute('source_val'), document.getElementById('today_t_time').innerText);
+                document.getElementById('accumulated_i_time').innerText = sumDurations(document.getElementById('accumulated_i_time').getAttribute('source_val'), document.getElementById('today_i_time').innerText);
+                document.getElementById('accumulated_cs_time').innerText = sumDurations(document.getElementById('accumulated_cs_time').getAttribute('source_val'), document.getElementById('today_cs_time').innerText);
+                document.getElementById('accumulated_wdt_time').innerText = sumDurations(document.getElementById('accumulated_wdt_time').getAttribute('source_val'), document.getElementById('today_wdt_time').innerText);
+                document.getElementById('accumulated_tbw_time').innerText = sumDurations(document.getElementById('accumulated_tbw_time').getAttribute('source_val'), document.getElementById('today_tbw_time').innerText);
+                document.getElementById('accumulated_cc_time').innerText = sumDurations(document.getElementById('accumulated_cc_time').getAttribute('source_val'), document.getElementById('today_cc_time').innerText);
+                document.getElementById('accumulated_tdt_time').innerText = sumDurations(document.getElementById('accumulated_tdt_time').getAttribute('source_val'), document.getElementById('today_tdt_time').innerText);
+                document.getElementById('accumulated_total_time').innerText = sumDurations(document.getElementById('accumulated_total_time').getAttribute('source_val'), document.getElementById('today_total_time').innerText);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <input type="date" id="selected-report-date" name="selected-report-date">
+            <button id="save-report-button">Save Changes</button>
+            <button id="generate-dpr-pdf">Generate DPR pdf</button>
+            <button id="reset-dpr">Reset DPR</button>
+            <button id="copy-dpr">Copy DPR Data</button>
+            <button id="reload-totals">Reload Totals</button>
+            <a href="/dpr-statistics" target="_blank" rel="noopener noreferrer"><button id="statistics-button">View Statistics</button></a>
+        </div>
+        <div id="report-content">
+            <div class="row-container">
+                <div class="form-group">
+                    <div class="form-group-header">A. Contact Details</div>
+                    <div class="form-row">
+                        <div class="entry-text">CEO:</div>
+                        <div class="entry-text" contenteditable="true" id="ceo_name"></div>
+                        <div class="entry-text" contenteditable="true" id="ceo_number"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="entry-text">Project Manager:</div>
+                        <div class="entry-text" contenteditable="true" id="pm_name"></div>
+                        <div class="entry-text" contenteditable="true" id="pm_number"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="entry-text">OCM:</div>
+                        <div class="entry-text" contenteditable="true" id="ocm_name"></div>
+                        <div class="entry-text" contenteditable="true" id="ocm_number"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="entry-text">EOD Manager:</div>
+                        <div class="entry-text" contenteditable="true" id="eodm_name"></div>
+                        <div class="entry-text" contenteditable="true" id="eodm_number"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="entry-text">Captain / Tel. Vessel:</div>
+                        <div class="entry-text" contenteditable="true" id="captain_name"></div>
+                        <div class="entry-text" contenteditable="true" id="captain_number"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="entry-text">Client Representative:</div>
+                        <div class="entry-text" contenteditable="true" id="clientrep_name"></div>
+                        <div class="entry-text" contenteditable="true" id="clientrep_number"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="entry-text">E-Mail Vessel:</div>
+                        <div class="entry-text" contenteditable="true" id="vessel_email" colspan="2"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group-header">Vessel "AQUARIUS-G" Position at 24:00LT</div>
+                    <div class="form-row" contenteditable="true" id="vessel_position"></div>
+                    <div class="form-group-header">Distribution List</div>
+                    <template id="distribution-list-template-entry">
+                        <div class="form-row">
+                            <span class="entry-text"  contenteditable="true"></span>
+                            <button type="button" class="remove-row">❌</button>
+                        </div>
+                    </template>
+                    <div id="distribution-list-entries"></div>
+                    <div class="form-row" >
+                        <button type="button" id="add-distribution-list-entry">➕ Add to Distribution List</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-container">
+            <div class="form-group">
+                <template id="personnel-list-template-entry">
+                    <li><div class="entry-text" contenteditable="true"></div></li>
+                </template>
+                <div class="form-group-header">B. Personnel (On Board - Onsigners)</div>
+                <div class="personnel-container">
+                    <ul>
+                        <li><strong>Marine Crew</strong></li>
+                        <div id="marine-onsigners-list"></div>
+                        <li><button id="add-marine-onsigner">➕</button></li>
+                    </ul>
+                    <ul>
+                        <li><strong>SeaTerra Personnel</strong></li>
+                        <div id="seaterra-onsigners-list"></div>
+                        <li><button id="add-seaterra-onsigner">➕</button></li>
+                    </ul>
+                    <ul>
+                        <li><strong>Client Personnel</strong></li>
+                        <div id="client-onsigners-list"></div>
+                        <li><button id="add-client-onsigner">➕</button></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-group-header">B. Personnel (Offsigners)</div>
+                <div class="personnel-container">
+                    <ul>
+                        <li><strong>Marine Crew</strong></li>
+                        <div id="marine-offsigners-list"></div>
+                        <li><button id="add-marine-offsigner">➕</button></li>
+                    </ul>
+                    <ul>
+                        <li><strong>SeaTerra Personnel</strong></li>
+                        <div id="seaterra-offsigners-list"></div>
+                        <li><button id="add-seaterra-offsigner">➕</button></li>
+                    </ul>
+                    <ul>
+                        <li><strong>Client Personnel</strong></li>
+                        <div id="client-offsigners-list"></div>
+                        <li><button id="add-client-offsigner">➕</button></li>
+                    </ul>
+                </div>
+            </div>                
+        </div>
+        <div class="row-container">
+            <div class="form-group">
+                <div class="form-group-header">C. Weather Info (weather forecast StormGeo 6:00LT)</div>
+                <div class="form-row">
+                    <div class="entry-text">Time</div>
+                    <div class="entry-text">Today [max wave m]</div>
+                    <div class="entry-text">Tomorrow [max wave m]</div>
+                </div>
+                <template id="weather-entry-template">
+                    <div class="form-row">
+                        <div class="entry-text" contenteditable="true"></div>
+                        <div class="entry-text" contenteditable="true"></div>
+                        <div class="entry-text" contenteditable="true"></div>
+                    </div>
+                </template>
+                <div id="weather-entries"></div>
+                <div class="form-row">
+                    <div class="entry-text">Look Ahead</div>
+                    <div class="entry-text">48 hours</div>
+                    <div class="entry-text">72 hours</div>
+                </div>
+                <div id="weather-lookahead-entries"></div>
+            </div>
+            <div class="form-group">
+                <div class="form-group-header">D. HSE Records</div>
+                <div class="form-row">
+                    <div class="entry-text"></div>
+                    <div class="entry-text">Today</div>
+                    <div class="entry-text">Accumulated Total</div>
+                </div>
+                <div class="form-row">
+                    <div class="entry-text">Daily Meetings</div>
+                    <div class="entry-text" contenteditable="true" id="daily_meetings_today" oninput="updateTotals()"></div>
+                    <div class="entry-text" contenteditable="true" source_val="0" id="daily_meetings_total"></div>
+                </div>
+                <div class="form-row">
+                    <div class="entry-text">Tool Box Talks</div>
+                    <div class="entry-text" contenteditable="true" id="toolbox_talks_today" oninput="updateTotals()"></div>
+                    <div class="entry-text" contenteditable="true" source_val="0" id="toolbox_talks_total"></div>
+                </div>
+                <div class="form-row">
+                    <div class="entry-text">Safety Observation Form</div>
+                    <div class="entry-text" contenteditable="true" id="safety_observation_form_today" oninput="updateTotals()"></div>
+                    <div class="entry-text" contenteditable="true" source_val="0" id="safety_observation_form_total"></div>
+                </div>
+                <div class="form-row">
+                    <div class="entry-text">Safety Drills</div>
+                    <div class="entry-text" contenteditable="true" id="safety_drills_today" oninput="updateTotals()"></div>
+                    <div class="entry-text" contenteditable="true" source_val="0" id="safety_drills_total"></div>
+                </div>
+                <div class="form-row">
+                    <div class="entry-text">Incidents</div>
+                    <div class="entry-text" contenteditable="true" id="incidents_today" oninput="updateTotals()"></div>
+                    <div class="entry-text" contenteditable="true" source_val="0" id="incidents_total"></div>
+                </div>
+                <div class="form-row">
+                    <div class="entry-text">Accidents</div>
+                    <div class="entry-text" contenteditable="true" id="accidents_today" oninput="updateTotals()"></div>
+                    <div class="entry-text" contenteditable="true" source_val="0" id="accidents_total"></div>
+                </div>
+                <div class="form-row">
+                    <div class="entry-text">Working Hours</div>
+                    <div class="entry-text" contenteditable="true" id="working_hours_today" oninput="updateTotals()"></div>
+                    <div class="entry-text" contenteditable="true" source_val="0" id="working_hours_total"></div>
+                </div>
+                <div class="form-row">
+                    <div class="entry-text">Start of Project</div>
+                    <div class="entry-text" contenteditable="true" id="project_start"></div>
+                    <div class="entry-text" contenteditable="true" id="days_since_start"></div>
+                </div>
+                <div class="form-row">
+                    <div class="entry-text">Days without Accident</div>
+                    <div class="entry-text" contenteditable="true" id="days_without_accident" oninput="updateTotals()"></div>
+                    <div class="entry-text" contenteditable="true" source_val="0" id="days_without_accident_total"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row-container">
+            <div class="form-group">
+                <div class="form-group-header">E. Summary of Work Carried Out Today</div>
+                <div class="form-row">
+                    <div class="entry-text" contenteditable="true" id="work_summary"></div>
+                </div>
+                <div class="form-row">
+                    <div class="entry-text">Target Cleared (#ID)</div>
+                    <div class="entry-text">Description</div>
+                    <div class="entry-text">Object</div>
+                </div>
+                <template id="work-entry-template">
+                    <div class="form-row">
+                        <div class="entry-text" contenteditable="true"></div>
+                        <div class="entry-text" contenteditable="true"></div>
+                        <div class="entry-text" contenteditable="true"></div>
+                    </div>
+                </template>
+                <div id="work_entries"></div>
+                <div class="form-row">
+                    <button id="add-work-entry">➕ Add Work Entry</button>
+                </div>
+            </div>
+        </div>
+        <div class="row-container">
+            <div class="form-group">
+                <div class="form-group-header">F. Plan For Next 24 Hours</div>
+                <div class="form-row">
+                    <div class="entry-text" contenteditable="true" id="plan_for_next_24hrs"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row-container">
+            <div class="form-group">
+                <div class="form-group-header">G. Chronological Daily Routine (24h)</div>
+                <div class="form-row">
+                    <div class="entry-text">From</div>
+                    <div class="entry-text">To</div>
+                    <div class="entry-text">Duration (hh:mm)</div>
+                    <div class="entry-text">Category</div>
+                    <div class="entry-text">Target #ID</div>
+                    <div class="entry-text">Description</div>
+                </div>
+                <template id="daily-routine-template">
+                    <div class="form-row">
+                        <div class="entry-text" contenteditable="true"></div>
+                        <div class="entry-text" contenteditable="true"></div>
+                        <div class="entry-text" contenteditable="true"></div>
+                        <div class="entry-select">
+                            <select style="width: 100%;">
+                                <option value="" disabled selected></option>
+                                <option value="MOB">MOB</option>
+                                <option value="T">T</option>
+                                <option value="I">I</option>
+                                <option value="CS">CS</option>
+                                <option value="WDT">WDT</option>
+                                <option value="TBW">TBW</option>
+                                <option value="CC">CC</option>
+                                <option value="TDT">TDT</option>
+                            </select>
+                        </div>
+                        <div class="entry-text" contenteditable="true"></div>
+                        <div class="entry-text" contenteditable="true"></div>
+                    </div>
+                </template>
+                <div id="daily-routine-entries"></div>
+                <div class="form-row">
+                    <button id="add-daily-routine-entry">➕ Add Daily Routine Entry</button>
+                </div>
+                <div class="form-row">
+                    <div class="entry-text">Vessel</div>
+                    <div class="entry-text">Total Number of Targets</div>
+                    <div class="entry-text">Total Number of Cleared Targets</div>
+                    <div class="entry-text">Number of Remaining Targets</div>
+                    <div class="entry-text">Total UXOs Found</div>
+                    <div class="entry-text">Targets Cleared Today</div>
+                    <div class="entry-text">Remarks</div>
+                </div>
+                <div class="form-row">
+                    <div class="entry-text" contenteditable="true" id="routine_vessel"></div>
+                    <div class="entry-text" contenteditable="true" id="routine_total_targets"></div>
+                    <div class="entry-text" contenteditable="true" id="routine_cleared_targets"></div>
+                    <div class="entry-text" contenteditable="true" id="routine_remaining_targets"></div>
+                    <div class="entry-text" contenteditable="true" id="routine_total_uxos_found"></div>
+                    <div class="entry-text" contenteditable="true" id="routine_targets_cleared_today"></div>
+                    <div class="entry-text" contenteditable="true" id="routine_remarks"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row-container">
+            <div class="form-group">
+                <div class="form-group-header">H. Time Analysis Summary (hh:mm)</div>
+                <div class="form-row">
+                    <div class="entry-text">Category</div>
+                    <div class="entry-text">Mob and Demob Survey Spread (MOB)</div>
+                    <div class="entry-text">Transit Time (T)</div>
+                    <div class="entry-text">Survey Spread Operational (I)</div>
+                    <div class="entry-text">Client Standby (CS)</div>
+                    <div class="entry-text">Weather Downtime (WDT)</div>
+                    <div class="entry-text">Time Based Work (TBW)</div>
+                    <div class="entry-text">Crew Change (CC)</div>
+                    <div class="entry-text">Technical Downtime (TDT)</div>
+                    <div class="entry-text">Total</div>
+                </div>
+                <div class="form-row">
+                    <div class="entry-text">Previous</div>
+                    <div class="entry-text" id="previous_mob_time"></div>
+                    <div class="entry-text" id="previous_t_time"></div>
+                    <div class="entry-text" id="previous_i_time"></div>
+                    <div class="entry-text" id="previous_cs_time"></div>
+                    <div class="entry-text" id="previous_wdt_time"></div>
+                    <div class="entry-text" id="previous_tbw_time"></div>
+                    <div class="entry-text" id="previous_cc_time"></div>
+                    <div class="entry-text" id="previous_tdt_time"></div>
+                    <div class="entry-text" id="previous_total_time"></div>
+                </div>
+                <div class="form-row">
+                    <div class="entry-text">Today</div>
+                    <div class="entry-text" id="today_mob_time" contenteditable="true" oninput="updateAccumulatedDurations()"></div>
+                    <div class="entry-text" id="today_t_time" contenteditable="true" oninput="updateAccumulatedDurations()"></div>
+                    <div class="entry-text" id="today_i_time" contenteditable="true" oninput="updateAccumulatedDurations()"></div>
+                    <div class="entry-text" id="today_cs_time" contenteditable="true" oninput="updateAccumulatedDurations()"></div>
+                    <div class="entry-text" id="today_wdt_time" contenteditable="true" oninput="updateAccumulatedDurations()"></div>
+                    <div class="entry-text" id="today_tbw_time" contenteditable="true" oninput="updateAccumulatedDurations()"></div>
+                    <div class="entry-text" id="today_cc_time" contenteditable="true" oninput="updateAccumulatedDurations()"></div>
+                    <div class="entry-text" id="today_tdt_time" contenteditable="true" oninput="updateAccumulatedDurations()"></div>
+                    <div class="entry-text" id="today_total_time" contenteditable="true" oninput="updateAccumulatedDurations()"></div>
+                </div>
+                <div class="form-row">
+                    <div class="entry-text">To Date (accumulated)</div>
+                    <div class="entry-text" id="accumulated_mob_time" contenteditable="true" source_val="0"></div>
+                    <div class="entry-text" id="accumulated_t_time" contenteditable="true" source_val="0"></div>
+                    <div class="entry-text" id="accumulated_i_time" contenteditable="true" source_val="0"></div>
+                    <div class="entry-text" id="accumulated_cs_time" contenteditable="true" source_val="0"></div>
+                    <div class="entry-text" id="accumulated_wdt_time" contenteditable="true" source_val="0"></div>
+                    <div class="entry-text" id="accumulated_tbw_time" contenteditable="true" source_val="0"></div>
+                    <div class="entry-text" id="accumulated_cc_time" contenteditable="true" source_val="0"></div>
+                    <div class="entry-text" id="accumulated_tdt_time" contenteditable="true" source_val="0"></div>
+                    <div class="entry-text" id="accumulated_total_time" contenteditable="true" source_val="0"></div>
+                </div>
+                <div class="form-row">
+                    <div class="entry-text">Notes: CS - any standby at direction of the client i.e waiting on directions from client</div>
+                </div>
+            </div>
+        </div>
+        <div class="row-container">
+            <div class="form-group">
+                <div class="form-group-header">I. Minutes of Meeting</div>
+                <div class="form-row">
+                    <div class="entry-text">Interpretation of Weather Forecast (next 24 hours)</div>
+                    <div class="entry-text">Technical Issues</div>
+                </div>
+                <div class="form-row">
+                    <div class="entry-text" contenteditable="true" id="weather_interpretation"></div>
+                    <div class="entry-text" contenteditable="true" id="technical_issues"></div>
+                </div>
+                <div class="form-row">
+                    <div class="entry-text">Meetings</div>
+                    <div class="entry-text">Other</div>
+                </div>
+                <div class="form-row">
+                    <div class="entry-text" contenteditable="true" id="meetings"></div>
+                    <div class="entry-text" contenteditable="true" id="other_remarks"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row-container">
+            <div class="form-group">
+                <div class="form-group-header">J. Comments</div>
+                <div class="form-row">
+                    <div class="entry-text">Client Comments</div>
+                </div>
+                <div class="form-row">
+                    <div class="entry-text" contenteditable="true" id="client_comments"></div>
+                </div>
+                <div class="form-row">
+                    <div class="entry-text">SeaTerra Comments</div>
+                </div>
+                <div class="form-row">
+                    <div class="entry-text" contenteditable="true" id="seaterra_comments"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

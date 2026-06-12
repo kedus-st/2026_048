@@ -1,0 +1,137 @@
+{% extends 'admin/base_site.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+
+<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/gallery_styles.css">
+
+<div class="picture-gallery">
+    <h2>{% translate "Bildergalerie" %}</h2>
+    <div class="sort-dropdown">
+        <label for="sortOptions">{% translate "Sortieren nach:" %}</label>
+        <select id="sortOptions" onchange="sortImages()">
+            <option value="name">Name</option>
+            <option value="date">{% translate "Datum hochgeladen" %}</option>
+        </select>
+    </div>
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="{% translate "Suchen..." %}" oninput="searchImages()">
+    </div>
+    <div class="items-per-page">
+        <label for="itemsPerPage">{% translate "Bilder pro Seite:" %}</label>
+        <input type="number" id="itemsPerPage" min="1">
+        <button onclick="changeItemsPerPage()">OK</button>
+    </div>
+    <div class="pagination">
+        <span class="step-links">
+            {% if pictures.has_previous %}
+                <a href="?page=1">&laquo; {% translate "erste" %}</a>
+                <a href="?page={{ pictures.previous_page_number }}">{% translate "vorherige" %}</a>
+            {% endif %}
+    
+            <span class="current">
+                Page {{ pictures.number }} of {{ pictures.paginator.num_pages }}.
+            </span>
+    
+            {% if pictures.has_next %}
+                <a href="?page={{ pictures.next_page_number }}">{% translate "nächste" %}</a>
+                <a href="?page={{ pictures.paginator.num_pages }}">{% translate "letzte" %} &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+    <div class="gallery-container" id="galleryContainer">
+        {% for picture in pictures %}
+            <div class="gallery-item" data-date="{{ picture.date|date:'Y-m-d H:i' }}" data-name="{{picture.name}}">
+                <img src="{{ picture.link }}" alt="" onclick="showPreview('{{ picture.link }}', '{{ picture.name }}')">
+                <div class="download-button">
+                    <a href="{{ picture.link }}" download="ITP.png">
+                        <img src="{{ STATIC_URL }}/static/img/icons/download.png" alt="Download">
+                    </a>
+                </div>
+                <p>{{ picture.name }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+<div class="preview-overlay" id="previewOverlay">
+    <div class="preview-content">
+        <span class="close-button" onclick="closePreview()">&times;</span>
+        <img id="previewImage" src="" alt="Preview">
+        <p id="previewCaption"></p>
+    </div>
+</div>
+
+<script>
+    function showPreview(imageUrl, caption) {
+        var overlay = document.getElementById('previewOverlay');
+        var previewImage = document.getElementById('previewImage');
+        var previewCaption = document.getElementById('previewCaption');
+
+        previewImage.src = imageUrl;
+        previewCaption.innerText = caption;
+
+        overlay.style.display = 'block';
+    }
+
+    function closePreview() {
+        var overlay = document.getElementById('previewOverlay');
+        overlay.style.display = 'none';
+    }
+
+    function sortImages() {
+        var sortOption = document.getElementById('sortOptions').value;
+        var galleryContainer = document.getElementById('galleryContainer');
+        var galleryItems = galleryContainer.getElementsByClassName('gallery-item');
+
+        var sortedItems = Array.from(galleryItems);
+
+        if (sortOption === 'name') {
+            sortedItems.sort((a, b) => {
+                var captionA = a.querySelector('p').innerText.toUpperCase();
+                var captionB = b.querySelector('p').innerText.toUpperCase();
+                return captionA.localeCompare(captionB);
+            });
+        } else if (sortOption === 'date') {
+            sortedItems.sort((a, b) => {
+                var dateA = new Date(a.getAttribute('data-date'));
+                var dateB = new Date(b.getAttribute('data-date'));
+                return dateB - dateA;
+            });
+        }
+
+        galleryContainer.innerHTML = '';
+
+        sortedItems.forEach(item => {
+            galleryContainer.appendChild(item);
+        });
+    }
+
+    function searchImages() {
+        var searchInput = document.getElementById('searchInput').value;
+        var galleryContainer = document.getElementById('galleryContainer');
+        var galleryItems = galleryContainer.getElementsByClassName('gallery-item');
+
+        Array.from(galleryItems).forEach(item => {
+            var itemName = item.getAttribute('data-name');
+            var displayStyle = itemName.includes(searchInput) ? 'block' : 'none';
+            item.style.display = displayStyle;
+        });
+    }
+
+    function changeItemsPerPage() {
+        var itemsPerPageInput = document.getElementById('itemsPerPage');
+        var itemsPerPage = parseInt(itemsPerPageInput.value, 10);
+
+        var currentUrl = window.location.href;
+        var url = new URL(currentUrl);
+        url.searchParams.set('items_per_page', itemsPerPage);
+
+        window.location.href = url.href;
+    }
+</script>
+
+{% endblock %}

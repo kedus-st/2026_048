@@ -1,0 +1,73 @@
+#calendar {
+    margin: 20px;
+    margin-top: 65px; /* Adjust margin size as needed */
+}
+
+.fc .fc-timegrid-slot {
+    height: 2.8em; 
+    border-bottom: 0 !important;
+}
+
+.fc-day-today {
+    background: #FFF !important;
+} 
+
+.schedule-event-button {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    z-index: 1000; /* Ensure it's above the calendar */
+    padding: 10px 20px; /* Add padding for larger size */
+    font-size: 16px; /* Increase font size */
+    background-color: #1e3a5e; /* Deep blue background color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    /* Add any additional styling you need */
+}
+
+.map-view-button {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    z-index: 1000; /* Ensure it's above the calendar */
+    padding: 10px 20px; /* Add padding for larger size */
+    font-size: 16px; /* Increase font size */
+    background-color: #1e3a5e; /* Deep blue background color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    /* Add any additional styling you need */
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.popup-content {
+margin-bottom: 20px;
+}
+
+.close {
+position: absolute;
+top: 5px;
+right: 10px;
+cursor: pointer;
+}
+
+.delete-button {
+    background-color: #f44336;
+    margin-left: 10px;
+}
+  

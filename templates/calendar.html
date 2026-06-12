@@ -1,0 +1,49 @@
+{% load i18n %}
+{% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calendar</title>
+        <link rel="stylesheet" href="{{ STATIC_URL }}/static/css/calendar_styles.css">
+        <div id="events_context_elem" data="{{serialized_events}}"></div>
+    </head>
+    <body>
+        <a href="{% url 'index' %}"><button id="mapViewButton" class="map-view-button">{% translate "Kartenansicht" %}</button></a>
+        <button id="scheduleEventButton" class="schedule-event-button">Schedule Event</button>
+        <div id="calendar"></div>
+        <div id="scheduleEventPopup" class="popup">
+            <div class="popup-content">
+              <span class="close" id="closeScheduleEventButton">&times;</span>
+              <form id="eventForm" method="post" action="/schedule_event">{% csrf_token %}
+                <input type="hidden" id="eventId" name="eventId" value="">
+
+                <label for="eventTitle">Event Title:</label><br>
+                <input type="text" id="eventTitle" name="eventTitle"><br><br>
+                
+                <label for="startDateTime">Start Date Time:</label><br>
+                <input type="datetime-local" id="startDateTime" name="startDateTime"><br><br>
+                
+                <label for="endDateTime">End Date Time:</label><br>
+                <input type="datetime-local" id="endDateTime" name="endDateTime"><br><br>
+                
+                <label for="eventType">Event Type:</label><br>
+                <select id="eventType" name="eventType">
+                  <option value="W">Weather Downtime</option>
+                  <option value="T">Scheduled Target</option>
+                  <option value="C">Crew Change</option>
+                  <option value="P">Port Call</option>
+                  <option value="O">Other</option>
+                </select><br><br>
+                
+                <input type="submit" value="Schedule Event" form="eventForm" name="submit">
+                <input type="submit" value="Delete" form="eventForm" name="delete" class="delete-button" id="deleteEventButton">
+              </form>
+            </div>
+          </div>
+          
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.10/index.global.js"></script>
+        <script src="{{ STATIC_URL }}/static/js/calendar.js"></script>
+    </body>
+{% endblock %}

@@ -1,0 +1,111 @@
+{% load static %}
+{% load i18n %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+        <html lang="en">
+
+        <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+        <title>Edit features with the Editor widget | Sample | ArcGIS Maps SDK for JavaScript 4.28</title>
+
+        <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css" />
+        <script src="https://js.arcgis.com/4.28/"></script>
+
+        <style>
+            html,
+            body,
+            #viewDiv {
+                padding: 0;
+                margin: 0;
+                height: 100%;
+                width: 100%;
+            }
+            #layerToggle {
+                top: 20px;
+                right: 20px;
+                position: absolute;
+                z-index: 99;
+                background-color: white;
+                border-radius: 8px;
+                padding: 10px;
+                opacity: 0.75;
+            }
+
+        </style>
+
+        <script>
+            require([
+                "esri/Map",
+                "esri/WebMap",
+                "esri/views/MapView",
+                "esri/widgets/Editor",
+                "esri/layers/GeoJSONLayer",
+                "esri/layers/TileLayer",
+            ], (
+                Map, WebMap, MapView,
+                Editor, GeoJSONLayer,
+                TileLayer
+            ) => {
+                
+                const map = new Map({
+                    basemap: "topo-vector"
+                });
+                // Create a map from the referenced webmap item id
+                const webmap = new WebMap({
+                portalItem: {
+                    id: "4793230052ed498ebf1c7bed9966bd35"
+                }
+                });
+
+                const view = new MapView({
+                    container: "viewDiv",
+                    map: map,
+                    center: [13, 54],
+                    zoom: 10
+                });
+
+                const overlayLayer = new GeoJSONLayer({
+                    url: '/static/geodata/vector/overlay.geojson',
+                    id: "overlay",
+                    visible: true
+                });
+
+                map.add(overlayLayer);
+
+                mbesLayer = new TileLayer({
+                    url : '/static/geodata/tiles/mbes/{z}/{x}/{y}.png',
+                });
+
+                map.add(mbesLayer)
+
+                
+                /*view.when(() => {
+                const editor = new Editor({
+                    view: view
+                });
+                });
+
+                // Add the widget to the view
+                view.ui.add(editor, "top-right");*/
+
+                const overlayLayerToggle = document.getElementById("overlayLayer");
+                
+                overlayLayerToggle.click();
+
+                overlayLayerToggle.addEventListener("change", () => {
+                    overlayLayer.visible = overlayLayerToggle.checked;
+                });
+            });
+        </script>
+        </head>
+
+        <body>
+        <div id="viewDiv">
+            <span id="layerToggle" class="esri-widget"> <input type="checkbox" id="overlayLayer" /> Overlay </span>
+        </div>
+        </body>
+
+        </html>
+{% endblock %}

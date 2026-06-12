@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    color: #fff; /* Text color for better readability */
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Change flex direction to column */
+}
+
+.sidebar {
+    width: 100%;
+    background-color: #111;
+    padding: 20px;
+    display: flex; /* Use flexbox */
+    flex-wrap: wrap; /* Allow items to wrap to next line */
+    justify-content: center; /* Center items horizontally */
+}
+
+.content {
+    width: 100%; /* Set content width to 100% */
+    padding: 20px;
+}
+
+#content_panel.active {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.content h1{
+    color: white;
+    font-weight: bold; 
+}
+
+.category {
+    width: calc(25% - 20px); /* Set width to fit four categories per row with margin */
+    margin: 0 10px 10px 0; /* Add margin between categories */
+    cursor: pointer;
+}
+
+.category:last-child {
+    border-bottom: none; /* Remove border from last category */
+}
+
+.category h2 {
+    margin: 0;
+}
+
+.expandable-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.document-name {
+    margin-bottom: 5px; /* Add margin to separate it from the details section */
+}
+
+.document-details {
+    display: flex;
+    align-items: center;
+}
+
+.document-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.upload-section {
+    margin-left: 10px; /* Add some spacing between the sections */
+}
+
+.document-dropdown {
+    width: 200px; /* Set the width of the dropdown list */
+    margin-right: 10px; /* Add some spacing between the dropdown list and document link */
+}
+
+.document-link {
+    margin-left: 80px;
+    color: white !important; 
+    text-decoration: underline !important; 
+}
+
+.upload-button {
+    padding: 5px 10px; /* Add padding to the button */
+    border: none; /* Remove button border */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+

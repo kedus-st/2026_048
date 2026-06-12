@@ -1,0 +1,319 @@
+.tab-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    background-color: #417690;; /* Django's shade of blue */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.tab-container a {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #f0f0f0;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    border-radius: 3px;
+}
+
+.tab-container a:hover {
+    background-color: #e0e0e0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.button-container {
+    display: flex;
+    width: 100%;
+}
+
+.section-selector {
+    flex: 1;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, font-weight 0.3s;
+}
+
+button:hover {
+    background-color: #e0e0e0;
+}
+
+button.active {
+    font-weight: bold;
+    background-color: #d0d0d0;
+}
+
+.section {
+    display: none;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    gap: 10px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+.form-container:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.actions-container {
+    display: flex;
+    gap: 20px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+}
+
+button#create-object {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    max-width: 50%;
+    max-height: 50px;
+}
+
+button#create-object:hover {
+    background-color: #0056b3;
+}
+
+.searchable-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.selects {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1;
+}
+
+#search-input-existing,
+#search-input-basket {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 95%;
+}
+
+.fields-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.text-fields-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 250px;
+}
+
+#box-fields {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.selects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.select-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.save-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    align-self: flex-end; /* Aligns the button to the right */
+    max-height: 35px;
+}
+
+#situation {
+    height: 100px;
+}
+
+#basket-details ul {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 0;
+    list-style-type: none;
+}
+
+#basket-details-2 ul {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 0;
+    list-style-type: none;
+}
+
+.save-button:hover {
+    background-color: #218838;
+}
+
+.datetime-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.datetime-button {
+    margin-right: 5px;
+    padding: 2px 5px;
+    font-size: 0.8em;
+}
+.datetime-input {
+    margin-right: 5px;
+}
+.save-datetime-button {
+    border: none;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    max-height: 35px;
+    padding: 2px 5px;
+    font-size: 0.8em;
+}
+
+.save-datetime-button:hover {
+    background-color: #218838;
+}
+
+.datetime-container label {
+    width: 150px;
+    display: inline-block;
+    text-align: left;
+    margin-right: 10px;
+}
+
+#basket-details-3 p,
+#basket-details-3 label,
+#basket-details-3 h4,
+#basket-details-3 select,
+#basket-details-3 button {
+    display: block;
+    margin: 10px 0;
+}
+
+#basket-details-3 select {
+    width: 100%;
+}
+
+#basket-details-3 button {
+    width: auto;
+}
+
+#image-upload {
+    display: block;
+    margin: 20px 0;
+    padding: 10px;
+    border: 2px dashed gray;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    color: gray;
+    background-color: #f8f9fa;
+}
+
+#image-upload:hover {
+    background-color: #e2e6ea;
+}
+
+#image-preview-container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    max-width: 500px;
+}
+
+#image-preview-container li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    margin-bottom: 5px;
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+    background-color: #ffffff;
+    list-style-type: none;
+}
+
+#image-preview-container li button {
+    background-color: #dc3545;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#image-preview-container li button:hover {
+    background-color: #c82333;
+}
+
+input[list="type-options"] {
+    width: 250px;
+}

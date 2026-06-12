@@ -1,0 +1,1558 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#: templates/item_management.html:305
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-26 13:04+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: clearance/settings.py:182
+msgid "Englisch"
+msgstr "English"
+
+#: clearance/settings.py:183
+msgid "Deutsch"
+msgstr "German"
+
+#: clearance/settings.py:184
+msgid "Polnisch"
+msgstr "Polish"
+
+#: clearance_app/models.py:44 clearance_app/models.py:49
+#: clearance_app/models.py:55
+msgid "JA"
+msgstr "YES"
+
+#: clearance_app/models.py:45 clearance_app/models.py:50
+#: clearance_app/models.py:56
+msgid "NEIN"
+msgstr "NO"
+
+#: clearance_app/models.py:57
+msgid "IN ARBEIT"
+msgstr "IN WORK"
+
+#: clearance_app/models.py:68
+msgid "Breitengrad"
+msgstr "Latitude"
+
+#: clearance_app/models.py:69
+msgid "Längengrad"
+msgstr "Longitude"
+
+#: clearance_app/models.py:71 templates/home.html:242 templates/home.html:265
+msgid "Wassertiefe [m]"
+msgstr "Water Depth [m]"
+
+#: clearance_app/models.py:73
+msgid "Modelltiefe [m]"
+msgstr "Model Depth [m]"
+
+#: clearance_app/models.py:75
+msgid "Modelltiefe unter GOK [m]"
+msgstr "Model depth under GOK [m]"
+
+#: clearance_app/models.py:77
+msgid "Modelgewicht [kg]"
+msgstr "Model Weight [kg]"
+
+#: clearance_app/models.py:79
+msgid "MAG Moment [A/m²]"
+msgstr "MAG Moment [A/m²]"
+
+#: clearance_app/models.py:81
+msgid "Anomaly max [nT]"
+msgstr "Anomaly max [nT]"
+
+#: clearance_app/models.py:83
+msgid "Anomaly min [nT]"
+msgstr "Anomaly min [nT]"
+
+#: clearance_app/models.py:85
+msgid "Dipole Breite [m]"
+msgstr "Dipole width [m]"
+
+#: clearance_app/models.py:87
+msgid "Dipole P-P [nT]"
+msgstr "Dipole P-P [nT]"
+
+#: clearance_app/models.py:88
+msgid "ITP Notizen"
+msgstr "ITP Notes"
+
+#: clearance_app/models.py:97
+msgid "todo_target"
+msgstr "todo_target"
+
+#: clearance_app/models.py:98
+msgid "Priorität"
+msgstr "Priority"
+
+#: clearance_app/models.py:99
+msgid "Sektion"
+msgstr ""
+
+#: clearance_app/models.py:100
+msgid "Bergungsdatum"
+msgstr "Clearance date"
+
+#: clearance_app/models.py:101
+msgid "Bergungszeit"
+msgstr "Clearance time"
+
+#: clearance_app/models.py:102 clearance_app/models.py:290
+#: management/models.py:202 templates/item_management.html:55
+msgid "Schiff"
+msgstr "Ship"
+
+#: clearance_app/models.py:103 templates/item_management.html:58
+#: templates/item_management.html:347
+msgid "Feuerwerker"
+msgstr "EOD"
+
+#: clearance_app/models.py:104 templates/item_management.html:62
+msgid "Vermesser"
+msgstr "Surveyor"
+
+#: clearance_app/models.py:105
+msgid "Räumfirma"
+msgstr "Clearance company"
+
+#: clearance_app/models.py:108 templates/item_management.html:316
+msgid "Gewicht (kg)"
+msgstr "Weight (kg)"
+
+#: clearance_app/models.py:109
+msgid "Länge (m)"
+msgstr "Length (m)"
+
+#: clearance_app/models.py:110
+msgid "Breite (m)"
+msgstr "Width (m)"
+
+#: clearance_app/models.py:111
+msgid "Tiefe GOK (m)"
+msgstr "Depth GOK (m)"
+
+#: clearance_app/models.py:113 templates/home.html:192
+#: templates/item_management.html:350
+msgid "TR Kommentar"
+msgstr "TR Comment"
+
+#: clearance_app/models.py:114
+msgid "gefunden (y/n)"
+msgstr "found (y/n)"
+
+#: clearance_app/models.py:115
+msgid "geborgen (y/n/w)"
+msgstr "recovered (y/n/w)"
+
+#: clearance_app/models.py:117
+msgid "Kampfmittel (x)"
+msgstr "UXO (x)"
+
+#: clearance_app/models.py:119
+#, fuzzy
+#| msgid "gefunden (y/n)"
+msgid "zu sprengen (y/n)"
+msgstr "found (y/n)"
+
+#: clearance_app/models.py:120
+#, fuzzy
+#| msgid "geborgen (y/n/w)"
+msgid "gesprengt (y/n/w)"
+msgstr "recovered (y/n/w)"
+
+#: clearance_app/models.py:121
+#, fuzzy
+#| msgid "Speichern"
+msgid "Sicherheitsabstand (m)"
+msgstr "Save"
+
+#: clearance_app/models.py:124
+msgid "frei (y/n/w)"
+msgstr "cleared (y/n/w)"
+
+#: clearance_app/models.py:127
+msgid "QA Freigabe (y)"
+msgstr "QA Approval (y)"
+
+#: clearance_app/models.py:130 management/models.py:205 templates/home.html:194
+#: templates/item_management.html:353
+msgid "Beschreibung"
+msgstr "Description"
+
+#: clearance_app/models.py:131
+msgid "QA Kommentare"
+msgstr "QA Comment"
+
+#: clearance_app/models.py:132 clearance_app/models.py:249
+msgid "Erstellt am"
+msgstr "Created at"
+
+#: clearance_app/models.py:133 clearance_app/models.py:250
+msgid "Aktualisiert am"
+msgstr "Updated at"
+
+#: clearance_app/models.py:181 management/models.py:208
+msgid "Bild"
+msgstr "Image"
+
+#: clearance_app/models.py:206
+msgid "Image"
+msgstr ""
+
+#: clearance_app/models.py:209
+msgid "Notizen"
+msgstr "Notes"
+
+#: clearance_app/models.py:246 management/models.py:49 management/models.py:170
+msgid "Name"
+msgstr "Name"
+
+#: clearance_app/models.py:247
+msgid "Art"
+msgstr "Type"
+
+#: clearance_app/models.py:248 management/models.py:50 management/models.py:171
+msgid "Datei"
+msgstr "File"
+
+#: clearance_app/models.py:270
+msgid "Niedrig"
+msgstr "Low"
+
+#: clearance_app/models.py:271 templates/item_management.html:343
+msgid "Mittel"
+msgstr "Middle"
+
+#: clearance_app/models.py:272
+msgid "Hoch"
+msgstr "High"
+
+#: clearance_app/models.py:279
+msgid "Schiffname"
+msgstr "Vessel name"
+
+#: clearance_app/models.py:280
+msgid "Infoblatt"
+msgstr "Datasheet"
+
+#: clearance_app/models.py:281
+msgid "MMSI"
+msgstr ""
+
+#: clearance_app/models.py:282
+msgid "IMO"
+msgstr ""
+
+#: clearance_app/models.py:291 templates/home.html:80
+msgid "Schiffe"
+msgstr "Vessels"
+
+#: management/models.py:131
+msgid "Weather Downtime"
+msgstr ""
+
+#: management/models.py:132
+msgid "Scheduled Target"
+msgstr ""
+
+#: management/models.py:133
+msgid "Crew Change"
+msgstr ""
+
+#: management/models.py:134
+msgid "Port Call"
+msgstr ""
+
+#: management/models.py:135
+msgid "Other"
+msgstr ""
+
+#: management/models.py:173
+msgid "Hochgeladen am"
+msgstr "Uploaded on"
+
+#: management/models.py:182
+msgid "Datum"
+msgstr "Date"
+
+#: management/models.py:183 templates/home.html:88
+msgid "Betriebsstunden"
+msgstr "Operational hours"
+
+#: management/models.py:184 templates/home.html:266
+msgid "Kommentar"
+msgstr "Comment"
+
+#: management/models.py:194
+#, fuzzy
+#| msgid "Erstellt am"
+msgid "Bestellt"
+msgstr "Created at"
+
+#: management/models.py:195
+msgid "Auf Lager"
+msgstr ""
+
+#: management/models.py:196
+msgid "Versandfertig"
+msgstr ""
+
+#: management/models.py:197
+msgid "Erhalten"
+msgstr ""
+
+#: management/models.py:201
+msgid "Titel"
+msgstr ""
+
+#: management/models.py:203
+#, fuzzy
+#| msgid "Bergungsdatum"
+msgid "Bestelldatum"
+msgstr "Clearance date"
+
+#: management/models.py:204
+msgid "Besteller"
+msgstr ""
+
+#: management/models.py:206
+#, fuzzy
+#| msgid "Inhalt Anzahl"
+msgid "Anzahl"
+msgstr "Content count"
+
+#: management/models.py:207
+msgid "Link"
+msgstr ""
+
+#: management/models.py:209
+#, fuzzy
+#| msgid "Statistik"
+msgid "Status"
+msgstr "Statistics"
+
+#: management/models.py:210
+#, fuzzy
+#| msgid "Lagerdatum"
+msgid "Lieferdatum"
+msgstr "Storage Date"
+
+#: management/models.py:216
+msgid "Bestellung"
+msgstr ""
+
+#: management/models.py:217
+msgid "Bestellungen"
+msgstr ""
+
+#: templates/admin/base_site.html:25 templates/calendar.html:11
+msgid "Kartenansicht"
+msgstr "Map View"
+
+#: templates/admin/change_form.html:18 templates/admin/change_list.html:31
+msgid "Home"
+msgstr ""
+
+#: templates/admin/change_form.html:21
+#, python-format
+msgid "Add %(name)s"
+msgstr ""
+
+#: templates/admin/change_form.html:43 templates/admin/change_list.html:85
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/admin/change_list.html:38
+msgid "Sichtbare Spalten Auswahl zeigen/verbergen"
+msgstr "Show/hide visible column choice"
+
+#: templates/admin/change_list.html:85
+msgid "Please correct the errors below."
+msgstr ""
+
+#: templates/admin/change_list.html:110 templates/home.html:273
+msgid "Filter"
+msgstr "Filters"
+
+#: templates/admin/change_list.html:112
+msgid "Clear all filters"
+msgstr ""
+
+#: templates/admin/mtlitem_change_form.html:30
+msgid "Korb Bergung Start"
+msgstr "Basket recovery start"
+
+#: templates/admin/mtlitem_change_form.html:35
+msgid "Korb Bergung Ende"
+msgstr "Basket recovery end"
+
+#: templates/admin/mtlitem_change_form.html:40
+msgid "Korb Transport Start"
+msgstr "Basket transport start"
+
+#: templates/admin/mtlitem_change_form.html:45
+msgid "Korb Transport Ende"
+msgstr "Basket transport end"
+
+#: templates/admin/mtlitem_change_form.html:50
+msgid "Objekt an Sortierschiffdeck am"
+msgstr "Object on sorting ship deck at"
+
+#: templates/admin/mtlitem_change_form.html:55
+msgid "Objekt im Übergabebehälter am"
+msgstr "Object in handover container on"
+
+#: templates/admin/mtlitem_change_form.html:60
+msgid "Objekt im Nasslagerbehälter am"
+msgstr "Object in wet store container on"
+
+#: templates/admin/mtlitem_change_form.html:65
+msgid "Übergabebedatum"
+msgstr "Handover date"
+
+#: templates/admin/mtlitem_change_form.html:70
+msgid "Nasslager Einlagerungdatum"
+msgstr "Wet storage date"
+
+#: templates/home.html:78 templates/home.html:79 templates/home.html:80
+#: templates/home.html:81 templates/home.html:82 templates/home.html:83
+#: templates/home.html:84 templates/home.html:85 templates/home.html:86
+#: templates/home.html:87 templates/home.html:88 templates/home.html:89
+#: templates/home.html:90 templates/home.html:91
+msgid "de"
+msgstr "en"
+
+#: templates/home.html:78 templates/home.html:279
+msgid "Statistik"
+msgstr "Statistics"
+
+#: templates/home.html:81
+msgid "Geodata"
+msgstr "Geodata"
+
+#: templates/home.html:82
+msgid "Unterlagen"
+msgstr "Documents"
+
+#: templates/home.html:83
+msgid "Berichte"
+msgstr "Reports"
+
+#: templates/home.html:84
+msgid "Kalender"
+msgstr "Calendar"
+
+#: templates/home.html:85
+msgid "Bilder"
+msgstr "Pictures"
+
+#: templates/home.html:86 templates/home.html:87 templates/home.html:424
+msgid "Wetter"
+msgstr "Weather"
+
+#: templates/home.html:89
+msgid "Target Records"
+msgstr ""
+
+#: templates/home.html:90
+msgid "Kontoverwaltung"
+msgstr "Account Management"
+
+#: templates/home.html:91
+msgid "Bestellliste"
+msgstr "Order List"
+
+#: templates/home.html:99 templates/item_management.html:34
+#: templates/item_management.html:114 templates/item_management.html:140
+#: templates/item_management.html:254 templates/item_management.html:399
+#: templates/item_management.html:424 templates/item_management.html:434
+#: templates/picture_gallery.html:19
+msgid "Suchen..."
+msgstr "Search..."
+
+#: templates/home.html:118
+msgid "Bild hochladen"
+msgstr "Upload Image"
+
+#: templates/home.html:130
+msgid "Modelltiefe :"
+msgstr "Model Depth :"
+
+#: templates/home.html:131
+msgid "Wassertiefe :"
+msgstr "Water Depth :"
+
+#: templates/home.html:132
+msgid "Bergungsdatum :"
+msgstr "Clearance date :"
+
+#: templates/home.html:133
+msgid "Feuerwerker :"
+msgstr "EOD :"
+
+#: templates/home.html:137
+msgid "Tiefe unter Boden :"
+msgstr "Depth below ground :"
+
+#: templates/home.html:139
+msgid "Schiff :"
+msgstr "Ship :"
+
+#: templates/home.html:143
+msgid "Gefunden"
+msgstr "Found"
+
+#: templates/home.html:149
+msgid "Geborgen"
+msgstr "Salvaged"
+
+#: templates/home.html:160
+msgid "Frei"
+msgstr "Clear"
+
+#: templates/home.html:167
+msgid "QA Frei"
+msgstr "QA Clear"
+
+#: templates/home.html:172
+msgid "Todo"
+msgstr ""
+
+#: templates/home.html:182
+msgid "Gewicht (kg):"
+msgstr "Weight (kg):"
+
+#: templates/home.html:185
+msgid "Breite (m):"
+msgstr "Width (m):"
+
+#: templates/home.html:188
+msgid "Lange (m):"
+msgstr "Length (m):"
+
+#: templates/home.html:193
+msgid "TR Kommentar hier eingeben..."
+msgstr "Enter TR comments here..."
+
+#: templates/home.html:195
+msgid "Beschreibung hier eingeben..."
+msgstr "Enter description here..."
+
+#: templates/home.html:205
+msgid "Rasterzelle öffnen"
+msgstr "Open Cell"
+
+#: templates/home.html:206 templates/home.html:228 templates/home.html:259
+#: templates/item_management.html:49
+msgid "Untersuchungsgebiet Zelle"
+msgstr "Clearance area cell"
+
+#: templates/home.html:207 templates/home.html:229 templates/home.html:240
+#: templates/home.html:260
+msgid "Easting"
+msgstr ""
+
+#: templates/home.html:208 templates/home.html:230 templates/home.html:241
+#: templates/home.html:261
+msgid "Northing"
+msgstr ""
+
+#: templates/home.html:209
+msgid "bearbeitet (y/n/w)"
+msgstr "processed (y/n/w)"
+
+#: templates/home.html:210
+msgid "Objekt Zahl"
+msgstr "Object count"
+
+#: templates/home.html:213
+msgid "Bild vor Räumung"
+msgstr "Image before clearance"
+
+#: templates/home.html:217
+msgid "Bild nach Räumung"
+msgstr "Image after clearance"
+
+#: templates/home.html:227
+msgid "Bohrpunkt öffnen"
+msgstr "Open drill point"
+
+#: templates/home.html:231
+msgid "Sondiert (y/n)"
+msgstr "Probed (y/n)"
+
+#: templates/home.html:232
+msgid "Anomalie gefunden (y/n)"
+msgstr "Anomaly found (y/n)"
+
+#: templates/home.html:243
+msgid "Behälter Art"
+msgstr "Container type"
+
+#: templates/home.html:244
+msgid "Gesamtmasse (kg)"
+msgstr "Total weight (kg)"
+
+#: templates/home.html:245
+msgid "Gesamtsprengstoffgewicht (kg)"
+msgstr "Total explosive weight (kg)"
+
+#: templates/home.html:246
+msgid "Inhalt Zustand / Art"
+msgstr "Content condition / type"
+
+#: templates/home.html:247
+msgid "Mtl Item Zahl"
+msgstr "Mtl Item Count"
+
+#: templates/home.html:248
+msgid "Schlussdatum"
+msgstr "Closing Date"
+
+#: templates/home.html:249
+msgid "Einlagerung Datum"
+msgstr "Wet storage date"
+
+#: templates/home.html:250
+msgid "Nasslager Zell"
+msgstr "Wet Store Cell"
+
+#: templates/home.html:251
+msgid "Objekte Exportieren"
+msgstr "Export objects"
+
+#: templates/home.html:258 templates/item_management.html:42
+msgid "Untersuchungsgebiet"
+msgstr "Clearance area"
+
+#: templates/home.html:262
+msgid "Gesammelt?"
+msgstr "Collected?"
+
+#: templates/home.html:263
+msgid "Zeitpunkt der Probenahme"
+msgstr "Time of Sample Collection"
+
+#: templates/home.html:264
+msgid "Gesammeltes Volumen [mL]"
+msgstr "Collected Volume [mL]"
+
+#: templates/home.html:270 templates/home.html:460
+msgid "Legend"
+msgstr ""
+
+#: templates/home.html:271 templates/home.html:403
+msgid "Sprachen"
+msgstr "Languages"
+
+#: templates/home.html:271
+msgid "Sprache"
+msgstr "Language"
+
+#: templates/home.html:272 templates/home.html:341
+msgid "Ebenen"
+msgstr "Layers"
+
+#: templates/home.html:274
+msgid "ITP Gruppen"
+msgstr "ITP Clusters"
+
+#: templates/home.html:283
+msgid "Klar Statistik"
+msgstr "Clear Statistics"
+
+#: templates/home.html:284
+msgid "To Do Statistik"
+msgstr "To Do Statistics"
+
+#: templates/home.html:285
+msgid "UXO Statistik"
+msgstr "UXO Statistics"
+
+#: templates/home.html:286
+msgid "Leistung Statistik"
+msgstr "Performance Statistics"
+
+#: templates/home.html:287
+msgid "Schiff Statistik"
+msgstr "Ship Statistics"
+
+#: templates/home.html:306
+msgid "Filter Option"
+msgstr "Filter Options"
+
+#: templates/home.html:336
+msgid "Filter anwenden"
+msgstr "Apply filters"
+
+#: templates/home.html:337
+msgid "Filter zurücksetzen"
+msgstr "Reset Filters"
+
+#: templates/home.html:391
+#, fuzzy
+#| msgid "BP Cluster Einstellungen"
+msgid "ITP Cluster Einstellungen"
+msgstr "DP Cluster Settings"
+
+#: templates/home.html:395
+msgid "Max. Pixel zwischen Punkten im Cluster:"
+msgstr "Max. pixels between points in a cluster:"
+
+#: templates/home.html:418
+msgid "Sprache ändern"
+msgstr "Change language"
+
+#: templates/home.html:429
+msgid "Wetter abfragen"
+msgstr "Get weather"
+
+#: templates/home.html:438
+msgid "Temperatur"
+msgstr "Temperature"
+
+#: templates/home.html:439 templates/home.html:443 templates/home.html:449
+#: templates/home.html:453
+msgid "Lädt..."
+msgstr "Loading..."
+
+#: templates/home.html:442
+msgid "Wetterlage"
+msgstr "Condition"
+
+#: templates/home.html:448
+msgid "Feuchtigkeit"
+msgstr "Humidity"
+
+#: templates/home.html:452
+msgid "Windgeschwindigkeit"
+msgstr "Wind speed"
+
+#: templates/home.html:469
+msgid "nicht freigegeben"
+msgstr "not clear"
+
+#: templates/home.html:475
+msgid "zu sprengen"
+msgstr ""
+
+#: templates/home.html:481
+msgid "freigegeben"
+msgstr "clear"
+
+#: templates/home.html:487 templates/item_management.html:77
+#: templates/item_management.html:107
+msgid "in Arbeit"
+msgstr "in work"
+
+#: templates/home.html:493
+msgid "Kampfmittel nicht freigegeben"
+msgstr "UXO not clear"
+
+#: templates/home.html:499
+msgid "Kampfmittel freigegeben"
+msgstr "UXO clear"
+
+#: templates/home.html:505
+msgid "Kampfmittel in Arbeit"
+msgstr "UXO in work"
+
+#: templates/home.html:511
+msgid "Kein ToDo"
+msgstr "No ToDo"
+
+#: templates/home.html:568 templates/item_management.html:15
+msgid "Körbe"
+msgstr "Baskets"
+
+#: templates/home.html:586 templates/home.html:605 templates/home.html:643
+msgid "Korb"
+msgstr "Basket"
+
+#: templates/home.html:590 templates/home.html:628
+msgid "Meeresboden"
+msgstr "Seafloor"
+
+#: templates/home.html:615
+msgid "Bergungsschiff"
+msgstr "Clearance ship"
+
+#: templates/home.html:653
+msgid "Sortierschiff"
+msgstr "Sorting ship:"
+
+#: templates/home.html:689
+msgid "Schiff auswählen"
+msgstr "Choose ship"
+
+#: templates/item_management.html:7 templates/item_management.html:19
+msgid "Fund / Objekt Verwaltung"
+msgstr "Item Management"
+
+#: templates/item_management.html:13
+msgid "Startseite"
+msgstr "Home page"
+
+#: templates/item_management.html:14
+msgid "Volle Objektliste"
+msgstr "Full object list"
+
+#: templates/item_management.html:16 templates/item_management.html:433
+msgid "Nasslagerbehälter"
+msgstr "Wet Store Containers"
+
+#: templates/item_management.html:17 templates/item_management.html:423
+msgid "Übergabebehälter"
+msgstr "Handover Containers"
+
+#: templates/item_management.html:21
+msgid "Räumschiff"
+msgstr "Clearance ship"
+
+#: templates/item_management.html:22
+msgid "Korb Transport"
+msgstr "Basket transport"
+
+#: templates/item_management.html:23
+msgid "Sortierung"
+msgstr "Sorting"
+
+#: templates/item_management.html:24
+msgid "Verpackung"
+msgstr "Packaging"
+
+#: templates/item_management.html:31
+msgid "Neues Objekt Erstellen"
+msgstr "Create new object"
+
+#: templates/item_management.html:33
+msgid "Bestehendes Objekt bearbeiten"
+msgstr "Edit existing object"
+
+#: templates/item_management.html:44
+msgid "Pelzerhaken West_00002"
+msgstr ""
+
+#: templates/item_management.html:45
+msgid "Pelzerhaken West_00032"
+msgstr ""
+
+#: templates/item_management.html:46
+msgid "Pelzerhaken West_00035"
+msgstr ""
+
+#: templates/item_management.html:66
+msgid "Kampfmittel (j/n)"
+msgstr "UXO (y/n)"
+
+#: templates/item_management.html:68 templates/item_management.html:76
+#: templates/item_management.html:105 templates/item_management.html:306
+#: templates/item_management.html:333
+msgid "Ja"
+msgstr "Yes"
+
+#: templates/item_management.html:69 templates/item_management.html:78
+#: templates/item_management.html:106 templates/item_management.html:307
+#: templates/item_management.html:334
+msgid "Nein"
+msgstr "No"
+
+#: templates/item_management.html:74
+msgid "Geborgen (j/n)"
+msgstr "recovered (y/n)"
+
+#: templates/item_management.html:82
+msgid "Fundsituation"
+msgstr "Situation discovered in"
+
+#: templates/item_management.html:89
+msgid "Tiefe GOK (cm)"
+msgstr "Depth GOK (cm)"
+
+#: templates/item_management.html:94
+msgid "Räumgerät"
+msgstr "Clearance tool"
+
+#: templates/item_management.html:96
+msgid "Greifer"
+msgstr "Grabber"
+
+#: templates/item_management.html:97
+msgid "Crawler"
+msgstr "Crawler"
+
+#: templates/item_management.html:98
+msgid "Anders"
+msgstr "Other"
+
+#: templates/item_management.html:103
+msgid "Frei (j/n/w)"
+msgstr "cleared (y/n/w)"
+
+#: templates/item_management.html:113
+msgid "im Korb legen..."
+msgstr "lay in basket..."
+
+#: templates/item_management.html:117 templates/item_management.html:143
+#: templates/item_management.html:257
+msgid "Korb "
+msgstr "Basket "
+
+#: templates/item_management.html:123 templates/item_management.html:149
+#: templates/item_management.html:263
+msgid "Korbinfo"
+msgstr "Basket info"
+
+#: templates/item_management.html:129 templates/item_management.html:208
+#: templates/item_management.html:215 templates/item_management.html:222
+#: templates/item_management.html:229 templates/item_management.html:236
+#: templates/item_management.html:389
+msgid "Speichern"
+msgstr "Save"
+
+#: templates/item_management.html:135
+msgid "Körb Transport"
+msgstr "Basket Transport"
+
+#: templates/item_management.html:139 templates/item_management.html:253
+msgid "Korb auswählen..."
+msgstr "Choose basket..."
+
+#: templates/item_management.html:205
+msgid "Start Korb Bergung"
+msgstr "Start of basket recovery"
+
+#: templates/item_management.html:206 templates/item_management.html:213
+#: templates/item_management.html:220 templates/item_management.html:227
+#: templates/item_management.html:234
+msgid "Auf Jetzt setzen"
+msgstr "Set to now"
+
+#: templates/item_management.html:212
+msgid "End Korb Bergung"
+msgstr "End of basket recovery"
+
+#: templates/item_management.html:219
+msgid "Transport Start"
+msgstr ""
+
+#: templates/item_management.html:226
+msgid "Transport End"
+msgstr ""
+
+#: templates/item_management.html:233
+msgid "Korb am Sortierschiff"
+msgstr "Basket on sorting ship"
+
+#: templates/item_management.html:243
+msgid "Nasslagerbehälter Transport"
+msgstr "Wetstore container transport"
+
+#: templates/item_management.html:266
+msgid "Fund Sortierung abschleissen"
+msgstr "Finish item sorting"
+
+#: templates/item_management.html:269
+msgid "ID"
+msgstr ""
+
+#: templates/item_management.html:272
+msgid "Kampfmittel Typ"
+msgstr "UXO type"
+
+#: templates/item_management.html:275
+msgid ""
+"Munition für Hand- und Maschinenwaffen (Infanteriemunition / alles unter D=2 "
+"cm)"
+msgstr "Ammunition for hand and machine guns"
+
+#: templates/item_management.html:276
+msgid ""
+"Nahkampfmittel (Handgranaten, Panzerabwehrhandwaffen, Gewehrgranaten, ...)"
+msgstr ""
+"Close combat weapons (hand grenades, anti-tank weapons, rifle grenades, ...)"
+
+#: templates/item_management.html:277
+msgid "Minen (Schützenminen, Panzerminen)"
+msgstr "Mines (anti-personnel mines, anti-tank mines)"
+
+#: templates/item_management.html:278
+msgid ""
+"Sprengmittel (verpackter oder loser Sprengstoff, Pioniersprengstoff, "
+"Rohrladung)"
+msgstr ""
+"Explosives (packaged or loose explosives, engineering explosives, pipe "
+"charge)"
+
+#: templates/item_management.html:279
+msgid "Zündmittel (Sprengkapseln, Anzünder, Übertragungsladung)"
+msgstr "Ignition devices (detonators, fuses, transfer charges)"
+
+#: templates/item_management.html:280
+msgid ""
+"Rohrwaffenmunition bis D<=5 cm (Granaten, Patronen, Wurfgranaten, Wurfminen)"
+msgstr ""
+"Tube weapon ammunition up to D<=5 cm (shells, cartridges, grenades, mortar "
+"shells)"
+
+#: templates/item_management.html:281
+msgid ""
+"Rohrwaffenmunition D=5cm bis D=15cm (Granaten, Patronen, Wurfgranaten, "
+"Wurfminen)"
+msgstr ""
+"Tube weapon ammunition D=5 cm to D=15 cm (shells, cartridges, grenades, "
+"mortar shells)"
+
+#: templates/item_management.html:282
+msgid ""
+"Rohrwaffenmunition über D>15 cm (Granaten, Patronen, Wurfgranaten, Wurfminen)"
+msgstr ""
+"Tube weapon ammunition over D>15 cm (shells, cartridges, grenades, mortar "
+"shells)"
+
+#: templates/item_management.html:283
+msgid "Stabbrandbomben"
+msgstr "Incendiary bombs (stick incendiary bombs)"
+
+#: templates/item_management.html:284
+msgid "sonstige Brandbomben"
+msgstr "Other incendiary bombs"
+
+#: templates/item_management.html:285
+msgid "Abwurfmunition"
+msgstr "Aerial munitions"
+
+#: templates/item_management.html:286
+msgid "Transportbehälter"
+msgstr "Transport containers"
+
+#: templates/item_management.html:287
+msgid "Raketen"
+msgstr "Rockets"
+
+#: templates/item_management.html:288
+msgid "Zünder (sprengkräftige oder nicht sprengkräftige Zünder)"
+msgstr "Fuzes (explosive or non-explosive fuzes)"
+
+#: templates/item_management.html:289
+msgid "Pyrotechnik (Leuch- oder Rauchsignale, Knallsätze)"
+msgstr "Pyrotechnics (light or smoke signals, flash bangs)"
+
+#: templates/item_management.html:290
+msgid "Treibsätze (getrennte Treibladungen)"
+msgstr "Propellant charges (separate propellant charges)"
+
+#: templates/item_management.html:291
+msgid "Marinekampfmittel (UW-Munition, Minen, Torpedos, Sperrwaffen)"
+msgstr ""
+"Naval ordnance (underwater ammunition, mines, torpedoes, barrier weapons)"
+
+#: templates/item_management.html:292
+msgid "sonstige spreng- und zündkräftige Kampfmittel (z.B. Bruchstücke)"
+msgstr "Other explosive and ignition ordnance (e.g., fragments)"
+
+#: templates/item_management.html:293
+msgid "Waffen (Waffen oder Waffenteile)"
+msgstr "Weapons (weapons or weapon parts)"
+
+#: templates/item_management.html:294
+msgid "inerte Teile / Splitter / Munitionsschrott"
+msgstr "Inert parts / fragments / munition scrap"
+
+#: templates/item_management.html:297
+msgid "Kampfmittel Typ Unterklassifizierung"
+msgstr "UXO type detail"
+
+#: templates/item_management.html:300
+msgid "Herkunftsland"
+msgstr "Country of origin"
+
+#: templates/item_management.html:303
+msgid "Bezündert (j/n)"
+msgstr "fused (y/n)"
+
+#: templates/item_management.html:310
+msgid "Zundertyp"
+msgstr "Fuse type"
+
+#: templates/item_management.html:319
+msgid "Länge (cm)"
+msgstr "Length (cm)"
+
+#: templates/item_management.html:322
+msgid "Breite (cm)"
+msgstr "Width (cm)"
+
+#: templates/item_management.html:325
+msgid "Höhe (cm)"
+msgstr "Height (cm)"
+
+#: templates/item_management.html:328
+msgid "Sprengstoffmasse NEM (kg)"
+msgstr "Explosive mass (kg)"
+
+#: templates/item_management.html:331
+msgid "Transportfähig (j/n)"
+msgstr "transportable (y/n)"
+
+#: templates/item_management.html:340
+msgid "Zustandbeschreibung"
+msgstr "Condition description"
+
+#: templates/item_management.html:342
+msgid "Gut"
+msgstr "Good"
+
+#: templates/item_management.html:344
+msgid "Schlecht"
+msgstr "Bad"
+
+#: templates/item_management.html:358
+msgid "Bilder hochladen"
+msgstr "Upload Images"
+
+#: templates/item_management.html:367
+msgid "Objekt ist eine Kiste / hat Inhalt"
+msgstr "Object is a box / has contents"
+
+#: templates/item_management.html:371
+msgid "Inhalt Länge (cm)"
+msgstr "Content length (cm)"
+
+#: templates/item_management.html:374
+msgid "Inhalt Breite (cm)"
+msgstr "Content width (cm)"
+
+#: templates/item_management.html:377
+msgid "Inhalt Höhe (cm)"
+msgstr "Content height (cm)"
+
+#: templates/item_management.html:380
+msgid "Einzeln gewicht (kg)"
+msgstr "Individual content weight (kg)"
+
+#: templates/item_management.html:383
+msgid "Inhalt Anzahl"
+msgstr "Content count"
+
+#: templates/item_management.html:398
+msgid "Sortierte Objekte"
+msgstr "Sorted objects"
+
+#: templates/item_management.html:417
+msgid "Objektinfo"
+msgstr "Object info"
+
+#: templates/item_management.html:443
+msgid "Behälterinfo"
+msgstr "Container info"
+
+#: templates/item_management.html:449
+msgid "Objekt im Behälter speichern"
+msgstr "Save object in container"
+
+#: templates/picture_gallery.html:10
+msgid "Bildergalerie"
+msgstr "Picture Galelry"
+
+#: templates/picture_gallery.html:12
+msgid "Sortieren nach:"
+msgstr "Sort by:"
+
+#: templates/picture_gallery.html:15
+msgid "Datum hochgeladen"
+msgstr "Date uploaded"
+
+#: templates/picture_gallery.html:22
+msgid "Bilder pro Seite:"
+msgstr "Items per page:"
+
+#: templates/picture_gallery.html:29
+msgid "erste"
+msgstr "first"
+
+#: templates/picture_gallery.html:30
+msgid "vorherige"
+msgstr "previous"
+
+#: templates/picture_gallery.html:38
+msgid "nächste"
+msgstr "next"
+
+#: templates/picture_gallery.html:39
+msgid "letzte"
+msgstr "last"
+
+#~ msgid "Basisdaten"
+#~ msgstr "Base data"
+
+#~ msgid "Räumschiff Aufgaben"
+#~ msgstr "Clearance ship tasks"
+
+#~ msgid "Munitionstender Aufgaben"
+#~ msgstr "Munition tender tasks"
+
+#~ msgid "Sortierschiff Aufgaben"
+#~ msgstr "Sorting ship tasks"
+
+#~ msgid "Generell"
+#~ msgstr "General"
+
+#~ msgid "Munitionstender"
+#~ msgstr "Munition tender"
+
+#~ msgid "Nasslager"
+#~ msgstr "Wet Store"
+
+#~ msgid "Übergeben"
+#~ msgstr "Handed over"
+
+#~ msgid "Kampfmittel frei bis T = 0,5 m"
+#~ msgstr "UXO clear up to T = 0.5 m"
+
+#~ msgid "Einzelanomalie, kein Kampfmittel"
+#~ msgstr "Individual anomaly, no munition"
+
+#~ msgid ""
+#~ "Einzelanomalie, vedacht auf Kampfmittel. Kein unmittelbarer "
+#~ "Handlungsbedarf"
+#~ msgstr "Individual anomaly, potential UXO. No need for immediate action"
+
+#~ msgid "Einzelanomalie, vedacht auf Kampfmittel. Überprüfung erforderlich"
+#~ msgstr "Individual anomaly, potential UXO. Inspection required"
+
+#~ msgid "Nicht als einzelanomalie auswertbar / Vedacht auf Munitionsschüttung"
+#~ msgstr ""
+#~ "Cannot be evaluated for individual anomaly / Possible munition dumping "
+#~ "site"
+
+#~ msgid "Voller Name"
+#~ msgstr "Full name"
+
+#~ msgid "Messergebniss Klassifizierung"
+#~ msgstr "Survey result classification"
+
+#~ msgid "generelle Fundsituation"
+#~ msgstr "situation discovered in"
+
+#~ msgid "transportfähig (y/n)"
+#~ msgstr "transportable"
+
+#~ msgid "Räumgerät benutzt"
+#~ msgstr "Clearance tool used"
+
+#~ msgid "Kampfmittel Typ Detail"
+#~ msgstr "UXO type details"
+
+#~ msgid "Höhe (m)"
+#~ msgstr "Length (m)"
+
+#~ msgid "bezündert (y/n)"
+#~ msgstr "fused (y/n)"
+
+#~ msgid "Parzelle"
+#~ msgstr "Cells"
+
+#~ msgid "Sondierungsdatum"
+#~ msgstr "Probe date"
+
+#~ msgid "Direkt-Upload"
+#~ msgstr "Direct Upload"
+
+#~ msgid "Dateien hochladen"
+#~ msgstr "Upload files"
+
+#~ msgid "Hochladen"
+#~ msgstr "Upload"
+
+#~ msgid "Rasterzellen"
+#~ msgstr "Clearance Cells"
+
+#~ msgid "Bohrpunkte"
+#~ msgstr "Drill Points"
+
+#~ msgid "Bohrpunkt Dateien"
+#~ msgstr "Drill point files"
+
+#~ msgid "BP Gruppen"
+#~ msgstr "DP Clusters"
+
+#~ msgid "Sondiert"
+#~ msgstr "Probed"
+
+#~ msgid "Anomalie gefunden"
+#~ msgstr "Anomaly found"
+
+#~ msgid "Nicht sondiert"
+#~ msgstr "Not probed"
+
+#~ msgid "Keine Anomalie gefunden"
+#~ msgstr "No anomaly found"
+
+#~ msgid "Probedatum"
+#~ msgstr "Probing date"
+
+#~ msgid "Nasslagerbeleg erstellen"
+#~ msgstr "Create wetstore container receipt"
+
+#~ msgid "Übergabeleg erstellen"
+#~ msgstr "Create handover container receipt"
+
+#~ msgid "Aktenzeichen für Räumstelle"
+#~ msgstr "Legal ID for clearance site"
+
+#~ msgid "im Korb abgelegt am"
+#~ msgstr "laid in Basked on"
+
+#~ msgid "Identifikationsnummer"
+#~ msgstr "ID number"
+
+#~ msgid "Inhalt Länge (m)"
+#~ msgstr "Content length (m)"
+
+#~ msgid "Inhalt Breite (m)"
+#~ msgstr "Content width (m)"
+
+#~ msgid "Inhalt Höhe (m)"
+#~ msgstr "Content height (m)"
+
+#~ msgid "Inhalt Gewicht (kg)"
+#~ msgstr "Content weight (kg)"
+
+#~ msgid "Standort"
+#~ msgstr "Location"
+
+#~ msgid "Übergabebehälterdaten"
+#~ msgstr "Handover container information"
+
+#~ msgid "Nasslagerbehälterdaten"
+#~ msgstr "Wetstore container information"
+
+#~ msgid "Nasslager ID"
+#~ msgstr "Wet Store ID"
+
+#~ msgid "Länge"
+#~ msgstr "Length"
+
+#~ msgid "Breite"
+#~ msgstr "Width"
+
+#~ msgid "Nasslagerbehälter ID"
+#~ msgstr "Wet Store ID"
+
+#~ msgid "Behältergewicht (kg)"
+#~ msgstr "Container weight (kg)"
+
+#, fuzzy
+#~| msgid "Inhalt Gewicht (kg)"
+#~ msgid "Inhaltgewicht (kg)"
+#~ msgstr "Content weight (kg)"
+
+#~ msgid "Letze Lagerdatum"
+#~ msgstr "Last Storage Date"
+
+#~ msgid "Start Behälter Transport"
+#~ msgstr "Container transport start"
+
+#~ msgid "Nasslager Zelle"
+#~ msgstr "Wet Store Cells"
+
+#~ msgid "Einlagerung Dokument"
+#~ msgstr "Wet storage document"
+
+#, fuzzy
+#~| msgid "Inhalt Anzahl"
+#~ msgid "Inhalt IDs"
+#~ msgstr "Content count"
+
+#~ msgid "Übergabebehälter ID"
+#~ msgstr "Handover container ID"
+
+#~ msgid "Übergabe Standort"
+#~ msgstr "Hand over location"
+
+#~ msgid "Übergabe Dokument"
+#~ msgstr "Handover document"
+
+#, fuzzy
+#~| msgid "bearbeitet (y/n/w)"
+#~ msgid "Tidengebiet? (y/n)"
+#~ msgstr "processed (y/n/w)"
+
+#, fuzzy
+#~| msgid "Wasserproben"
+#~ msgid "Wasserstraße"
+#~ msgstr "Water Samples"
+
+#, fuzzy
+#~| msgid "Untersuchungsgebiet"
+#~ msgid "Verkehrstrennungsgebiet"
+#~ msgstr "Clearance area"
+
+#, fuzzy
+#~| msgid "Untersuchungsgebiet"
+#~ msgid "Naturschutzgebiet"
+#~ msgstr "Clearance area"
+
+#, fuzzy
+#~| msgid "Sortierte Objekte"
+#~ msgid "Gezählte Objekte"
+#~ msgstr "Sorted objects"
+
+#, fuzzy
+#~| msgid "Munitionstender"
+#~ msgid "Munition Zustand"
+#~ msgstr "Munition tender"
+
+#~ msgid "Belegt"
+#~ msgstr "Occupied"
+
+#~ msgid "Bild vor Lagerung"
+#~ msgstr "Image before storage"
+
+#~ msgid "Bild nach Lagerung"
+#~ msgstr "Image after storage"
+
+#~ msgid "Korb ID"
+#~ msgstr "Basket ID"
+
+#~ msgid "Voll"
+#~ msgstr "Full"
+
+#~ msgid "Laufende Zahl"
+#~ msgstr "Running count"
+
+#~ msgid "Bergung Start"
+#~ msgstr "Recovery start"
+
+#~ msgid "Bergung End"
+#~ msgstr "Recovery end"
+
+#~ msgid "Sortierschiffdeck Lieferung"
+#~ msgstr "Delivery to sorting ship deck"
+
+#~ msgid "Typ"
+#~ msgstr "Type"
+
+#~ msgid "Datum / Zeit"
+#~ msgstr "Date / Time"
+
+#~ msgid "Korbereignis"
+#~ msgstr "Basket Event"
+
+#~ msgid "Korbereignisse"
+#~ msgstr "Basket Events"
+
+#~ msgid "Probe ID"
+#~ msgstr "Sample ID"
+
+#~ msgid "Abschnitte"
+#~ msgstr "Sections"
+
+#~ msgid "Munitionshaufen"
+#~ msgstr "Clearance Areas"
+
+#~ msgid "Wasserproben"
+#~ msgstr "Water Samples"
+
+#~ msgid "Abwurfmunition / Sprengbomben unter 5 kg"
+#~ msgstr "Dropped munitions / explosive bombs under 5 kg"
+
+#~ msgid "Abwurfmunition / Sprengbomben über 5 kg"
+#~ msgstr "Dropped munitions / explosive bombs over 5 kg"
+
+#~ msgid "Artilleriemunition"
+#~ msgstr "Artillery munition"
+
+#~ msgid "Handgranaten"
+#~ msgstr "Hand grenades"
+
+#~ msgid "Marinekampfmittel"
+#~ msgstr "Naval munitions"
+
+#~ msgid "Minen"
+#~ msgstr "Mines"
+
+#~ msgid "Pyrotechnik"
+#~ msgstr "Pyrotechnics"
+
+#~ msgid "Raketen/Panzerabwehrmunition"
+#~ msgstr "Rockets/anti-tank ammunition"
+
+#~ msgid "Sprengmittel"
+#~ msgstr "Explosives"
+
+#~ msgid "Werfer/Mörser"
+#~ msgstr "Launchers/Mortars"
+
+#~ msgid "Zünder"
+#~ msgstr "Fuzes"
+
+#~ msgid "Untersuchungsgebeit Zelle"
+#~ msgstr "Clearance area cell"
+
+#~ msgid "Untersuchungsgebeit"
+#~ msgstr "Clearance area"
+
+#~ msgid "Overlay"
+#~ msgstr "Overlay"
+
+#~ msgid "TMI"
+#~ msgstr "TMI"
+
+#~ msgid "MBES"
+#~ msgstr "MBES"
+
+#~ msgid "SSS"
+#~ msgstr "SSS"
+
+#~ msgid "WTG-OSS-EXC"
+#~ msgstr "WTG-OSS-EXC"
+
+#~ msgid "Abstand vom EXC"
+#~ msgstr "distance to EXC"
+
+#~ msgid "nicht freigegeben (Kein Schiff zugewiesen)"
+#~ msgstr "not clear (No ship assigned)"
+
+#~ msgid "nicht freigegeben (RS Sentinel)"
+#~ msgstr "not clear (RS Sentinel)"
+
+#~ msgid "nicht freigegeben (Felsblock)"
+#~ msgstr "not clear (Boulder)"
+
+#~ msgid "freigegeben (Felsblock)"
+#~ msgstr "clear (Boulder)"
+
+#~ msgid "Kampfmittel nicht freigegeben (Kein Schiff zugewiesen)"
+#~ msgstr "UXO not clear (No ship assigned)"
+
+#~ msgid "Kampfmittel nicht freigegeben (Kamara)"
+#~ msgstr "UXO not clear (Kamara)"
+
+#~ msgid "Kampfmittel nicht freigegeben (RS Sntinel)"
+#~ msgstr "UXO not clear (RS Sentinel)"
+
+#~ msgid "Latitude"
+#~ msgstr "Latitude"
+
+#~ msgid "Longitude"
+#~ msgstr "Longitude"

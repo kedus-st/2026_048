@@ -1,0 +1,24 @@
+<VRTDataset rasterXSize="2023" rasterYSize="1053">
+  <SRS dataAxisToSRSAxisMapping="2,1">PROJCS["ETRF2000-PL / CS2000/15",GEOGCS["ETRF2000-PL",DATUM["ETRF2000_Poland",SPHEROID["GRS 1980",6378137,298.257222101,AUTHORITY["EPSG","7019"]],AUTHORITY["EPSG","1305"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","9702"]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",15],PARAMETER["scale_factor",0.999923],PARAMETER["false_easting",5500000],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Northing",NORTH],AXIS["Easting",EAST],AUTHORITY["EPSG","2176"]]</SRS>
+  <GeoTransform>  5.4512044182000002e+06,  7.4065022244202405e-01,  0.0000000000000000e+00,  5.9739761306921151e+06,  0.0000000000000000e+00, -7.4065022244202405e-01</GeoTransform>
+  <Metadata>
+    <MDI key="AREA_OR_POINT">Area</MDI>
+    <MDI key="TIFFTAG_RESOLUTIONUNIT">2 (pixels/inch)</MDI>
+    <MDI key="TIFFTAG_XRESOLUTION">120</MDI>
+    <MDI key="TIFFTAG_YRESOLUTION">120</MDI>
+  </Metadata>
+  <Metadata domain="IMAGE_STRUCTURE">
+    <MDI key="INTERLEAVE">BAND</MDI>
+  </Metadata>
+  <VRTRasterBand dataType="Byte" band="1" blockYSize="4">
+    <NoDataValue>255</NoDataValue>
+    <ColorInterp>Red</ColorInterp>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="1">tmp_masked.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="2023" RasterYSize="1053" DataType="Byte" BlockXSize="2023" BlockYSize="4" />
+      <SrcRect xOff="0" yOff="0" xSize="2023" ySize="1053" />
+      <DstRect xOff="0" yOff="0" xSize="2023" ySize="1053" />
+    </SimpleSource>
+  </VRTRasterBand>
+</VRTDataset>

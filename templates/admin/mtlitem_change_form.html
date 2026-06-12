@@ -1,0 +1,75 @@
+{% extends "admin/change_form.html" %}
+{% load i18n %}
+
+{% block extrahead %}
+{{ block.super }}
+<style>
+    #timeline {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
+        background-color: #f9f9f9;
+        font-size: 12px;
+    }
+    .timeline-event {
+        text-align: center;
+    }
+    .object-tools {
+        display: none;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="timeline">
+    {% if mtlitem.basket_recovery_start_datetime %}
+        <div class="timeline-event">
+            <strong>{% translate "Korb Bergung Start" %}:</strong><br>{{ mtlitem.basket_recovery_start_datetime }}
+        </div>
+    {% endif %}
+    {% if mtlitem.basket_recovery_end_datetime %}
+        <div class="timeline-event">
+            <strong>{% translate "Korb Bergung Ende" %}:</strong><br>{{ mtlitem.basket_recovery_end_datetime }}
+        </div>
+    {% endif %}
+    {% if mtlitem.basket_transport_start_datetime %}
+        <div class="timeline-event">
+            <strong>{% translate "Korb Transport Start" %}:</strong><br>{{ mtlitem.basket_transport_start_datetime }}
+        </div>
+    {% endif %}
+    {% if mtlitem.basket_transport_end_datetime %}
+        <div class="timeline-event">
+            <strong>{% translate "Korb Transport Ende" %}:</strong><br>{{ mtlitem.basket_transport_end_datetime }}
+        </div>
+    {% endif %}
+    {% if mtlitem.delivered_to_sorting_datetime %}
+        <div class="timeline-event">
+            <strong>{% translate "Objekt an Sortierschiffdeck am" %}:</strong><br>{{ mtlitem.delivered_to_sorting_datetime }}
+        </div>
+    {% endif %}
+    {% if mtlitem.handover_container_datetime %}
+        <div class="timeline-event">
+            <strong>{% translate "Objekt im Übergabebehälter am" %}:</strong><br>{{ mtlitem.handover_container_datetime }}
+        </div>
+    {% endif %}
+    {% if mtlitem.wetstore_container_datetime %}
+        <div class="timeline-event">
+            <strong>{% translate "Objekt im Nasslagerbehälter am" %}:</strong><br>{{ mtlitem.wetstore_container_datetime }}
+        </div>
+    {% endif %}
+    {% if mtlitem.handover_datetime %}
+        <div class="timeline-event">
+            <strong>{% translate "Übergabebedatum" %}:</strong><br>{{ mtlitem.handover_datetime }}
+        </div>
+    {% endif %}
+    {% if mtlitem.wetstore_datetime %}
+        <div class="timeline-event">
+            <strong>{% translate "Nasslager Einlagerungdatum" %}:</strong><br>{{ mtlitem.wetstore_datetime }}
+        </div>
+    {% endif %}
+</div>
+{{ block.super }}
+{% endblock %}

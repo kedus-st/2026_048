@@ -1,0 +1,453 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% translate "Fund / Objekt Verwaltung" %}</title>
+    <link rel="stylesheet" href="/static/css/item_management_styles.css">
+    <script src="/static/js/item_management.js" defer></script>
+</head>
+<body>
+    <div class="tab-container">
+        <a href="{% url 'index' %}">{% translate "Startseite" %}</a>
+        <a href="/admin/clearance_app/mtlitem/">{% translate "Volle Objektliste" %}</a>
+        <a href="/admin/clearance_app/basket/">{% translate "Körbe" %}</a>
+        <a href="/admin/clearance_app/wetstorecontainer/">{% translate "Nasslagerbehälter" %}</a>
+        <a href="/admin/clearance_app/handovercontainer/">{% translate "Übergabebehälter" %}</a>
+    </div>
+    <h1>{% translate "Fund / Objekt Verwaltung" %}</h1>
+    <div class="button-container">
+        <button class="section-selector" data-section="section1">{% translate "Räumschiff" %}</button>
+        <button class="section-selector" data-section="section2">{% translate "Korb Transport" %}</button>
+        <button class="section-selector" data-section="section3">{% translate "Sortierung" %}</button>
+        <button class="section-selector" data-section="section4">{% translate "Verpackung" %}</button>
+    </div>
+
+    <div id="section1" class="section">
+        <div class="form-container">
+            <!--div class="actions-container">
+                <div class="action-buttons">
+                    <button id="create-object">{% translate "Neues Objekt Erstellen" %}</button>
+                    <div class="searchable-list-container">
+                        <label for="existing-objects">{% translate "Bestehendes Objekt bearbeiten" %}:</label>
+                        <input type="text" id="search-input-existing" placeholder="{% translate "Suchen..." %}">
+                        <select class="selects" id="existing-objects" size="5">
+                        </select>
+                    </div>
+                </div>
+            </div-->
+            <div class="fields-container">
+                <div class="text-fields-container">
+                    <label for="area">{% translate "Untersuchungsgebiet" %}:</label>
+                    <select id="area" name="area">
+                        <option value="PW02">{% translate "Pelzerhaken West_00002" %}</option>
+                        <option value="PW32">{% translate "Pelzerhaken West_00032" %}</option>
+                        <option value="PW35">{% translate "Pelzerhaken West_00035" %}</option>
+                    </select>
+
+                    <label for="cell">{% translate "Untersuchungsgebiet Zelle" %}:</label>
+                    <input type="text" id="cell" name="cell" list="cell-options">
+                    <datalist id="cell-options">
+                        <!-- Options will be dynamically added here -->
+                    </datalist>
+
+                    <label for="schip">{% translate "Schiff" %}:</label>
+                    <input type="text" id="ship" name="ship">
+
+                    <label for="eod">{% translate "Feuerwerker" %}:</label>
+                    <input type="text" id="eod" name="eod">
+                </div>
+                <div class="text-fields-container">
+                    <label for="surveyor">{% translate "Vermesser" %}:</label>
+                    <input type="text" id="surveyor" name="surveyor">
+
+                    <div class="select-container">
+                        <label for="uxo">{% translate "Kampfmittel (j/n)" %}:</label>
+                        <select id="uxo" name="uxo">
+                            <option value="x">{% translate "Ja" %}</option>
+                            <option value="">{% translate "Nein" %}</option>
+                        </select>
+                    </div>
+
+                    <div class="select-container">
+                        <label for="recovered">{% translate "Geborgen (j/n)" %}:</label>
+                        <select id="recovered" name="recovered">
+                            <option value="y">{% translate "Ja" %}</option>
+                            <option value="w">{% translate "in Arbeit" %}</option>
+                            <option value="n">{% translate "Nein" %}</option>
+                        </select>
+                    </div>
+
+                    <label for="situation">{% translate "Fundsituation" %}:</label>
+                    <textarea rows="5" cols="25" id="situation" name="situation"></textarea>
+                    
+                </div>
+
+                <div class="selects-container">
+
+                    <label for="depth">{% translate "Tiefe GOK (cm)" %}:</label>
+                    <input type="number" id="depth" name="depth" step="0.1">
+
+
+                    <div class="select-container">
+                        <label for="cl_tool">{% translate "Räumgerät" %}:</label>
+                        <select id="cl_tool" name="cl_tool">
+                            <option value="G">{% translate "Greifer" %}</option>
+                            <option value="C">{% translate "Crawler" %}</option>
+                            <option value="A">{% translate "Anders" %}</option>
+                        </select>
+                    </div>
+
+                    <div class="select-container">
+                        <label for="clear">{% translate "Frei (j/n/w)" %}:</label>
+                        <select id="clear" name="clear">
+                            <option value="y">{% translate "Ja" %}</option>
+                            <option value="n">{% translate "Nein" %}</option>
+                            <option value="w">{% translate "in Arbeit" %}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="selects-container">
+                    <div class="searchable-list-container">
+                        <label for="basket-list">{% translate "im Korb legen..." %}:</label>
+                        <input type="text" id="search-input-basket" placeholder="{% translate "Suchen..." %}">
+                        <select class="selects" id="basket-list" size="5">
+                            {% for basket in baskets %}
+                                <option value="{{ basket.pk }}">{% translate "Korb " %}{{ basket.basket_id }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="selects-container">
+                    <h3 style="margin-bottom: 0px; margin-top: 0px;">{% translate "Korbinfo" %}</h3>
+                    <div id="basket-details">
+                    </div>
+                </div>
+            </div>
+            <label id="save-status"></label>
+            <button id="section1-save" class="save-button">{% translate "Speichern" %}</button>
+        </div>
+    </div>
+
+    <div id="section2" class="section">
+        <div class="form-container">
+            <h3 style="margin-bottom: 25px;">{% translate "Körb Transport" %}</h3>
+            <div class="fields-container">
+                <div class="selects-container">
+                    <div class="searchable-list-container">
+                        <label for="basket-list-2">{% translate "Korb auswählen..." %}:</label>
+                        <input type="text" id="search-input-basket-2" placeholder="{% translate "Suchen..." %}">
+                        <select class="selects" id="basket-list-2" size="5">
+                            {% for basket in baskets %}
+                                <option value="{{ basket.pk }}">{% translate "Korb " %}{{ basket.basket_id }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="selects-container">
+                    <h3 style="margin-bottom: 0px; margin-top: 0px;">{% translate "Korbinfo" %}</h3>
+                    <div id="basket-details-2">
+                    </div>
+                </div>
+                <div class="selects-container">
+                    <script>
+                        function setNow(id) {
+                            const now = new Date();
+                            const year = now.getUTCFullYear();
+                            const month = String(now.getUTCMonth() + 1).padStart(2, '0');
+                            const day = String(now.getUTCDate()).padStart(2, '0');
+                            const hours = String(now.getUTCHours()).padStart(2, '0');
+                            const minutes = String(now.getUTCMinutes()).padStart(2, '0');
+                            const utcDateTime = `${year}-${month}-${day}T${hours}:${minutes}`;
+                            document.getElementById(id).value = utcDateTime;
+                        }
+                        
+                        function saveDateTime(buttonType, datetimeId) {
+                            const datetimeValue = document.getElementById(datetimeId).value;
+                            const basketId = document.getElementById('basket-list-2').value;
+                            const csrfToken = '{{ csrf_token }}';
+                            const statusLabel = document.getElementById('datetime-status-label');
+
+                            fetch("{% url 'save_datetime' %}", {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                    "X-CSRFToken": csrfToken
+                                },
+                                body: JSON.stringify({
+                                    button_type: buttonType,
+                                    datetime: datetimeValue,
+                                    basket_id: basketId
+                                })
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.success) {
+                                    statusLabel.textContent = 'Gespeichert';
+                                    statusLabel.style.color = 'green';
+                                } else {
+                                    statusLabel.textContent = 'Speichern fehlgeschlagen';
+                                    statusLabel.style.color = 'red';
+                                }
+                                setTimeout(() => {
+                                    statusLabel.textContent = '';
+                                }, 3000);
+                            })
+                            .catch((error) => {
+                                console.error('Error:', error);
+                                statusLabel.textContent = 'Speichern fehlgeschlagen';
+                                statusLabel.style.color = 'red';
+                            });
+                        }
+                    </script>
+                    <div class="datetime-container">
+                        <label for="BS">{% translate "Start Korb Bergung" %}</label>
+                        <button type="button" class="datetime-button" onclick="setNow('BS')">{% translate "Auf Jetzt setzen" %}</button>
+                        <input type="datetime-local" id="BS" name="BS" class="datetime-input">
+                        <button type="button" class="save-datetime-button" onclick="saveDateTime('BS', 'BS')">{% translate "Speichern" %}</button>
+                    </div>
+
+                    <div class="datetime-container">
+                        <label for="BE">{% translate "End Korb Bergung" %}</label>
+                        <button type="button" class="datetime-button" onclick="setNow('BE')">{% translate "Auf Jetzt setzen" %}</button>
+                        <input type="datetime-local" id="BE" name="BE" class="datetime-input">
+                        <button type="button" class="save-datetime-button" onclick="saveDateTime('BE', 'BE')">{% translate "Speichern" %}</button>
+                    </div>
+
+                    <div class="datetime-container">
+                        <label for="TS">{% translate "Transport Start" %}</label>
+                        <button type="button" class="datetime-button" onclick="setNow('TS')">{% translate "Auf Jetzt setzen" %}</button>
+                        <input type="datetime-local" id="TS" name="TS" class="datetime-input">
+                        <button type="button" class="save-datetime-button" onclick="saveDateTime('TS', 'TS')">{% translate "Speichern" %}</button>
+                    </div>
+
+                    <div class="datetime-container">
+                        <label for="TE">{% translate "Transport End" %}</label>
+                        <button type="button" class="datetime-button" onclick="setNow('TE')">{% translate "Auf Jetzt setzen" %}</button>
+                        <input type="datetime-local" id="TE" name="TE" class="datetime-input">
+                        <button type="button" class="save-datetime-button" onclick="saveDateTime('TE', 'TE')">{% translate "Speichern" %}</button>
+                    </div>
+
+                    <div class="datetime-container">
+                        <label for="SL">{% translate "Korb am Sortierschiff" %}</label>
+                        <button type="button" class="datetime-button" onclick="setNow('SL')">{% translate "Auf Jetzt setzen" %}</button>
+                        <input type="datetime-local" id="SL" name="SL" class="datetime-input">
+                        <button type="button" class="save-datetime-button" onclick="saveDateTime('SL', 'SL')">{% translate "Speichern" %}</button>
+                    </div>
+                    <span id="datetime-status-label" class="datetime-status-label"></span>
+                </div>
+            </div>
+        </div>
+        <!--div class="form-container">
+            <h4 style="margin-bottom: 25px;">{% translate "Nasslagerbehälter Transport" %}</h4>
+            
+        </div-->
+    </div>
+
+    <div id="section3" class="section">
+        <div class="form-container">
+            <div class="fields-container">
+                <div class="selects-container">
+                    <div class="searchable-list-container">
+                        <label for="basket-list-3">{% translate "Korb auswählen..." %}:</label>
+                        <input type="text" id="search-input-basket-3" placeholder="{% translate "Suchen..." %}">
+                        <select class="selects" id="basket-list-3" size="5">
+                            {% for basket in baskets %}
+                                <option value="{{ basket.pk }}">{% translate "Korb " %}{{ basket.basket_id }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="selects-container">
+                    <h3 style="margin-bottom: 0px; margin-top: 0px;">{% translate "Korbinfo" %}</h3>
+                    <div id="basket-details-3">
+                    </div>
+                    <button class="remove-button" id="finish-sorting" name="finish-sorting">{% translate "Fund Sortierung abschleissen" %}</button>
+                </div>
+                <div class="text-fields-container">
+                    <label for="identifier">{% translate "ID" %}:</label>
+                    <input type="text" id="identifier" name="identifier">
+                
+                    <label for="type">{% translate "Kampfmittel Typ" %}:</label>
+                    <input type="text" id="type" name="type" list="type-options">
+                    <datalist id="type-options">
+                        <option value="Munition für Hand- und Maschinenwaffen">{% translate "Munition für Hand- und Maschinenwaffen (Infanteriemunition / alles unter D=2 cm)" %}</option>
+                        <option value="Nahkampfmittel">{% translate "Nahkampfmittel (Handgranaten, Panzerabwehrhandwaffen, Gewehrgranaten, ...)" %}</option>
+                        <option value="Minen">{% translate "Minen (Schützenminen, Panzerminen)" %}</option>
+                        <option value="Sprengmittel">{% translate "Sprengmittel (verpackter oder loser Sprengstoff, Pioniersprengstoff, Rohrladung)" %}</option>
+                        <option value="Zündmittel">{% translate "Zündmittel (Sprengkapseln, Anzünder, Übertragungsladung)" %}</option>
+                        <option value="Rohrwaffenmunition bis D<=5 cm">{% translate "Rohrwaffenmunition bis D<=5 cm (Granaten, Patronen, Wurfgranaten, Wurfminen)" %}</option>
+                        <option value="Rohrwaffenmunition D=5cm bis D=15cm">{% translate "Rohrwaffenmunition D=5cm bis D=15cm (Granaten, Patronen, Wurfgranaten, Wurfminen)" %}</option>
+                        <option value="Rohrwaffenmunition über D>15 cm">{% translate "Rohrwaffenmunition über D>15 cm (Granaten, Patronen, Wurfgranaten, Wurfminen)" %}</option>
+                        <option value="Stabbrandbomben">{% translate "Stabbrandbomben" %}</option>
+                        <option value="sonstige Brandbomben">{% translate "sonstige Brandbomben" %}</option>
+                        <option value="Abwurfmunition">{% translate "Abwurfmunition" %}</option>
+                        <option value="Transportbehälter">{% translate "Transportbehälter" %}</option>
+                        <option value="Raketen">{% translate "Raketen" %}</option>
+                        <option value="Zünder">{% translate "Zünder (sprengkräftige oder nicht sprengkräftige Zünder)" %}</option>
+                        <option value="Pyrotechnik">{% translate "Pyrotechnik (Leuch- oder Rauchsignale, Knallsätze)" %}</option>
+                        <option value="Treibsätze">{% translate "Treibsätze (getrennte Treibladungen)" %}</option>
+                        <option value="Marinekampfmittel">{% translate "Marinekampfmittel (UW-Munition, Minen, Torpedos, Sperrwaffen)" %}</option>
+                        <option value="sonstige spreng- und zündkräftige Kampfmittel">{% translate "sonstige spreng- und zündkräftige Kampfmittel (z.B. Bruchstücke)" %}</option>
+                        <option value="Waffen oder Waffenteile">{% translate "Waffen (Waffen oder Waffenteile)" %}</option>
+                        <option value="inerte Teile / Splitter / Munitionsschrott">{% translate "inerte Teile / Splitter / Munitionsschrott" %}</option>
+                    </datalist>
+
+                    <label for="type_detail">{% translate "Kampfmittel Typ Unterklassifizierung" %}:</label>
+                    <input type="text" id="type_detail" name="type_detail">
+
+                    <label for="country">{% translate "Herkunftsland" %}:</label>
+                    <input type="text" id="country" name="country">
+
+                    <label for="fused">{% translate "Bezündert (j/n)" %}:</label>
+                    <select id="fused" name="fused">
+                        <option value="">{% translate "" %}</option>
+                        <option value="y">{% translate "Ja" %}</option>
+                        <option value="n">{% translate "Nein" %}</option>
+                    </select>
+                
+                    <label for="fuse_type">{% translate "Zundertyp" %}:</label>
+                    <input type="text" id="fuse_type" name="fuse_type">
+                
+                </div>
+                <div class="text-fields-container">
+
+                    <label for="cl_weight">{% translate "Gewicht (kg)" %}:</label>
+                    <input type="number" id="cl_weight" name="cl_weight" step="0.01">
+                
+                    <label for="cl_length">{% translate "Länge (cm)" %}:</label>
+                    <input type="number" id="cl_length" name="cl_length" step="0.01">
+                
+                    <label for="cl_width">{% translate "Breite (cm)" %}:</label>
+                    <input type="number" id="cl_width" name="cl_width" step="0.01">
+
+                    <label for="cl_height">{% translate "Höhe (cm)" %}:</label>
+                    <input type="number" id="cl_height" name="cl_height" step="0.01">
+                
+                    <label for="explosive_weight">{% translate "Sprengstoffmasse NEM (kg)" %}:</label>
+                    <input type="number" id="explosive_weight" name="explosive_weight" step="0.01">
+
+                    <label for="transportable">{% translate "Transportfähig (j/n)" %}:</label>
+                    <select id="transportable" name="transportable">
+                        <option value="y">{% translate "Ja" %}</option>
+                        <option value="n">{% translate "Nein" %}</option>
+                    </select>
+
+                </div>
+                <div class="text-fields-container">
+                    
+                    <label for="condition">{% translate "Zustandbeschreibung" %}:</label>
+                    <select id="condition" name="condition">
+                        <option value="Gut">{% translate "Gut" %}</option>
+                        <option value="Mittel">{% translate "Mittel" %}</option>
+                        <option value="Schlecht">{% translate "Schlecht" %}</option>
+                    </select>
+
+                    <label for="eod-sorting">{% translate "Feuerwerker" %}:</label>
+                    <input type="text" id="eod-sorting" name="eod-sorting">
+
+                    <label for="tr_comment">{% translate "TR Kommentar" %}:</label>
+                    <textarea rows="5" cols="25" id="tr_comment" name="tr_comment"></textarea>
+                
+                    <label for="description_detail">{% translate "Beschreibung" %}:</label>
+                    <textarea rows="5" cols="25" id="description_detail" name="description_detail"></textarea>
+
+                </div>
+                <div class="text-fields-container">
+                    <label for="image-upload">{% translate "Bilder hochladen" %}:</label>
+                    <input type="file" id="image-upload" name="images" multiple accept="image/*">
+        
+                    <div id="image-preview-container">
+
+                    </div>
+                </div>
+                <div class="text-fields-container">
+                    
+                    <label for="show_box_fields">{% translate "Objekt ist eine Kiste / hat Inhalt" %}:</label>
+                    <input type="checkbox" id="show_box_fields" name="show_box_fields">
+                    
+                    <div id="box-fields">
+                        <label for="content_length">{% translate "Inhalt Länge (cm)" %}:</label>
+                        <input type="number" id="content_length" name="content_length" step="0.01">
+                
+                        <label for="content_width">{% translate "Inhalt Breite (cm)" %}:</label>
+                        <input type="number" id="content_width" name="content_width" step="0.01">
+                
+                        <label for="content_height">{% translate "Inhalt Höhe (cm)" %}:</label>
+                        <input type="number" id="content_height" name="content_height" step="0.01">
+                
+                        <label for="content_weight">{% translate "Einzeln gewicht (kg)" %}:</label>
+                        <input type="number" id="content_weight" name="content_weight" step="0.01">
+                
+                        <label for="content_count">{% translate "Inhalt Anzahl" %}:</label>
+                        <input type="number" id="content_count" name="content_count">
+                    </div>
+                </div>
+            </div>
+            <label id="save-status-3"></label>
+            <button id="section3-save" class="save-button">{% translate "Speichern" %}</button>
+        </div>
+    </div>
+
+    <div id="section4" class="section">
+        <div class="form-container">
+            <div class="fields-container">
+                <div class="selects-container">
+                    <div class="searchable-list-container">
+                        <label for="sorted_items">{% translate "Sortierte Objekte" %}:</label>
+                        <input type="text" id="search-input-sorted_items" placeholder="{% translate "Suchen..." %}">
+                        <select class="selects" id="sorted_items" name="sorted_items" size="5">
+                            {% for item in sorted_items %}
+                                <option value="{{ item.pk }}" 
+                                    data-identifier="{{ item.identifier }}"
+                                    data-verbose_name="{{ item.verbose_name }}"
+                                    data-type="{{ item.type }}"
+                                    data-cl_weight="{{ item.cl_weight }}"
+                                    data-explosive_weight="{{ item.explosive_weight }}"
+                                    data-fused="{{ item.fused }}"
+                                    data-description_detail="{{ item.description_detail }}">
+                                    {{ item.identifier }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="selects-container">
+                    <h3 style="margin-bottom: 0px; margin-top: 0px;">{% translate "Objektinfo" %}</h3>
+                    <div id="item-details">
+                    </div>
+                </div>
+                <div class="selects-container">
+                    <div class="searchable-list-container">
+                        <label for="handover_container">{% translate "Übergabebehälter" %}:</label>
+                        <input type="text" id="search-input-handover_container" placeholder="{% translate "Suchen..." %}">
+                        <select class="selects" id="handover_container" name="handover_container" size="5">
+                            {% for container in handover_containers %}
+                                <option value="{{ container.pk }}">{{ container.hoc_id }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                
+                    <div class="searchable-list-container">
+                        <label for="wetstore_container">{% translate "Nasslagerbehälter" %}:</label>
+                        <input type="text" id="search-input-wetstore_container" placeholder="{% translate "Suchen..." %}">
+                        <select class="selects" id="wetstore_container" name="wetstore_container" size="5">
+                            {% for container in wetstore_containers %}
+                                <option value="{{ container.pk }}">{{ container.wsc_id }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="selects-container">
+                    <h3 style="margin-bottom: 0px; margin-top: 0px;">{% translate "Behälterinfo" %}</h3>
+                    <div id="container-details">
+                    </div>
+                </div>
+            </div>
+            <label id="save-status-4"></label>
+            <button id="section4-save" class="save-button">{% translate "Objekt im Behälter speichern" %}</button>
+        </div>
+    </div>
+</body>
+</html>

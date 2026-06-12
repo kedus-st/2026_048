@@ -1,0 +1,46 @@
+{% extends 'admin/base_site.html' %}
+{% load i18n %}
+
+{% block extrastyle %}
+  {{ block.super }}
+  <style>
+    #header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #home-button-div {
+      margin-right: 20px;
+    }
+  </style>
+{% endblock %}
+
+{% block header %}
+  <div id="header">
+    <div id="branding" class="flex">
+      {% block branding %}
+        <div id="header">
+            <div id="home-button-div" class="flex">
+                <a href="{% url 'index' %}" class="button">{% translate "Kartenansicht" %}</a>
+            </div>
+            <h1 id="site-name">
+              <a href="{% url 'admin:index' %}">SeaTerra Clearance</a>
+            </h1>
+        </div>
+      {% endblock %}
+    </div>
+    <div id="user-tools" class="flex">
+
+      {% block welcome-msg %}
+        <p>Welcome, {{ user.get_username }}. 
+            <form method="post" action="{% url 'admin:logout' %}" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-link" style="padding: 0; border: none; background: none;">Logout</button>
+            </form>
+        </p>
+      <!--a href="{% url 'admin:logout' %}">Logout</a-->
+      {% endblock %}
+    </div>
+  </div>
+{% endblock %}
