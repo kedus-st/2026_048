@@ -42,10 +42,10 @@ def create_tr(mtl_item):
 
         #if(None in [query.clear, query.found, query.eod] or '' in [query.clear, query.found, query.eod]):
         #    return
-        #elif ('y' not in query.qa_clear or 'y' not in query.clear):
-        #    return
-        #if query.clear is None:
-        #    return
+        if query.clear is None or query.qa_clear is None:
+            return
+        if ('y' not in query.qa_clear or 'y' not in query.clear):
+            return
         value_08 = itp_no_mag
         value_20 = query.eod
         value_22 = query.cl_date
@@ -128,8 +128,8 @@ def create_tr(mtl_item):
 
         if (settings.PROJECT_NAME+'/media/magimages/'+str(itp_no_mag) + '_TMI_IMAGE.png' in magimages):      
             image_tmi = Image(get_secure_blob_url(settings.PROJECT_NAME+'/media/magimages/'+str(itp_no_mag) + '_TMI_IMAGE.png'))
-            image_tmi.drawHeight = 53 * mm
-            image_tmi.drawWidth = 74 * mm
+            image_tmi.drawHeight = 40 * mm
+            image_tmi.drawWidth = 80 * mm
         else:
             image_tmi = Image(os.path.join(settings.STATIC_ROOT, 'img/no_image.png'))
             image_tmi.drawHeight = 53 * mm
@@ -137,8 +137,8 @@ def create_tr(mtl_item):
 
         if (settings.PROJECT_NAME+'/media/topoimages/'+str(itp_no_mag) + '_TOPO_IMAGE.png' in topoimages):
             image_topo = Image(get_secure_blob_url(settings.PROJECT_NAME+'/media/topoimages/'+str(itp_no_mag) + '_TOPO_IMAGE.png'))
-            image_topo.drawWidth = 74 * mm
-            image_topo.drawHeight = 53 * mm
+            image_topo.drawWidth = 80 * mm
+            image_topo.drawHeight = 40 * mm
         else:
             image_topo = Image(os.path.join(settings.STATIC_ROOT, 'img/no_image.png'))
             image_topo.drawHeight = 53 * mm

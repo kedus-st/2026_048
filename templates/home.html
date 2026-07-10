@@ -190,9 +190,11 @@
                         </div>
                         
                         <label id="tr-comment-label" for="tr-comment">{% translate "TR Kommentar" %}</label>
-                        <input type="text" class="text-input" id="tr-comment" name="tr-comment" placeholder="{% translate "TR Kommentar hier eingeben..." %}">
+                        <!--input type="text" class="text-input" id="tr-comment" name="tr-comment" placeholder="{% translate "TR Kommentar hier eingeben..." %}"-->
+                        <textarea rows="1" style="resize: none; overflow: hidden;" class="text-input" id="tr-comment" name="tr-comment" placeholder="{% translate "TR Kommentar hier eingeben..." %}"></textarea>
                         <label id="tr-comment-label" for="tr-comment">{% translate "Beschreibung" %}</label>
-                        <input type="text" class="text-input" id="description-detail" name="description-detail" placeholder="{% translate "Beschreibung hier eingeben..." %}">
+                        <!--input type="text" class="text-input" id="description-detail" name="description-detail" placeholder="{% translate "Beschreibung hier eingeben..." %}"-->
+                        <textarea rows="1" style="resize: none; overflow: hidden;" class="text-input" id="description-detail" name="description-detail" placeholder="{% translate "Beschreibung hier eingeben..." %}"></textarea>
                         <input class="itp-submit" type="submit" value="Submit" form="itp-form">
                     </div>
                 </div>

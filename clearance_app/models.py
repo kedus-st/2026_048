@@ -96,7 +96,7 @@ class MtlItem(models.Model):
     )
     todo_target = models.CharField(max_length=1, blank=True, null=True, choices=TODO_CHOICES, verbose_name=_('todo_target'))
     prio = models.IntegerField(null=True, blank=True, verbose_name=_('Priorität'))  # added 10.05.2022
-    section = models.CharField(max_length=3, null=True, blank=True, verbose_name=_('Sektion'))
+    section = models.CharField(max_length=30, null=True, blank=True, verbose_name=_('Sektion'))
     cl_date = models.DateField(verbose_name=_('Bergungsdatum'), blank=True, null=True)
     cl_time = models.TimeField(verbose_name=_('Bergungszeit'), blank=True, null=True)
     vessel = models.CharField(verbose_name=_('Schiff'), max_length=30, blank=True, null=True)

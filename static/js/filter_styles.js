@@ -425,7 +425,7 @@ const itp_styleFunction = function (clusters, resolution) {
             }
         }
 
-        if(feature.get('to_detonate') == 'y'){
+        /*if(feature.get('to_detonate') == 'y'){
             if(feature.get('detonated') == 'n' || feature.get('detonated') == '' || feature.get('detonated') == null){
                 safety_dist = feature.get('safety_dist') || 0;
                 console.log('Safety distance:', safety_dist);
@@ -445,7 +445,7 @@ const itp_styleFunction = function (clusters, resolution) {
                 orange_circle_marker.getText().setText(feature.get('itp_no_mag').replace('ITP-0000', '').replace('ITP-000', '').replace('ITP-00', '').replace('ITP-0', '').replace('ITP-', ''));
                 style = [orange_circle_marker, safety_radius];
             }
-        }
+        }*/
 
         if(target_filters.found == 'y'){
             if(feature.get('found') == 'n' || feature.get('found') == '' || feature.get('found') == null)
@@ -541,7 +541,7 @@ const itp_styleFunctionVessels = function (clusters, resolution) {
                 }),
             }),
             text: new ol.style.Text({
-                text: size.toString(),
+                text: features.map(f => f.get('itp_no_mag').replace('ITP-0000', '').replace('ITP-000', '').replace('ITP-00', '').replace('ITP-0', '').replace('ITP-', '')).join(',\n'),
                 fill: new ol.style.Fill({
                     color: 'black',
                 }),

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-26 13:04+0200\n"
+"POT-Creation-Date: 2026-06-24 09:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,6 +30,104 @@ msgstr "German"
 #: clearance/settings.py:184
 msgid "Polnisch"
 msgstr "Polish"
+
+#: clearance_app/dash_app.py:18
+msgid "Geräumte Objekte (Gewicht >= 50kg)"
+msgstr "Cleared Objects (Weight >= 50kg)"
+
+#: clearance_app/dash_app.py:19
+msgid "Geräumte Objekte (alle Gewichte)"
+msgstr "Cleared Objects (all weights)"
+
+#: clearance_app/dash_app.py:20
+msgid "Geräumte Objekte"
+msgstr "Cleared objects"
+
+#: clearance_app/dash_app.py:24
+msgid "Geräumt"
+msgstr "Cleared"
+
+#: clearance_app/dash_app.py:25 clearance_app/dash_app.py:29
+msgid "To Do"
+msgstr ""
+
+#: clearance_app/dash_app.py:26 clearance_app/dash_app.py:78
+msgid "UXO"
+msgstr ""
+
+#: clearance_app/dash_app.py:27 clearance_app/models.py:98
+msgid "Priorität"
+msgstr "Priority"
+
+#: clearance_app/dash_app.py:28 clearance_app/models.py:102
+#: clearance_app/models.py:290 management/models.py:220
+#: templates/item_management.html:55
+msgid "Schiff"
+msgstr "Ship"
+
+#: clearance_app/dash_app.py:41
+msgid "Objektanzahl"
+msgstr "Object count"
+
+#: clearance_app/dash_app.py:49
+msgid "Nicht geräumt (Gewicht >= 50kg)"
+msgstr "Not cleared (Weight >= 50kg)"
+
+#: clearance_app/dash_app.py:50
+msgid "Nicht geräumt (Gewicht < 50kg)"
+msgstr "Not cleared (Weight < 50kg)"
+
+#: clearance_app/dash_app.py:51
+msgid "Geräumt (Gewicht >= 50kg)"
+msgstr "Cleared (Weight >= 50kg)"
+
+#: clearance_app/dash_app.py:52
+msgid "Geräumt (Gewicht < 50kg)"
+msgstr "Cleared (Weight < 50kg)"
+
+#: clearance_app/dash_app.py:53
+msgid "In Arbeit"
+msgstr "In work"
+
+#: clearance_app/dash_app.py:66
+msgid "ToDo (Gewicht >= 50kg)"
+msgstr "ToDo (Weight >= 50kg)"
+
+#: clearance_app/dash_app.py:66
+msgid "ToDo (Gewicht < 50kg)"
+msgstr "ToDo (Weight < 50kg)"
+
+#: clearance_app/dash_app.py:66
+msgid "Nicht zu räumen (kein ToDo)"
+msgstr "Non-targets (No ToDo)"
+
+#: clearance_app/dash_app.py:78
+msgid "Nicht UXO"
+msgstr "Non UXO"
+
+#: clearance_app/dash_app.py:78
+msgid "Keine Angabe"
+msgstr "No Entry"
+
+#: clearance_app/dash_app.py:92 clearance_app/dash_app.py:103
+msgid "null"
+msgstr "null"
+
+#: clearance_app/dash_app.py:126
+msgid "Statistiken nach Datum"
+msgstr "Statistic by Date"
+
+#: clearance_app/dash_app.py:136
+msgid "Objekt Statistik"
+msgstr "Object Statistics"
+
+#: clearance_app/dash_app.py:159
+msgid "Objekte"
+msgstr "Objects"
+
+#: clearance_app/dash_app.py:161
+msgid "Daten"
+msgstr "Dates"
 
 #: clearance_app/models.py:44 clearance_app/models.py:49
 #: clearance_app/models.py:55
@@ -97,13 +195,9 @@ msgstr "ITP Notes"
 msgid "todo_target"
 msgstr "todo_target"
 
-#: clearance_app/models.py:98
-msgid "Priorität"
-msgstr "Priority"
-
 #: clearance_app/models.py:99
 msgid "Sektion"
-msgstr ""
+msgstr "Section"
 
 #: clearance_app/models.py:100
 msgid "Bergungsdatum"
@@ -112,11 +206,6 @@ msgstr "Clearance date"
 #: clearance_app/models.py:101
 msgid "Bergungszeit"
 msgstr "Clearance time"
-
-#: clearance_app/models.py:102 clearance_app/models.py:290
-#: management/models.py:202 templates/item_management.html:55
-msgid "Schiff"
-msgstr "Ship"
 
 #: clearance_app/models.py:103 templates/item_management.html:58
 #: templates/item_management.html:347
@@ -190,7 +279,7 @@ msgstr "cleared (y/n/w)"
 msgid "QA Freigabe (y)"
 msgstr "QA Approval (y)"
 
-#: clearance_app/models.py:130 management/models.py:205 templates/home.html:194
+#: clearance_app/models.py:130 management/models.py:223 templates/home.html:194
 #: templates/item_management.html:353
 msgid "Beschreibung"
 msgstr "Description"
@@ -207,7 +296,7 @@ msgstr "Created at"
 msgid "Aktualisiert am"
 msgstr "Updated at"
 
-#: clearance_app/models.py:181 management/models.py:208
+#: clearance_app/models.py:181 management/models.py:226
 msgid "Bild"
 msgstr "Image"
 
@@ -219,7 +308,7 @@ msgstr ""
 msgid "Notizen"
 msgstr "Notes"
 
-#: clearance_app/models.py:246 management/models.py:49 management/models.py:170
+#: clearance_app/models.py:246 management/models.py:55 management/models.py:176
 msgid "Name"
 msgstr "Name"
 
@@ -227,7 +316,7 @@ msgstr "Name"
 msgid "Art"
 msgstr "Type"
 
-#: clearance_app/models.py:248 management/models.py:50 management/models.py:171
+#: clearance_app/models.py:248 management/models.py:56 management/models.py:177
 msgid "Datei"
 msgstr "File"
 
@@ -263,102 +352,396 @@ msgstr ""
 msgid "Schiffe"
 msgstr "Vessels"
 
-#: management/models.py:131
+#: management/models.py:137
 msgid "Weather Downtime"
 msgstr ""
 
-#: management/models.py:132
+#: management/models.py:138
 msgid "Scheduled Target"
 msgstr ""
 
-#: management/models.py:133
+#: management/models.py:139
 msgid "Crew Change"
 msgstr ""
 
-#: management/models.py:134
+#: management/models.py:140
 msgid "Port Call"
 msgstr ""
 
-#: management/models.py:135
+#: management/models.py:141 management/models.py:382
 msgid "Other"
 msgstr ""
 
-#: management/models.py:173
+#: management/models.py:179
 msgid "Hochgeladen am"
 msgstr "Uploaded on"
 
-#: management/models.py:182
+#: management/models.py:188 management/models.py:295
 msgid "Datum"
 msgstr "Date"
 
-#: management/models.py:183 templates/home.html:88
+#: management/models.py:189 templates/home.html:87
 msgid "Betriebsstunden"
 msgstr "Operational hours"
 
-#: management/models.py:184 templates/home.html:266
+#: management/models.py:190 templates/home.html:266
 msgid "Kommentar"
 msgstr "Comment"
 
-#: management/models.py:194
-#, fuzzy
-#| msgid "Erstellt am"
-msgid "Bestellt"
-msgstr "Created at"
-
-#: management/models.py:195
-msgid "Auf Lager"
-msgstr ""
-
-#: management/models.py:196
-msgid "Versandfertig"
-msgstr ""
-
-#: management/models.py:197
-msgid "Erhalten"
+#: management/models.py:200
+msgid "Offen"
 msgstr ""
 
 #: management/models.py:201
+msgid "wird bearbeitet"
+msgstr "being processed"
+
+#: management/models.py:202
+msgid "Bestellt"
+msgstr "Ordered"
+
+#: management/models.py:203
+msgid "Auf Lager"
+msgstr ""
+
+#: management/models.py:204
+msgid "Versandfertig"
+msgstr ""
+
+#: management/models.py:205
+msgid "Erhalten"
+msgstr ""
+
+#: management/models.py:219
 msgid "Titel"
 msgstr ""
 
-#: management/models.py:203
+#: management/models.py:221
 #, fuzzy
 #| msgid "Bergungsdatum"
 msgid "Bestelldatum"
 msgstr "Clearance date"
 
-#: management/models.py:204
+#: management/models.py:222
 msgid "Besteller"
 msgstr ""
 
-#: management/models.py:206
+#: management/models.py:224
 #, fuzzy
 #| msgid "Inhalt Anzahl"
 msgid "Anzahl"
 msgstr "Content count"
 
-#: management/models.py:207
+#: management/models.py:225
 msgid "Link"
 msgstr ""
 
-#: management/models.py:209
+#: management/models.py:227
 #, fuzzy
 #| msgid "Statistik"
 msgid "Status"
 msgstr "Statistics"
 
-#: management/models.py:210
+#: management/models.py:229
 #, fuzzy
 #| msgid "Lagerdatum"
 msgid "Lieferdatum"
 msgstr "Storage Date"
 
-#: management/models.py:216
+#: management/models.py:240
 msgid "Bestellung"
 msgstr ""
 
-#: management/models.py:217
+#: management/models.py:241
 msgid "Bestellungen"
+msgstr ""
+
+#: management/models.py:296
+#, fuzzy
+#| msgid "Vermesser"
+msgid "Vessel"
+msgstr "Surveyor"
+
+#: management/models.py:297
+msgid "Client"
+msgstr ""
+
+#: management/models.py:298
+msgid "Contractor"
+msgstr ""
+
+#: management/models.py:302
+msgid "Position at 24:00LT"
+msgstr ""
+
+#: management/models.py:304
+msgid "CEO"
+msgstr ""
+
+#: management/models.py:305
+msgid "Project Manager"
+msgstr ""
+
+#: management/models.py:306
+msgid "OCM"
+msgstr ""
+
+#: management/models.py:307
+msgid "EOD Manager"
+msgstr ""
+
+#: management/models.py:308
+msgid "Captain"
+msgstr ""
+
+#: management/models.py:309
+msgid "Client Rep"
+msgstr ""
+
+#: management/models.py:310
+msgid "Vessel Email"
+msgstr ""
+
+#: management/models.py:312
+msgid "Distribution List"
+msgstr ""
+
+#: management/models.py:314
+msgid "Marine Onsigners"
+msgstr ""
+
+#: management/models.py:315
+msgid "SeaTerra Onsigners"
+msgstr ""
+
+#: management/models.py:316
+msgid "Client Onsigners"
+msgstr ""
+
+#: management/models.py:318
+msgid "Marine Offsigners"
+msgstr ""
+
+#: management/models.py:319
+msgid "SeaTerra Offsigners"
+msgstr ""
+
+#: management/models.py:320
+msgid "Client Offsigners"
+msgstr ""
+
+#: management/models.py:322
+msgid "Weather Info"
+msgstr ""
+
+#: management/models.py:323
+msgid "Weather Info Lookahead"
+msgstr ""
+
+#: management/models.py:325
+msgid "HSE Meetings"
+msgstr ""
+
+#: management/models.py:326
+msgid "HSE Toolbox Talks"
+msgstr ""
+
+#: management/models.py:327
+msgid "HSE Safety Observation Form"
+msgstr ""
+
+#: management/models.py:328
+msgid "HSE Safety Drills"
+msgstr ""
+
+#: management/models.py:329
+msgid "HSE Incidents"
+msgstr ""
+
+#: management/models.py:330
+msgid "HSE Accidents"
+msgstr ""
+
+#: management/models.py:331
+msgid "HSE Working Hours"
+msgstr ""
+
+#: management/models.py:332
+msgid "HSE Start of Project"
+msgstr ""
+
+#: management/models.py:333
+msgid "HSE Days Without Accident"
+msgstr ""
+
+#: management/models.py:335
+msgid "HSE Meetings Total"
+msgstr ""
+
+#: management/models.py:336
+msgid "HSE Toolbox Talks Total"
+msgstr ""
+
+#: management/models.py:337
+msgid "HSE Safety Observation Form Total"
+msgstr ""
+
+#: management/models.py:338
+msgid "HSE Safety Drills Total"
+msgstr ""
+
+#: management/models.py:339
+msgid "HSE Incidents Total"
+msgstr ""
+
+#: management/models.py:340
+msgid "HSE Accidents Total"
+msgstr ""
+
+#: management/models.py:341
+msgid "HSE Working Hours Total"
+msgstr ""
+
+#: management/models.py:342
+msgid "HSE Days Without Accident Total"
+msgstr ""
+
+#: management/models.py:344
+msgid "Work Summary"
+msgstr ""
+
+#: management/models.py:345
+msgid "Work Entries"
+msgstr ""
+
+#: management/models.py:347
+msgid "Plan for the next 24hrs"
+msgstr ""
+
+#: management/models.py:349
+msgid "Daily Routine"
+msgstr ""
+
+#: management/models.py:351
+msgid "Routine Vessel"
+msgstr ""
+
+#: management/models.py:352
+msgid "Routine Total Targets"
+msgstr ""
+
+#: management/models.py:353
+msgid "Routine Cleared Targets"
+msgstr ""
+
+#: management/models.py:354
+msgid "Routine Remaining Targets"
+msgstr ""
+
+#: management/models.py:355
+msgid "Routine Total UXOs Found"
+msgstr ""
+
+#: management/models.py:356
+msgid "Routine Targets Cleared Today"
+msgstr ""
+
+#: management/models.py:357
+msgid "Routine Remarks"
+msgstr ""
+
+#: management/models.py:359
+msgid "MOB Duration"
+msgstr ""
+
+#: management/models.py:360
+#, fuzzy
+#| msgid "Fundsituation"
+msgid "Transit Duration"
+msgstr "Situation discovered in"
+
+#: management/models.py:361
+msgid "Survey Spread Duration"
+msgstr ""
+
+#: management/models.py:362
+msgid "Client Standby Duration"
+msgstr ""
+
+#: management/models.py:363
+msgid "Weather Downtime Duration"
+msgstr ""
+
+#: management/models.py:364
+msgid "Time Based Work Duration"
+msgstr ""
+
+#: management/models.py:365
+msgid "Crew Change Duration"
+msgstr ""
+
+#: management/models.py:366
+msgid "Technical Downtime Duration"
+msgstr ""
+
+#: management/models.py:369
+msgid "MOB Duration Total"
+msgstr ""
+
+#: management/models.py:370
+msgid "Transit Duration Total"
+msgstr ""
+
+#: management/models.py:371
+msgid "Survey Spread Duration Total"
+msgstr ""
+
+#: management/models.py:372
+msgid "Client Standby Duration Total"
+msgstr ""
+
+#: management/models.py:373
+msgid "Weather Downtime Duration Total"
+msgstr ""
+
+#: management/models.py:374
+msgid "Time Based Work Duration Total"
+msgstr ""
+
+#: management/models.py:375
+msgid "Crew Change Duration Total"
+msgstr ""
+
+#: management/models.py:376
+msgid "Technical Downtime Duration Total"
+msgstr ""
+
+#: management/models.py:379
+msgid "Interpretation of weather forecast"
+msgstr ""
+
+#: management/models.py:380
+msgid "Technical Issues"
+msgstr ""
+
+#: management/models.py:381
+msgid "Meetings"
+msgstr ""
+
+#: management/models.py:384
+msgid "SeaTerra Comments"
+msgstr ""
+
+#: management/models.py:385
+msgid "Client Comments"
+msgstr ""
+
+#: management/models.py:391
+msgid "DPR"
+msgstr ""
+
+#: management/models.py:392 templates/home.html:91
+msgid "DPRs"
 msgstr ""
 
 #: templates/admin/base_site.html:25 templates/calendar.html:11
@@ -453,30 +836,26 @@ msgid "Unterlagen"
 msgstr "Documents"
 
 #: templates/home.html:83
-msgid "Berichte"
-msgstr "Reports"
-
-#: templates/home.html:84
 msgid "Kalender"
 msgstr "Calendar"
 
-#: templates/home.html:85
+#: templates/home.html:84
 msgid "Bilder"
 msgstr "Pictures"
 
-#: templates/home.html:86 templates/home.html:87 templates/home.html:424
+#: templates/home.html:85 templates/home.html:86 templates/home.html:420
 msgid "Wetter"
 msgstr "Weather"
 
-#: templates/home.html:89
+#: templates/home.html:88
 msgid "Target Records"
 msgstr ""
 
-#: templates/home.html:90
+#: templates/home.html:89
 msgid "Kontoverwaltung"
 msgstr "Account Management"
 
-#: templates/home.html:91
+#: templates/home.html:90
 msgid "Bestellliste"
 msgstr "Order List"
 
@@ -655,11 +1034,11 @@ msgstr "Time of Sample Collection"
 msgid "Gesammeltes Volumen [mL]"
 msgstr "Collected Volume [mL]"
 
-#: templates/home.html:270 templates/home.html:460
+#: templates/home.html:270 templates/home.html:456
 msgid "Legend"
 msgstr ""
 
-#: templates/home.html:271 templates/home.html:403
+#: templates/home.html:271 templates/home.html:399
 msgid "Sprachen"
 msgstr "Languages"
 
@@ -707,99 +1086,99 @@ msgstr "Apply filters"
 msgid "Filter zurücksetzen"
 msgstr "Reset Filters"
 
-#: templates/home.html:391
+#: templates/home.html:387
 #, fuzzy
 #| msgid "BP Cluster Einstellungen"
 msgid "ITP Cluster Einstellungen"
 msgstr "DP Cluster Settings"
 
-#: templates/home.html:395
+#: templates/home.html:391
 msgid "Max. Pixel zwischen Punkten im Cluster:"
 msgstr "Max. pixels between points in a cluster:"
 
-#: templates/home.html:418
+#: templates/home.html:414
 msgid "Sprache ändern"
 msgstr "Change language"
 
-#: templates/home.html:429
+#: templates/home.html:425
 msgid "Wetter abfragen"
 msgstr "Get weather"
 
-#: templates/home.html:438
+#: templates/home.html:434
 msgid "Temperatur"
 msgstr "Temperature"
 
-#: templates/home.html:439 templates/home.html:443 templates/home.html:449
-#: templates/home.html:453
+#: templates/home.html:435 templates/home.html:439 templates/home.html:445
+#: templates/home.html:449
 msgid "Lädt..."
 msgstr "Loading..."
 
-#: templates/home.html:442
+#: templates/home.html:438
 msgid "Wetterlage"
 msgstr "Condition"
 
-#: templates/home.html:448
+#: templates/home.html:444
 msgid "Feuchtigkeit"
 msgstr "Humidity"
 
-#: templates/home.html:452
+#: templates/home.html:448
 msgid "Windgeschwindigkeit"
 msgstr "Wind speed"
 
-#: templates/home.html:469
+#: templates/home.html:465
 msgid "nicht freigegeben"
 msgstr "not clear"
 
-#: templates/home.html:475
+#: templates/home.html:471
 msgid "zu sprengen"
 msgstr ""
 
-#: templates/home.html:481
+#: templates/home.html:477
 msgid "freigegeben"
 msgstr "clear"
 
-#: templates/home.html:487 templates/item_management.html:77
+#: templates/home.html:483 templates/item_management.html:77
 #: templates/item_management.html:107
 msgid "in Arbeit"
 msgstr "in work"
 
-#: templates/home.html:493
+#: templates/home.html:489
 msgid "Kampfmittel nicht freigegeben"
 msgstr "UXO not clear"
 
-#: templates/home.html:499
+#: templates/home.html:495
 msgid "Kampfmittel freigegeben"
 msgstr "UXO clear"
 
-#: templates/home.html:505
+#: templates/home.html:501
 msgid "Kampfmittel in Arbeit"
 msgstr "UXO in work"
 
-#: templates/home.html:511
+#: templates/home.html:507
 msgid "Kein ToDo"
 msgstr "No ToDo"
 
-#: templates/home.html:568 templates/item_management.html:15
+#: templates/home.html:564 templates/item_management.html:15
 msgid "Körbe"
 msgstr "Baskets"
 
-#: templates/home.html:586 templates/home.html:605 templates/home.html:643
+#: templates/home.html:582 templates/home.html:601 templates/home.html:639
 msgid "Korb"
 msgstr "Basket"
 
-#: templates/home.html:590 templates/home.html:628
+#: templates/home.html:586 templates/home.html:624
 msgid "Meeresboden"
 msgstr "Seafloor"
 
-#: templates/home.html:615
+#: templates/home.html:611
 msgid "Bergungsschiff"
 msgstr "Clearance ship"
 
-#: templates/home.html:653
+#: templates/home.html:649
 msgid "Sortierschiff"
 msgstr "Sorting ship:"
 
-#: templates/home.html:689
+#: templates/home.html:685
 msgid "Schiff auswählen"
 msgstr "Choose ship"
 
@@ -1201,6 +1580,9 @@ msgstr "next"
 msgid "letzte"
 msgstr "last"
 
+#~ msgid "Berichte"
+#~ msgstr "Reports"
+
 #~ msgid "Basisdaten"
 #~ msgstr "Base data"
 
@@ -1358,9 +1740,6 @@ msgstr "last"
 #~ msgid "Nasslagerbehälter ID"
 #~ msgstr "Wet Store ID"
 
-#~ msgid "Behältergewicht (kg)"
-#~ msgstr "Container weight (kg)"
-
 #, fuzzy
 #~| msgid "Inhalt Gewicht (kg)"
 #~ msgid "Inhaltgewicht (kg)"
@@ -1411,11 +1790,6 @@ msgstr "last"
 #~| msgid "Untersuchungsgebiet"
 #~ msgid "Naturschutzgebiet"
 #~ msgstr "Clearance area"
-
-#, fuzzy
-#~| msgid "Sortierte Objekte"
-#~ msgid "Gezählte Objekte"
-#~ msgstr "Sorted objects"
 
 #, fuzzy
 #~| msgid "Munitionstender"

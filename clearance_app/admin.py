@@ -201,6 +201,7 @@ class MtlItemAdmin(LeafletGeoAdminMixin, ImportExportMixin, VersionAdmin, Import
                      'surveyor')
     list_filter = (
         'clear',
+        'qa_clear',
         'uxo',
         'todo_target',
         'prio',

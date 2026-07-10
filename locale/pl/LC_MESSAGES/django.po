@@ -3,12 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#: templates/item_management.html:305
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-22 15:08+0200\n"
+"POT-Creation-Date: 2026-06-24 09:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,117 +21,208 @@ msgstr ""
 "(n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && "
 "n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: clearance/settings.py:155
+#: clearance/settings.py:182
 msgid "Englisch"
 msgstr "Angielski"
 
-#: clearance/settings.py:156
+#: clearance/settings.py:183
 msgid "Deutsch"
 msgstr "Niemiecki"
 
-#: clearance/settings.py:157
+#: clearance/settings.py:184
 msgid "Polnisch"
 msgstr "Polski"
 
-#: clearance_app/models.py:43 clearance_app/models.py:48
-#: clearance_app/models.py:54
-msgid "JA"
-msgstr "TAK"
+#: clearance_app/dash_app.py:18
+msgid "Geräumte Objekte (Gewicht >= 50kg)"
+msgstr "Usunięte obiekty (waga >= 50 kg)"
+
+#: clearance_app/dash_app.py:19
+msgid "Geräumte Objekte (alle Gewichte)"
+msgstr "Usunięte obiekty (wszystkie wagi)"
+
+#: clearance_app/dash_app.py:20
+msgid "Geräumte Objekte"
+msgstr "Usunięte obiekty"
+
+#: clearance_app/dash_app.py:24
+msgid "Geräumt"
+msgstr "Usunięto"
+
+#: clearance_app/dash_app.py:25 clearance_app/dash_app.py:29
+msgid "To Do"
+msgstr "Do zrobienia"
+
+#: clearance_app/dash_app.py:26 clearance_app/dash_app.py:78
+msgid "UXO"
+msgstr "UXO"
+
+#: clearance_app/dash_app.py:27 clearance_app/models.py:98
+msgid "Priorität"
+msgstr "Priorytet"
+
+#: clearance_app/dash_app.py:28 clearance_app/models.py:102
+#: clearance_app/models.py:290 management/models.py:220
+#: templates/item_management.html:55
+msgid "Schiff"
+msgstr "Statek"
+
+#: clearance_app/dash_app.py:41
+msgid "Objektanzahl"
+msgstr "Liczba obiektów"
+
+#: clearance_app/dash_app.py:49
+msgid "Nicht geräumt (Gewicht >= 50kg)"
+msgstr "Nieusunięte (waga >= 50 kg)"
+
+#: clearance_app/dash_app.py:50
+msgid "Nicht geräumt (Gewicht < 50kg)"
+msgstr "Nieusunięte (waga < 50 kg)"
+
+#: clearance_app/dash_app.py:51
+msgid "Geräumt (Gewicht >= 50kg)"
+msgstr "Usunięte (waga >= 50 kg)"
+
+#: clearance_app/dash_app.py:52
+msgid "Geräumt (Gewicht < 50kg)"
+msgstr "Usunięte (waga < 50 kg)"
+
+#: clearance_app/dash_app.py:53
+msgid "In Arbeit"
+msgstr "W trakcie pracy"
+
+#: clearance_app/dash_app.py:66
+msgid "ToDo (Gewicht >= 50kg)"
+msgstr "Do zrobienia (waga >= 50 kg)"
+
+#: clearance_app/dash_app.py:66
+msgid "ToDo (Gewicht < 50kg)"
+msgstr "Do zrobienia (waga < 50 kg)"
+
+#: clearance_app/dash_app.py:66
+msgid "Nicht zu räumen (kein ToDo)"
+msgstr "Nie do usunięcia (brak zadania)"
+
+#: clearance_app/dash_app.py:78
+msgid "Nicht UXO"
+msgstr "Nie UXO"
+
+#: clearance_app/dash_app.py:78
+msgid "Keine Angabe"
+msgstr "Brak danych"
+
+#: clearance_app/dash_app.py:92 clearance_app/dash_app.py:103
+msgid "null"
+msgstr "brak"
+
+#: clearance_app/dash_app.py:126
+msgid "Statistiken nach Datum"
+msgstr "Statystyki według daty"
+
+#: clearance_app/dash_app.py:136
+msgid "Objekt Statistik"
+msgstr "Statystyka obiektów"
+
+#: clearance_app/dash_app.py:159
+msgid "Objekte"
+msgstr "Obiekty"
+
+#: clearance_app/dash_app.py:161
+msgid "Daten"
+msgstr "Daty"
 
 #: clearance_app/models.py:44 clearance_app/models.py:49
 #: clearance_app/models.py:55
+msgid "JA"
+msgstr "TAK"
+
+#: clearance_app/models.py:45 clearance_app/models.py:50
+#: clearance_app/models.py:56
 msgid "NEIN"
 msgstr "NIE"
 
-#: clearance_app/models.py:56
+#: clearance_app/models.py:57
 msgid "IN ARBEIT"
 msgstr "w trakcie pracy"
 
-#: clearance_app/models.py:67
+#: clearance_app/models.py:68
 msgid "Breitengrad"
 msgstr "Szerokość"
 
-#: clearance_app/models.py:68
+#: clearance_app/models.py:69
 msgid "Längengrad"
 msgstr "Stopień długości"
 
-#: clearance_app/models.py:70
+#: clearance_app/models.py:71 templates/home.html:242 templates/home.html:265
 msgid "Wassertiefe [m]"
 msgstr "Glebokosc wody [m]"
 
-#: clearance_app/models.py:72
+#: clearance_app/models.py:73
 msgid "Modelltiefe [m]"
 msgstr "Szacowana glebokosc [m]"
 
-#: clearance_app/models.py:74
+#: clearance_app/models.py:75
 msgid "Modelltiefe unter GOK [m]"
 msgstr "Szacowana glebokosc geoida pod pow.dna [m]"
 
-#: clearance_app/models.py:76
+#: clearance_app/models.py:77
 msgid "Modelgewicht [kg]"
 msgstr "Szacowana waga [kg]"
 
-#: clearance_app/models.py:78
+#: clearance_app/models.py:79
 msgid "MAG Moment [A/m²]"
 msgstr "Moment magnetyczny [A/m²]"
 
-#: clearance_app/models.py:80
+#: clearance_app/models.py:81
 msgid "Anomaly max [nT]"
 msgstr "Max anomalia [nT]"
 
-#: clearance_app/models.py:82
+#: clearance_app/models.py:83
 msgid "Anomaly min [nT]"
 msgstr "Min anomalia [nT]"
 
-#: clearance_app/models.py:84
+#: clearance_app/models.py:85
 msgid "Dipole Breite [m]"
 msgstr "Szerokosc dipola [m]"
 
-#: clearance_app/models.py:86
+#: clearance_app/models.py:87
 msgid "Dipole P-P [nT]"
 msgstr "Dipol P-P [nT]"
 
-#: clearance_app/models.py:87
+#: clearance_app/models.py:88
 msgid "ITP Notizen"
 msgstr "Notatki ITP"
 
-#: clearance_app/models.py:96
-msgid "WTG-OSS-EXC"
-msgstr ""
-
 #: clearance_app/models.py:97
-msgid "Abstand vom EXC"
-msgstr ""
-
-#: clearance_app/models.py:98
 msgid "todo_target"
 msgstr "Obiekt do zrobienia"
 
 #: clearance_app/models.py:99
-msgid "Priorität"
-msgstr "Priorytet"
+msgid "Sektion"
+msgstr ""
 
-#: clearance_app/models.py:101
+#: clearance_app/models.py:100
 msgid "Bergungsdatum"
 msgstr "Data oczyszczenia"
 
-#: clearance_app/models.py:102
+#: clearance_app/models.py:101
 msgid "Bergungszeit"
 msgstr "Czas oczyszczenia"
 
-#: clearance_app/models.py:103
-msgid "Schiff"
-msgstr "Statek"
-
-#: clearance_app/models.py:104
+#: clearance_app/models.py:103 templates/item_management.html:58
+#: templates/item_management.html:347
 msgid "Feuerwerker"
 msgstr "Saper"
 
-#: clearance_app/models.py:105
+#: clearance_app/models.py:104 templates/item_management.html:62
 msgid "Vermesser"
 msgstr "Surveyor"
 
-#: clearance_app/models.py:108
+#: clearance_app/models.py:105
+msgid "Räumfirma"
+msgstr ""
+
+#: clearance_app/models.py:108 templates/item_management.html:316
 msgid "Gewicht (kg)"
 msgstr "Waga (kg)"
 
@@ -146,7 +238,8 @@ msgstr "Szerokość (m)"
 msgid "Tiefe GOK (m)"
 msgstr "Rzeczywista glebokosc obiektu (m)"
 
-#: clearance_app/models.py:113 templates/home.html:153
+#: clearance_app/models.py:113 templates/home.html:192
+#: templates/item_management.html:350
 msgid "TR Kommentar"
 msgstr "Uwagi sapera"
 
@@ -162,358 +255,1362 @@ msgstr "wydobyte (t/n/w)"
 msgid "Kampfmittel (x)"
 msgstr "Niewybuchy (x)"
 
+#: clearance_app/models.py:119
+#, fuzzy
+#| msgid "gefunden (y/n)"
+msgid "zu sprengen (y/n)"
+msgstr "znaleziono (t/n)"
+
 #: clearance_app/models.py:120
+#, fuzzy
+#| msgid "geborgen (y/n/w)"
+msgid "gesprengt (y/n/w)"
+msgstr "wydobyte (t/n/w)"
+
+#: clearance_app/models.py:121
+msgid "Sicherheitsabstand (m)"
+msgstr ""
+
+#: clearance_app/models.py:124
 msgid "frei (y/n/w)"
 msgstr "oczyszczone (t/n/w)"
 
-#: clearance_app/models.py:123
+#: clearance_app/models.py:127
 msgid "QA Freigabe (y)"
 msgstr "Sprawdzone kontrola jakosci (t)"
 
-#: clearance_app/models.py:126
+#: clearance_app/models.py:130 management/models.py:223 templates/home.html:194
+#: templates/item_management.html:353
 msgid "Beschreibung"
 msgstr "Opis"
 
-#: clearance_app/models.py:127
+#: clearance_app/models.py:131
 msgid "QA Kommentare"
 msgstr "Uwagi kontrola jakosci"
 
-#: clearance_app/models.py:128 clearance_app/models.py:652
+#: clearance_app/models.py:132 clearance_app/models.py:249
 msgid "Erstellt am"
 msgstr "Stworzone"
 
-#: clearance_app/models.py:129 clearance_app/models.py:653
+#: clearance_app/models.py:133 clearance_app/models.py:250
 msgid "Aktualisiert am"
 msgstr "Zaktualizowano dnia"
 
-#: clearance_app/models.py:607
-msgid ""
-"The first image associated with an mtlitem will be renamed in the form of "
-"ITP-[no]_pic_1.jpg. Consecutive images associated with an mtlitem will be "
-"saved as is"
+#: clearance_app/models.py:181 management/models.py:226
+#, fuzzy
+#| msgid "Bilder"
+msgid "Bild"
+msgstr "Zdjęcia"
+
+#: clearance_app/models.py:206
+msgid "Image"
 msgstr ""
-"Nazwa pierwszego obrazu powiązanego z mtlitem zostanie zmieniona naPKT-"
-"[nr]_pic_1.jpg. Kolejne obrazy powiązane z mtlitem będązapisane w "
-"niezmienionej formie"
 
-#: clearance_app/models.py:628
-msgid "Overlay"
-msgstr "Overlay"
+#: clearance_app/models.py:209
+#, fuzzy
+#| msgid "ITP Notizen"
+msgid "Notizen"
+msgstr "Notatki ITP"
 
-#: clearance_app/models.py:629
-msgid "TMI"
-msgstr "TMI"
-
-#: clearance_app/models.py:630
-msgid "MBES"
-msgstr "MBES"
-
-#: clearance_app/models.py:631
-msgid "SSS"
-msgstr "SSS"
-
-#: clearance_app/models.py:649 management/models.py:45 management/models.py:186
+#: clearance_app/models.py:246 management/models.py:55 management/models.py:176
 msgid "Name"
 msgstr "Nazwa"
 
-#: clearance_app/models.py:650
+#: clearance_app/models.py:247
 msgid "Art"
 msgstr "Rodzaj"
 
-#: clearance_app/models.py:651 management/models.py:46 management/models.py:187
+#: clearance_app/models.py:248 management/models.py:56 management/models.py:177
 msgid "Datei"
 msgstr "Plik"
 
-#: management/models.py:147
+#: clearance_app/models.py:270
+msgid "Niedrig"
+msgstr ""
+
+#: clearance_app/models.py:271 templates/item_management.html:343
+msgid "Mittel"
+msgstr ""
+
+#: clearance_app/models.py:272
+msgid "Hoch"
+msgstr ""
+
+#: clearance_app/models.py:279
+#, fuzzy
+#| msgid "Schiffe"
+msgid "Schiffname"
+msgstr "Statki"
+
+#: clearance_app/models.py:280
+msgid "Infoblatt"
+msgstr ""
+
+#: clearance_app/models.py:281
+msgid "MMSI"
+msgstr ""
+
+#: clearance_app/models.py:282
+msgid "IMO"
+msgstr ""
+
+#: clearance_app/models.py:291 templates/home.html:80
+msgid "Schiffe"
+msgstr "Statki"
+
+#: management/models.py:137
 msgid "Weather Downtime"
 msgstr "Czas przestoju pogodowego"
 
-#: management/models.py:148
+#: management/models.py:138
 msgid "Scheduled Target"
 msgstr "Zaplanowany cel"
 
-#: management/models.py:149
+#: management/models.py:139
 msgid "Crew Change"
 msgstr "Zmiana załogi"
 
-#: management/models.py:150
+#: management/models.py:140
 msgid "Port Call"
 msgstr "Wezwanie do portu"
 
-#: management/models.py:151
+#: management/models.py:141 management/models.py:382
 msgid "Other"
 msgstr "Inne"
 
-#: management/models.py:189
+#: management/models.py:179
 msgid "Hochgeladen am"
 msgstr "Załadowano dnia"
 
-#: management/models.py:198
+#: management/models.py:188 management/models.py:295
 msgid "Datum"
 msgstr ""
 
-#: management/models.py:199 templates/home.html:61
+#: management/models.py:189 templates/home.html:87
 #, fuzzy
 #| msgid "Bergungszeit"
 msgid "Betriebsstunden"
 msgstr "Czas oczyszczenia"
 
-#: management/models.py:200
+#: management/models.py:190 templates/home.html:266
 #, fuzzy
 #| msgid "TR Kommentar"
 msgid "Kommentar"
 msgstr "Uwagi sapera"
 
+#: management/models.py:200
+msgid "Offen"
+msgstr ""
+
+#: management/models.py:201
+msgid "wird bearbeitet"
+msgstr ""
+
+#: management/models.py:202
+#, fuzzy
+#| msgid "Erstellt am"
+msgid "Bestellt"
+msgstr "Stworzone"
+
+#: management/models.py:203
+msgid "Auf Lager"
+msgstr ""
+
+#: management/models.py:204
+msgid "Versandfertig"
+msgstr ""
+
+#: management/models.py:205
+msgid "Erhalten"
+msgstr ""
+
+#: management/models.py:219
+msgid "Titel"
+msgstr ""
+
+#: management/models.py:221
+#, fuzzy
+#| msgid "Bergungsdatum"
+msgid "Bestelldatum"
+msgstr "Data oczyszczenia"
+
+#: management/models.py:222
+msgid "Besteller"
+msgstr ""
+
+#: management/models.py:224
+msgid "Anzahl"
+msgstr ""
+
+#: management/models.py:225
+msgid "Link"
+msgstr ""
+
+#: management/models.py:227
+#, fuzzy
+#| msgid "Statistik"
+msgid "Status"
+msgstr "Statystyka"
+
+#: management/models.py:229
+msgid "Lieferdatum"
+msgstr ""
+
+#: management/models.py:240
+msgid "Bestellung"
+msgstr ""
+
+#: management/models.py:241
+msgid "Bestellungen"
+msgstr ""
+
+#: management/models.py:296
+#, fuzzy
+#| msgid "Vermesser"
+msgid "Vessel"
+msgstr "Surveyor"
+
+#: management/models.py:297
+msgid "Client"
+msgstr ""
+
+#: management/models.py:298
+msgid "Contractor"
+msgstr ""
+
+#: management/models.py:302
+msgid "Position at 24:00LT"
+msgstr ""
+
+#: management/models.py:304
+msgid "CEO"
+msgstr ""
+
+#: management/models.py:305
+msgid "Project Manager"
+msgstr ""
+
+#: management/models.py:306
+msgid "OCM"
+msgstr ""
+
+#: management/models.py:307
+msgid "EOD Manager"
+msgstr ""
+
+#: management/models.py:308
+msgid "Captain"
+msgstr ""
+
+#: management/models.py:309
+msgid "Client Rep"
+msgstr ""
+
+#: management/models.py:310
+msgid "Vessel Email"
+msgstr ""
+
+#: management/models.py:312
+msgid "Distribution List"
+msgstr ""
+
+#: management/models.py:314
+msgid "Marine Onsigners"
+msgstr ""
+
+#: management/models.py:315
+msgid "SeaTerra Onsigners"
+msgstr ""
+
+#: management/models.py:316
+msgid "Client Onsigners"
+msgstr ""
+
+#: management/models.py:318
+msgid "Marine Offsigners"
+msgstr ""
+
+#: management/models.py:319
+msgid "SeaTerra Offsigners"
+msgstr ""
+
+#: management/models.py:320
+msgid "Client Offsigners"
+msgstr ""
+
+#: management/models.py:322
+#, fuzzy
+#| msgid "Weather Downtime"
+msgid "Weather Info"
+msgstr "Czas przestoju pogodowego"
+
+#: management/models.py:323
+msgid "Weather Info Lookahead"
+msgstr ""
+
+#: management/models.py:325
+msgid "HSE Meetings"
+msgstr ""
+
+#: management/models.py:326
+msgid "HSE Toolbox Talks"
+msgstr ""
+
+#: management/models.py:327
+msgid "HSE Safety Observation Form"
+msgstr ""
+
+#: management/models.py:328
+msgid "HSE Safety Drills"
+msgstr ""
+
+#: management/models.py:329
+msgid "HSE Incidents"
+msgstr ""
+
+#: management/models.py:330
+msgid "HSE Accidents"
+msgstr ""
+
+#: management/models.py:331
+msgid "HSE Working Hours"
+msgstr ""
+
+#: management/models.py:332
+msgid "HSE Start of Project"
+msgstr ""
+
+#: management/models.py:333
+msgid "HSE Days Without Accident"
+msgstr ""
+
+#: management/models.py:335
+msgid "HSE Meetings Total"
+msgstr ""
+
+#: management/models.py:336
+msgid "HSE Toolbox Talks Total"
+msgstr ""
+
+#: management/models.py:337
+msgid "HSE Safety Observation Form Total"
+msgstr ""
+
+#: management/models.py:338
+msgid "HSE Safety Drills Total"
+msgstr ""
+
+#: management/models.py:339
+msgid "HSE Incidents Total"
+msgstr ""
+
+#: management/models.py:340
+msgid "HSE Accidents Total"
+msgstr ""
+
+#: management/models.py:341
+msgid "HSE Working Hours Total"
+msgstr ""
+
+#: management/models.py:342
+msgid "HSE Days Without Accident Total"
+msgstr ""
+
+#: management/models.py:344
+msgid "Work Summary"
+msgstr ""
+
+#: management/models.py:345
+msgid "Work Entries"
+msgstr ""
+
+#: management/models.py:347
+msgid "Plan for the next 24hrs"
+msgstr ""
+
+#: management/models.py:349
+msgid "Daily Routine"
+msgstr ""
+
+#: management/models.py:351
+msgid "Routine Vessel"
+msgstr ""
+
+#: management/models.py:352
+msgid "Routine Total Targets"
+msgstr ""
+
+#: management/models.py:353
+msgid "Routine Cleared Targets"
+msgstr ""
+
+#: management/models.py:354
+msgid "Routine Remaining Targets"
+msgstr ""
+
+#: management/models.py:355
+msgid "Routine Total UXOs Found"
+msgstr ""
+
+#: management/models.py:356
+msgid "Routine Targets Cleared Today"
+msgstr ""
+
+#: management/models.py:357
+msgid "Routine Remarks"
+msgstr ""
+
+#: management/models.py:359
+msgid "MOB Duration"
+msgstr ""
+
+#: management/models.py:360
+msgid "Transit Duration"
+msgstr ""
+
+#: management/models.py:361
+msgid "Survey Spread Duration"
+msgstr ""
+
+#: management/models.py:362
+msgid "Client Standby Duration"
+msgstr ""
+
+#: management/models.py:363
+#, fuzzy
+#| msgid "Weather Downtime"
+msgid "Weather Downtime Duration"
+msgstr "Czas przestoju pogodowego"
+
+#: management/models.py:364
+msgid "Time Based Work Duration"
+msgstr ""
+
+#: management/models.py:365
+#, fuzzy
+#| msgid "Crew Change"
+msgid "Crew Change Duration"
+msgstr "Zmiana załogi"
+
+#: management/models.py:366
+msgid "Technical Downtime Duration"
+msgstr ""
+
+#: management/models.py:369
+msgid "MOB Duration Total"
+msgstr ""
+
+#: management/models.py:370
+msgid "Transit Duration Total"
+msgstr ""
+
+#: management/models.py:371
+msgid "Survey Spread Duration Total"
+msgstr ""
+
+#: management/models.py:372
+msgid "Client Standby Duration Total"
+msgstr ""
+
+#: management/models.py:373
+#, fuzzy
+#| msgid "Weather Downtime"
+msgid "Weather Downtime Duration Total"
+msgstr "Czas przestoju pogodowego"
+
+#: management/models.py:374
+msgid "Time Based Work Duration Total"
+msgstr ""
+
+#: management/models.py:375
+msgid "Crew Change Duration Total"
+msgstr ""
+
+#: management/models.py:376
+msgid "Technical Downtime Duration Total"
+msgstr ""
+
+#: management/models.py:379
+msgid "Interpretation of weather forecast"
+msgstr ""
+
+#: management/models.py:380
+msgid "Technical Issues"
+msgstr ""
+
+#: management/models.py:381
+msgid "Meetings"
+msgstr ""
+
+#: management/models.py:384
+msgid "SeaTerra Comments"
+msgstr ""
+
+#: management/models.py:385
+msgid "Client Comments"
+msgstr ""
+
+#: management/models.py:391
+msgid "DPR"
+msgstr ""
+
+#: management/models.py:392 templates/home.html:91
+msgid "DPRs"
+msgstr ""
+
 #: templates/admin/base_site.html:25 templates/calendar.html:11
 msgid "Kartenansicht"
 msgstr "Widok mapy"
 
-#: templates/admin/change_list.html:31
+#: templates/admin/change_form.html:18 templates/admin/change_list.html:31
 msgid "Home"
 msgstr "Strona główna"
 
+#: templates/admin/change_form.html:21
+#, python-format
+msgid "Add %(name)s"
+msgstr ""
+
+#: templates/admin/change_form.html:43 templates/admin/change_list.html:85
+#, fuzzy
+#| msgid "Please correct the error below."
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] "Proszę poprawić błąd poniżej."
+msgstr[1] "Proszę poprawić błąd poniżej."
+msgstr[2] "Proszę poprawić błąd poniżej."
+msgstr[3] "Proszę poprawić błąd poniżej."
+
 #: templates/admin/change_list.html:38
-msgid "Sichtbare Spalten auswählen"
+#, fuzzy
+#| msgid "Sichtbare Spalten auswählen"
+msgid "Sichtbare Spalten Auswahl zeigen/verbergen"
 msgstr "Wybierz widoczne kolumny"
 
-#: templates/admin/change_list.html:72
-msgid "Please correct the error below."
-msgstr "Proszę poprawić błąd poniżej."
-
-#: templates/admin/change_list.html:72
+#: templates/admin/change_list.html:85
 msgid "Please correct the errors below."
 msgstr "Proszę poprawić błędy poniżej."
 
-#: templates/admin/change_list.html:97 templates/home.html:164
+#: templates/admin/change_list.html:110 templates/home.html:273
 msgid "Filter"
 msgstr "Filtr"
 
-#: templates/admin/change_list.html:99
+#: templates/admin/change_list.html:112
 msgid "Clear all filters"
 msgstr "Wyczyść wszystkie filtry"
 
-#: templates/home.html:49 templates/home.html:50 templates/home.html:51
-#: templates/home.html:52 templates/home.html:53 templates/home.html:54
-#: templates/home.html:55 templates/home.html:56 templates/home.html:57
-#: templates/home.html:58 templates/home.html:59 templates/home.html:60
-#: templates/home.html:61 templates/home.html:62
+#: templates/admin/mtlitem_change_form.html:30
+msgid "Korb Bergung Start"
+msgstr ""
+
+#: templates/admin/mtlitem_change_form.html:35
+msgid "Korb Bergung Ende"
+msgstr ""
+
+#: templates/admin/mtlitem_change_form.html:40
+msgid "Korb Transport Start"
+msgstr ""
+
+#: templates/admin/mtlitem_change_form.html:45
+msgid "Korb Transport Ende"
+msgstr ""
+
+#: templates/admin/mtlitem_change_form.html:50
+msgid "Objekt an Sortierschiffdeck am"
+msgstr ""
+
+#: templates/admin/mtlitem_change_form.html:55
+msgid "Objekt im Übergabebehälter am"
+msgstr ""
+
+#: templates/admin/mtlitem_change_form.html:60
+msgid "Objekt im Nasslagerbehälter am"
+msgstr ""
+
+#: templates/admin/mtlitem_change_form.html:65
+msgid "Übergabebedatum"
+msgstr ""
+
+#: templates/admin/mtlitem_change_form.html:70
+msgid "Nasslager Einlagerungdatum"
+msgstr ""
+
+#: templates/home.html:78 templates/home.html:79 templates/home.html:80
+#: templates/home.html:81 templates/home.html:82 templates/home.html:83
+#: templates/home.html:84 templates/home.html:85 templates/home.html:86
+#: templates/home.html:87 templates/home.html:88 templates/home.html:89
+#: templates/home.html:90 templates/home.html:91
 msgid "de"
 msgstr "de"
 
-#: templates/home.html:49
-msgid "Abschnitte"
-msgstr "Sekcje"
-
-#: templates/home.html:50 templates/home.html:170
+#: templates/home.html:78 templates/home.html:279
 msgid "Statistik"
 msgstr "Statystyka"
 
-#: templates/home.html:52
-msgid "Nasslager"
-msgstr "Składowisko mokre"
-
-#: templates/home.html:53
-msgid "Schiffe"
-msgstr "Statki"
-
-#: templates/home.html:54
+#: templates/home.html:81
 msgid "Geodata"
 msgstr "Geodane"
 
-#: templates/home.html:55
+#: templates/home.html:82
 msgid "Unterlagen"
 msgstr "Dokumenty"
 
-#: templates/home.html:56
-msgid "Berichte"
-msgstr "Raporty"
-
-#: templates/home.html:57
-msgid "Wasserproben"
-msgstr "Próby wody"
-
-#: templates/home.html:58
+#: templates/home.html:83
 msgid "Kalender"
 msgstr "Kalendarz"
 
-#: templates/home.html:59
+#: templates/home.html:84
 msgid "Bilder"
 msgstr "Zdjęcia"
 
-#: templates/home.html:60 templates/home.html:279
+#: templates/home.html:85 templates/home.html:86 templates/home.html:420
 msgid "Wetter"
 msgstr "Pogoda"
 
-#: templates/home.html:62
+#: templates/home.html:88
 msgid "Target Records"
 msgstr "Rejestry celów"
 
-#: templates/home.html:70 templates/picture_gallery.html:19
+#: templates/home.html:89
+msgid "Kontoverwaltung"
+msgstr ""
+
+#: templates/home.html:90
+msgid "Bestellliste"
+msgstr ""
+
+#: templates/home.html:99 templates/item_management.html:34
+#: templates/item_management.html:114 templates/item_management.html:140
+#: templates/item_management.html:254 templates/item_management.html:399
+#: templates/item_management.html:424 templates/item_management.html:434
+#: templates/picture_gallery.html:19
 msgid "Suchen..."
 msgstr "Szukaj..."
 
-#: templates/home.html:89
+#: templates/home.html:118
 msgid "Bild hochladen"
 msgstr "Prześlij obraz"
 
-#: templates/home.html:101
+#: templates/home.html:130
 msgid "Modelltiefe :"
 msgstr "Głębokość modelu:"
 
-#: templates/home.html:102
+#: templates/home.html:131
 msgid "Wassertiefe :"
 msgstr "Głębokość wody:"
 
-#: templates/home.html:106
+#: templates/home.html:132
+#, fuzzy
+#| msgid "Bergungsdatum"
+msgid "Bergungsdatum :"
+msgstr "Data oczyszczenia"
+
+#: templates/home.html:133
+#, fuzzy
+#| msgid "Feuerwerker"
+msgid "Feuerwerker :"
+msgstr "Saper"
+
+#: templates/home.html:137
 msgid "Tiefe unter Boden :"
 msgstr "Głębokość pod ziemią:"
 
-#: templates/home.html:111
+#: templates/home.html:139
+#, fuzzy
+#| msgid "Schiff"
+msgid "Schiff :"
+msgstr "Statek"
+
+#: templates/home.html:143
 msgid "Gefunden"
 msgstr "Znaleziono"
 
-#: templates/home.html:117
+#: templates/home.html:149
 msgid "Geborgen"
 msgstr "Odnaleziono"
 
-#: templates/home.html:128
+#: templates/home.html:160
 msgid "Frei"
 msgstr "Wolne"
 
-#: templates/home.html:135
+#: templates/home.html:167
 msgid "QA Frei"
 msgstr "Zatwierdzone przez QA"
 
-#: templates/home.html:143
+#: templates/home.html:172
+msgid "Todo"
+msgstr ""
+
+#: templates/home.html:182
 msgid "Gewicht (kg):"
 msgstr "Waga (kg):"
 
-#: templates/home.html:146
+#: templates/home.html:185
 msgid "Breite (m):"
 msgstr "Szerokość (m):"
 
-#: templates/home.html:149
+#: templates/home.html:188
 msgid "Lange (m):"
 msgstr "Długość (m):"
 
-#: templates/home.html:154
+#: templates/home.html:193
 msgid "TR Kommentar hier eingeben..."
 msgstr "Wpisz tutaj komentarz TR..."
 
-#: templates/home.html:161 templates/home.html:315
+#: templates/home.html:195
+#, fuzzy
+#| msgid "TR Kommentar hier eingeben..."
+msgid "Beschreibung hier eingeben..."
+msgstr "Wpisz tutaj komentarz TR..."
+
+#: templates/home.html:205
+msgid "Rasterzelle öffnen"
+msgstr ""
+
+#: templates/home.html:206 templates/home.html:228 templates/home.html:259
+#: templates/item_management.html:49
+msgid "Untersuchungsgebiet Zelle"
+msgstr ""
+
+#: templates/home.html:207 templates/home.html:229 templates/home.html:240
+#: templates/home.html:260
+msgid "Easting"
+msgstr ""
+
+#: templates/home.html:208 templates/home.html:230 templates/home.html:241
+#: templates/home.html:261
+msgid "Northing"
+msgstr ""
+
+#: templates/home.html:209
+#, fuzzy
+#| msgid "frei (y/n/w)"
+msgid "bearbeitet (y/n/w)"
+msgstr "oczyszczone (t/n/w)"
+
+#: templates/home.html:210
+msgid "Objekt Zahl"
+msgstr ""
+
+#: templates/home.html:213
+msgid "Bild vor Räumung"
+msgstr ""
+
+#: templates/home.html:217
+msgid "Bild nach Räumung"
+msgstr ""
+
+#: templates/home.html:227
+msgid "Bohrpunkt öffnen"
+msgstr ""
+
+#: templates/home.html:231
+#, fuzzy
+#| msgid "gefunden (y/n)"
+msgid "Sondiert (y/n)"
+msgstr "znaleziono (t/n)"
+
+#: templates/home.html:232
+#, fuzzy
+#| msgid "gefunden (y/n)"
+msgid "Anomalie gefunden (y/n)"
+msgstr "znaleziono (t/n)"
+
+#: templates/home.html:243
+msgid "Behälter Art"
+msgstr ""
+
+#: templates/home.html:244
+msgid "Gesamtmasse (kg)"
+msgstr ""
+
+#: templates/home.html:245
+msgid "Gesamtsprengstoffgewicht (kg)"
+msgstr ""
+
+#: templates/home.html:246
+msgid "Inhalt Zustand / Art"
+msgstr ""
+
+#: templates/home.html:247
+msgid "Mtl Item Zahl"
+msgstr ""
+
+#: templates/home.html:248
+msgid "Schlussdatum"
+msgstr ""
+
+#: templates/home.html:249
+#, fuzzy
+#| msgid "Bergungsdatum"
+msgid "Einlagerung Datum"
+msgstr "Data oczyszczenia"
+
+#: templates/home.html:250
+#, fuzzy
+#| msgid "Nasslager"
+msgid "Nasslager Zell"
+msgstr "Składowisko mokre"
+
+#: templates/home.html:251
+msgid "Objekte Exportieren"
+msgstr ""
+
+#: templates/home.html:258 templates/item_management.html:42
+msgid "Untersuchungsgebiet"
+msgstr ""
+
+#: templates/home.html:262
+msgid "Gesammelt?"
+msgstr ""
+
+#: templates/home.html:263
+msgid "Zeitpunkt der Probenahme"
+msgstr ""
+
+#: templates/home.html:264
+msgid "Gesammeltes Volumen [mL]"
+msgstr ""
+
+#: templates/home.html:270 templates/home.html:456
 msgid "Legend"
 msgstr ""
 
-#: templates/home.html:162 templates/home.html:258
+#: templates/home.html:271 templates/home.html:399
 msgid "Sprachen"
 msgstr "Języki"
 
-#: templates/home.html:162
+#: templates/home.html:271
 msgid "Sprache"
 msgstr "Język"
 
-#: templates/home.html:163 templates/home.html:227
+#: templates/home.html:272 templates/home.html:341
 msgid "Ebenen"
 msgstr "Warstwy"
 
-#: templates/home.html:165
+#: templates/home.html:274
 msgid "ITP Gruppen"
 msgstr "Grupy ITP"
 
-#: templates/home.html:174
+#: templates/home.html:283
 msgid "Klar Statistik"
 msgstr "Statystyka Klar"
 
-#: templates/home.html:175
+#: templates/home.html:284
 msgid "To Do Statistik"
 msgstr "Statystyka Do Zrobienia"
 
-#: templates/home.html:176
+#: templates/home.html:285
 msgid "UXO Statistik"
 msgstr "Statystyka UXO"
 
-#: templates/home.html:177
+#: templates/home.html:286
 #, fuzzy
 #| msgid "Statistik"
 msgid "Leistung Statistik"
 msgstr "Statystyka"
 
-#: templates/home.html:196
+#: templates/home.html:287
+#, fuzzy
+#| msgid "Statistik"
+msgid "Schiff Statistik"
+msgstr "Statystyka"
+
+#: templates/home.html:306
 msgid "Filter Option"
 msgstr "Opcje filtra"
 
-#: templates/home.html:222
+#: templates/home.html:336
 msgid "Filter anwenden"
 msgstr "Zastosuj filtr"
 
-#: templates/home.html:223
+#: templates/home.html:337
 msgid "Filter zurücksetzen"
 msgstr "Resetuj filtr"
 
-#: templates/home.html:246
+#: templates/home.html:387
 msgid "ITP Cluster Einstellungen"
 msgstr "Ustawienia klastra ITP"
 
-#: templates/home.html:250
+#: templates/home.html:391
 msgid "Max. Pixel zwischen Punkten im Cluster:"
 msgstr "Maks. liczba pikseli między punktami w klastrze:"
 
-#: templates/home.html:273
+#: templates/home.html:414
 msgid "Sprache ändern"
 msgstr "Zmień język"
 
-#: templates/home.html:284
+#: templates/home.html:425
 msgid "Wetter abfragen"
 msgstr "Zapytaj o pogodę"
 
-#: templates/home.html:293
+#: templates/home.html:434
 msgid "Temperatur"
 msgstr "Temperatura"
 
-#: templates/home.html:294 templates/home.html:298 templates/home.html:304
-#: templates/home.html:308
+#: templates/home.html:435 templates/home.html:439 templates/home.html:445
+#: templates/home.html:449
 msgid "Lädt..."
 msgstr "Ładuje..."
 
-#: templates/home.html:297
+#: templates/home.html:438
 msgid "Wetterlage"
 msgstr "Warunki pogodowe"
 
-#: templates/home.html:303
+#: templates/home.html:444
 msgid "Feuchtigkeit"
 msgstr "Wilgotność"
 
-#: templates/home.html:307
+#: templates/home.html:448
 msgid "Windgeschwindigkeit"
 msgstr "Prędkość wiatru"
 
-#: templates/home.html:324
+#: templates/home.html:465
 msgid "nicht freigegeben"
 msgstr "nie zatwierdzone"
 
-#: templates/home.html:330
+#: templates/home.html:471
+msgid "zu sprengen"
+msgstr ""
+
+#: templates/home.html:477
 msgid "freigegeben"
 msgstr "zatwierdzone"
 
-#: templates/home.html:336
+#: templates/home.html:483 templates/item_management.html:77
+#: templates/item_management.html:107
 msgid "in Arbeit"
 msgstr "w trakcie pracy"
 
-#: templates/home.html:341
+#: templates/home.html:489
 msgid "Kampfmittel nicht freigegeben"
 msgstr "Środki bojowe niezatwierdzone"
 
-#: templates/home.html:347
+#: templates/home.html:495
 msgid "Kampfmittel freigegeben"
 msgstr "Środki bojowe zatwierdzone"
 
-#: templates/home.html:353
+#: templates/home.html:501
 msgid "Kampfmittel in Arbeit"
 msgstr "Środki bojowe w trakcie pracy"
 
-#: templates/home.html:359
+#: templates/home.html:507
 msgid "Kein ToDo"
 msgstr "Brak do wykonania"
+
+#: templates/home.html:564 templates/item_management.html:15
+msgid "Körbe"
+msgstr ""
+
+#: templates/home.html:582 templates/home.html:601 templates/home.html:639
+msgid "Korb"
+msgstr ""
+
+#: templates/home.html:586 templates/home.html:624
+msgid "Meeresboden"
+msgstr ""
+
+#: templates/home.html:611
+#, fuzzy
+#| msgid "Bergungszeit"
+msgid "Bergungsschiff"
+msgstr "Czas oczyszczenia"
+
+#: templates/home.html:649
+#, fuzzy
+#| msgid "Sortieren nach:"
+msgid "Sortierschiff"
+msgstr "Sortuj według:"
+
+#: templates/home.html:685
+#, fuzzy
+#| msgid "Sichtbare Spalten auswählen"
+msgid "Schiff auswählen"
+msgstr "Wybierz widoczne kolumny"
+
+#: templates/item_management.html:7 templates/item_management.html:19
+msgid "Fund / Objekt Verwaltung"
+msgstr ""
+
+#: templates/item_management.html:13
+msgid "Startseite"
+msgstr ""
+
+#: templates/item_management.html:14
+msgid "Volle Objektliste"
+msgstr ""
+
+#: templates/item_management.html:16 templates/item_management.html:433
+#, fuzzy
+#| msgid "Nasslager"
+msgid "Nasslagerbehälter"
+msgstr "Składowisko mokre"
+
+#: templates/item_management.html:17 templates/item_management.html:423
+msgid "Übergabebehälter"
+msgstr ""
+
+#: templates/item_management.html:21
+msgid "Räumschiff"
+msgstr ""
+
+#: templates/item_management.html:22
+msgid "Korb Transport"
+msgstr ""
+
+#: templates/item_management.html:23
+#, fuzzy
+#| msgid "Sortieren nach:"
+msgid "Sortierung"
+msgstr "Sortuj według:"
+
+#: templates/item_management.html:24
+msgid "Verpackung"
+msgstr ""
+
+#: templates/item_management.html:31
+msgid "Neues Objekt Erstellen"
+msgstr ""
+
+#: templates/item_management.html:33
+msgid "Bestehendes Objekt bearbeiten"
+msgstr ""
+
+#: templates/item_management.html:44
+msgid "Pelzerhaken West_00002"
+msgstr ""
+
+#: templates/item_management.html:45
+msgid "Pelzerhaken West_00032"
+msgstr ""
+
+#: templates/item_management.html:46
+msgid "Pelzerhaken West_00035"
+msgstr ""
+
+#: templates/item_management.html:66
+#, fuzzy
+#| msgid "Kampfmittel (x)"
+msgid "Kampfmittel (j/n)"
+msgstr "Niewybuchy (x)"
+
+#: templates/item_management.html:68 templates/item_management.html:76
+#: templates/item_management.html:105 templates/item_management.html:306
+#: templates/item_management.html:333
+msgid "Ja"
+msgstr ""
+
+#: templates/item_management.html:69 templates/item_management.html:78
+#: templates/item_management.html:106 templates/item_management.html:307
+#: templates/item_management.html:334
+msgid "Nein"
+msgstr ""
+
+#: templates/item_management.html:74
+#, fuzzy
+#| msgid "geborgen (y/n/w)"
+msgid "Geborgen (j/n)"
+msgstr "wydobyte (t/n/w)"
+
+#: templates/item_management.html:82
+msgid "Fundsituation"
+msgstr ""
+
+#: templates/item_management.html:89
+#, fuzzy
+#| msgid "Tiefe GOK (m)"
+msgid "Tiefe GOK (cm)"
+msgstr "Rzeczywista glebokosc obiektu (m)"
+
+#: templates/item_management.html:94
+msgid "Räumgerät"
+msgstr ""
+
+#: templates/item_management.html:96
+msgid "Greifer"
+msgstr ""
+
+#: templates/item_management.html:97
+msgid "Crawler"
+msgstr ""
+
+#: templates/item_management.html:98
+msgid "Anders"
+msgstr ""
+
+#: templates/item_management.html:103
+#, fuzzy
+#| msgid "frei (y/n/w)"
+msgid "Frei (j/n/w)"
+msgstr "oczyszczone (t/n/w)"
+
+#: templates/item_management.html:113
+msgid "im Korb legen..."
+msgstr ""
+
+#: templates/item_management.html:117 templates/item_management.html:143
+#: templates/item_management.html:257
+msgid "Korb "
+msgstr ""
+
+#: templates/item_management.html:123 templates/item_management.html:149
+#: templates/item_management.html:263
+msgid "Korbinfo"
+msgstr ""
+
+#: templates/item_management.html:129 templates/item_management.html:208
+#: templates/item_management.html:215 templates/item_management.html:222
+#: templates/item_management.html:229 templates/item_management.html:236
+#: templates/item_management.html:389
+msgid "Speichern"
+msgstr ""
+
+#: templates/item_management.html:135
+msgid "Körb Transport"
+msgstr ""
+
+#: templates/item_management.html:139 templates/item_management.html:253
+msgid "Korb auswählen..."
+msgstr ""
+
+#: templates/item_management.html:205
+msgid "Start Korb Bergung"
+msgstr ""
+
+#: templates/item_management.html:206 templates/item_management.html:213
+#: templates/item_management.html:220 templates/item_management.html:227
+#: templates/item_management.html:234
+msgid "Auf Jetzt setzen"
+msgstr ""
+
+#: templates/item_management.html:212
+msgid "End Korb Bergung"
+msgstr ""
+
+#: templates/item_management.html:219
+msgid "Transport Start"
+msgstr ""
+
+#: templates/item_management.html:226
+msgid "Transport End"
+msgstr ""
+
+#: templates/item_management.html:233
+msgid "Korb am Sortierschiff"
+msgstr ""
+
+#: templates/item_management.html:243
+msgid "Nasslagerbehälter Transport"
+msgstr ""
+
+#: templates/item_management.html:266
+msgid "Fund Sortierung abschleissen"
+msgstr ""
+
+#: templates/item_management.html:269
+msgid "ID"
+msgstr ""
+
+#: templates/item_management.html:272
+#, fuzzy
+#| msgid "Kampfmittel (x)"
+msgid "Kampfmittel Typ"
+msgstr "Niewybuchy (x)"
+
+#: templates/item_management.html:275
+msgid ""
+"Munition für Hand- und Maschinenwaffen (Infanteriemunition / alles unter D=2 "
+"cm)"
+msgstr ""
+
+#: templates/item_management.html:276
+msgid ""
+"Nahkampfmittel (Handgranaten, Panzerabwehrhandwaffen, Gewehrgranaten, ...)"
+msgstr ""
+
+#: templates/item_management.html:277
+msgid "Minen (Schützenminen, Panzerminen)"
+msgstr ""
+
+#: templates/item_management.html:278
+msgid ""
+"Sprengmittel (verpackter oder loser Sprengstoff, Pioniersprengstoff, "
+"Rohrladung)"
+msgstr ""
+
+#: templates/item_management.html:279
+msgid "Zündmittel (Sprengkapseln, Anzünder, Übertragungsladung)"
+msgstr ""
+
+#: templates/item_management.html:280
+msgid ""
+"Rohrwaffenmunition bis D<=5 cm (Granaten, Patronen, Wurfgranaten, Wurfminen)"
+msgstr ""
+
+#: templates/item_management.html:281
+msgid ""
+"Rohrwaffenmunition D=5cm bis D=15cm (Granaten, Patronen, Wurfgranaten, "
+"Wurfminen)"
+msgstr ""
+
+#: templates/item_management.html:282
+msgid ""
+"Rohrwaffenmunition über D>15 cm (Granaten, Patronen, Wurfgranaten, Wurfminen)"
+msgstr ""
+
+#: templates/item_management.html:283
+msgid "Stabbrandbomben"
+msgstr ""
+
+#: templates/item_management.html:284
+msgid "sonstige Brandbomben"
+msgstr ""
+
+#: templates/item_management.html:285
+msgid "Abwurfmunition"
+msgstr ""
+
+#: templates/item_management.html:286
+msgid "Transportbehälter"
+msgstr ""
+
+#: templates/item_management.html:287
+msgid "Raketen"
+msgstr ""
+
+#: templates/item_management.html:288
+msgid "Zünder (sprengkräftige oder nicht sprengkräftige Zünder)"
+msgstr ""
+
+#: templates/item_management.html:289
+msgid "Pyrotechnik (Leuch- oder Rauchsignale, Knallsätze)"
+msgstr ""
+
+#: templates/item_management.html:290
+msgid "Treibsätze (getrennte Treibladungen)"
+msgstr ""
+
+#: templates/item_management.html:291
+msgid "Marinekampfmittel (UW-Munition, Minen, Torpedos, Sperrwaffen)"
+msgstr ""
+
+#: templates/item_management.html:292
+msgid "sonstige spreng- und zündkräftige Kampfmittel (z.B. Bruchstücke)"
+msgstr ""
+
+#: templates/item_management.html:293
+msgid "Waffen (Waffen oder Waffenteile)"
+msgstr ""
+
+#: templates/item_management.html:294
+msgid "inerte Teile / Splitter / Munitionsschrott"
+msgstr ""
+
+#: templates/item_management.html:297
+msgid "Kampfmittel Typ Unterklassifizierung"
+msgstr ""
+
+#: templates/item_management.html:300
+msgid "Herkunftsland"
+msgstr ""
+
+#: templates/item_management.html:303
+msgid "Bezündert (j/n)"
+msgstr ""
+
+#: templates/item_management.html:310
+msgid "Zundertyp"
+msgstr ""
+
+#: templates/item_management.html:319
+#, fuzzy
+#| msgid "Länge (m)"
+msgid "Länge (cm)"
+msgstr "Długość (m)"
+
+#: templates/item_management.html:322
+#, fuzzy
+#| msgid "Breite (m)"
+msgid "Breite (cm)"
+msgstr "Szerokość (m)"
+
+#: templates/item_management.html:325
+msgid "Höhe (cm)"
+msgstr ""
+
+#: templates/item_management.html:328
+msgid "Sprengstoffmasse NEM (kg)"
+msgstr ""
+
+#: templates/item_management.html:331
+msgid "Transportfähig (j/n)"
+msgstr ""
+
+#: templates/item_management.html:340
+#, fuzzy
+#| msgid "Beschreibung"
+msgid "Zustandbeschreibung"
+msgstr "Opis"
+
+#: templates/item_management.html:342
+msgid "Gut"
+msgstr ""
+
+#: templates/item_management.html:344
+msgid "Schlecht"
+msgstr ""
+
+#: templates/item_management.html:358
+#, fuzzy
+#| msgid "Bild hochladen"
+msgid "Bilder hochladen"
+msgstr "Prześlij obraz"
+
+#: templates/item_management.html:367
+msgid "Objekt ist eine Kiste / hat Inhalt"
+msgstr ""
+
+#: templates/item_management.html:371
+#, fuzzy
+#| msgid "Länge (m)"
+msgid "Inhalt Länge (cm)"
+msgstr "Długość (m)"
+
+#: templates/item_management.html:374
+#, fuzzy
+#| msgid "Breite (m)"
+msgid "Inhalt Breite (cm)"
+msgstr "Szerokość (m)"
+
+#: templates/item_management.html:377
+msgid "Inhalt Höhe (cm)"
+msgstr ""
+
+#: templates/item_management.html:380
+#, fuzzy
+#| msgid "Gewicht (kg)"
+msgid "Einzeln gewicht (kg)"
+msgstr "Waga (kg)"
+
+#: templates/item_management.html:383
+msgid "Inhalt Anzahl"
+msgstr ""
+
+#: templates/item_management.html:398
+msgid "Sortierte Objekte"
+msgstr ""
+
+#: templates/item_management.html:417
+msgid "Objektinfo"
+msgstr ""
+
+#: templates/item_management.html:443
+msgid "Behälterinfo"
+msgstr ""
+
+#: templates/item_management.html:449
+msgid "Objekt im Behälter speichern"
+msgstr ""
 
 #: templates/picture_gallery.html:10
 msgid "Bildergalerie"
@@ -546,3 +1643,33 @@ msgstr "następny"
 #: templates/picture_gallery.html:39
 msgid "letzte"
 msgstr "ostatni"
+
+#~ msgid ""
+#~ "The first image associated with an mtlitem will be renamed in the form of "
+#~ "ITP-[no]_pic_1.jpg. Consecutive images associated with an mtlitem will be "
+#~ "saved as is"
+#~ msgstr ""
+#~ "Nazwa pierwszego obrazu powiązanego z mtlitem zostanie zmieniona naPKT-"
+#~ "[nr]_pic_1.jpg. Kolejne obrazy powiązane z mtlitem będązapisane w "
+#~ "niezmienionej formie"
+
+#~ msgid "Overlay"
+#~ msgstr "Overlay"
+
+#~ msgid "TMI"
+#~ msgstr "TMI"
+
+#~ msgid "MBES"
+#~ msgstr "MBES"
+
+#~ msgid "SSS"
+#~ msgstr "SSS"
+
+#~ msgid "Abschnitte"
+#~ msgstr "Sekcje"
+
+#~ msgid "Berichte"
+#~ msgstr "Raporty"
+
+#~ msgid "Wasserproben"
+#~ msgstr "Próby wody"
